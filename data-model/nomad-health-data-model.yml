@@ -1,0 +1,851 @@
+generated: '2026-08-04'
+method: derived
+source: openapi/nomad-health-platform-openapi.yml, openapi/nomad-health-api-openapi.yml
+note: Derived from URL structure only. Neither harvested Swagger 2.0 document declares a single entry
+  under definitions (0 schemas across 498 operations) and no operation declares a request or response
+  body, so no field-level model can be read from the contract. Entities below are the resource collections
+  the paths expose; relationships are inferred from nested path segments and *_id path parameters. This
+  is a structural map, not a schema.
+id_format:
+  style: mongodb-objectid
+  example: 597b539ce4055d099bf7562f
+  evidence: https://nomadhealth.com/api/region returned 24-character hex ids
+schemas_declared: 0
+entity_count: 73
+entities:
+- entity: admin
+  operations: 97
+  methods:
+  - delete
+  - get
+  - patch
+  - post
+  - put
+  identified_by:
+  - assignment_id
+  - attachment_id
+  - bonus_id
+  - call_id
+  - candidate_id
+  - conversation_id
+  - group_id
+  - id
+  - job_id
+  - jobpost_id
+  - message_id
+  - offer_id
+  - provider_id
+  - reminder_id
+  - task_id
+  - user_id
+  paths: 88
+- entity: fx
+  operations: 22
+  methods:
+  - delete
+  - get
+  - patch
+  - post
+  - put
+  identified_by:
+  - account_id
+  - id
+  paths: 13
+- entity: users
+  operations: 18
+  methods:
+  - get
+  - patch
+  - post
+  - put
+  identified_by:
+  - jobpost_id
+  paths: 13
+- entity: twilio
+  operations: 16
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 16
+- entity: credentialing
+  operations: 13
+  methods:
+  - get
+  - post
+  - put
+  identified_by: null
+  paths: 13
+- entity: jobposts
+  operations: 13
+  methods:
+  - get
+  - post
+  identified_by:
+  - id
+  - jobpost_id
+  paths: 13
+- entity: application
+  operations: 12
+  methods:
+  - delete
+  - get
+  - patch
+  - post
+  - put
+  identified_by:
+  - id
+  paths: 9
+- entity: facility
+  operations: 11
+  methods:
+  - get
+  - post
+  - put
+  identified_by:
+  - facility_id
+  - id
+  - id_or_slug
+  - photo_id
+  paths: 10
+- entity: rules-engine-admin
+  operations: 11
+  methods:
+  - delete
+  - get
+  - post
+  - put
+  identified_by:
+  - config_name
+  - entity_id
+  - entity_type
+  - rule_instance_id
+  paths: 7
+- entity: demand_entity
+  operations: 10
+  methods:
+  - get
+  identified_by:
+  - code
+  - id
+  paths: 10
+- entity: packet
+  operations: 9
+  methods:
+  - get
+  - post
+  - put
+  identified_by:
+  - id
+  paths: 5
+- entity: placements
+  operations: 7
+  methods:
+  - get
+  - patch
+  - post
+  identified_by:
+  - id
+  - placement_id
+  paths: 4
+- entity: applications
+  operations: 6
+  methods:
+  - get
+  - patch
+  identified_by:
+  - id
+  - jobpost_id
+  paths: 5
+- entity: campaign
+  operations: 6
+  methods:
+  - delete
+  - get
+  - patch
+  identified_by:
+  - id
+  paths: 4
+- entity: referrals
+  operations: 6
+  methods:
+  - get
+  - post
+  identified_by:
+  - user_id
+  paths: 6
+- entity: zendesk
+  operations: 6
+  methods:
+  - post
+  identified_by: null
+  paths: 6
+- entity: admin-user
+  operations: 5
+  methods:
+  - get
+  - post
+  - put
+  identified_by:
+  - id
+  paths: 4
+- entity: incidents
+  operations: 5
+  methods:
+  - delete
+  - get
+  - patch
+  - post
+  identified_by:
+  - id
+  paths: 2
+- entity: license-checks
+  operations: 5
+  methods:
+  - get
+  - put
+  identified_by:
+  - id
+  - output_type
+  - provider_id
+  paths: 5
+- entity: messages
+  operations: 5
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 5
+- entity: offers
+  operations: 5
+  methods:
+  - get
+  - post
+  identified_by:
+  - job_id
+  - offer_id
+  paths: 3
+- entity: provider
+  operations: 5
+  methods:
+  - delete
+  - get
+  - patch
+  - post
+  identified_by:
+  - id
+  - note_id
+  paths: 3
+- entity: saved-admin-view
+  operations: 5
+  methods:
+  - delete
+  - get
+  - post
+  - put
+  identified_by:
+  - id
+  paths: 2
+- entity: shift-mappings
+  operations: 5
+  methods:
+  - delete
+  - get
+  - patch
+  - post
+  identified_by:
+  - id
+  paths: 2
+- entity: admin-agency
+  operations: 4
+  methods:
+  - get
+  - patch
+  - post
+  identified_by:
+  - id
+  paths: 2
+- entity: admin-saved-search
+  operations: 4
+  methods:
+  - get
+  - patch
+  - post
+  identified_by: null
+  paths: 2
+- entity: admin-vms
+  operations: 4
+  methods:
+  - get
+  - patch
+  - post
+  identified_by:
+  - id
+  paths: 2
+- entity: auth
+  operations: 4
+  methods:
+  - post
+  identified_by: null
+  paths: 4
+- entity: health-systems
+  operations: 4
+  methods:
+  - get
+  - patch
+  - post
+  identified_by:
+  - id
+  paths: 2
+- entity: iterable
+  operations: 4
+  methods:
+  - get
+  - patch
+  identified_by:
+  - user_id
+  paths: 4
+- entity: job_source
+  operations: 4
+  methods:
+  - get
+  - patch
+  - post
+  identified_by:
+  - id
+  paths: 2
+- entity: onboarding
+  operations: 4
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 3
+- entity: provider-sizzle
+  operations: 4
+  methods:
+  - get
+  - post
+  identified_by:
+  - provider_id
+  paths: 4
+- entity: quick-apply
+  operations: 4
+  methods:
+  - get
+  - post
+  identified_by:
+  - application_id
+  paths: 3
+- entity: saved-search
+  operations: 4
+  methods:
+  - get
+  - patch
+  - post
+  identified_by: null
+  paths: 2
+- entity: user_assessment
+  operations: 4
+  methods:
+  - get
+  - patch
+  - post
+  identified_by:
+  - assessment_id
+  - user_assessment_id
+  paths: 2
+- entity: admin-references
+  operations: 4
+  methods:
+  - delete
+  - get
+  - post
+  - put
+  identified_by:
+  - provider_id
+  - reference_id
+  paths: 2
+- entity: accounts
+  operations: 3
+  methods:
+  - get
+  - patch
+  - put
+  identified_by: null
+  paths: 1
+- entity: admin-application-review
+  operations: 3
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 3
+- entity: admin-applications
+  operations: 3
+  methods:
+  - get
+  - patch
+  identified_by:
+  - provider_id
+  paths: 2
+- entity: admin-facility
+  operations: 3
+  methods:
+  - get
+  - patch
+  identified_by:
+  - id
+  paths: 2
+- entity: admin-lead
+  operations: 3
+  methods:
+  - get
+  - patch
+  identified_by:
+  - id
+  paths: 2
+- entity: application-autopilot-user
+  operations: 3
+  methods:
+  - delete
+  - get
+  - patch
+  identified_by:
+  - id
+  paths: 1
+- entity: application-cart
+  operations: 3
+  methods:
+  - delete
+  - get
+  - post
+  identified_by:
+  - id
+  paths: 2
+- entity: application_center
+  operations: 3
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 3
+- entity: job-pricing
+  operations: 3
+  methods:
+  - get
+  - post
+  identified_by:
+  - entity_id
+  - entity_type
+  paths: 2
+- entity: merge-facilities
+  operations: 3
+  methods:
+  - get
+  - post
+  identified_by:
+  - id
+  paths: 2
+- entity: notification-center
+  operations: 3
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 3
+- entity: provider-bookmarks
+  operations: 3
+  methods:
+  - get
+  - patch
+  - put
+  identified_by:
+  - id
+  paths: 1
+- entity: qualification
+  operations: 3
+  methods:
+  - get
+  identified_by:
+  - jobpost_id
+  - provider_id
+  paths: 3
+- entity: reset-password
+  operations: 3
+  methods:
+  - post
+  identified_by: null
+  paths: 3
+- entity: rule-parameters
+  operations: 3
+  methods:
+  - get
+  - put
+  identified_by:
+  - entity_type
+  - id
+  paths: 2
+- entity: vms_submission
+  operations: 3
+  methods:
+  - get
+  - post
+  identified_by:
+  - object_descriptor
+  - placement_id
+  paths: 2
+- entity: job-preferences
+  operations: 3
+  methods:
+  - get
+  - post
+  - put
+  identified_by: null
+  paths: 1
+- entity: account-manager
+  operations: 2
+  methods:
+  - get
+  identified_by:
+  - id
+  paths: 2
+- entity: admin-documents
+  operations: 2
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 2
+- entity: agency
+  operations: 2
+  methods:
+  - get
+  identified_by:
+  - id
+  paths: 2
+- entity: application-autopilot-users
+  operations: 2
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 1
+- entity: campaigns
+  operations: 2
+  methods:
+  - get
+  - post
+  identified_by: null
+  paths: 1
+- entity: certifications
+  operations: 2
+  methods:
+  - get
+  identified_by: null
+  paths: 2
+relationships:
+- from: admin
+  to: assignment
+  type: has_many
+  via: assignment_id
+  occurrences: 4
+- from: provider-sizzle
+  to: provider
+  type: has_many
+  via: provider_id
+  occurrences: 4
+- from: rules-engine-admin
+  to: entity
+  type: has_many
+  via: entity_id
+  occurrences: 4
+- from: fx
+  to: account
+  type: has_many
+  via: account_id
+  occurrences: 3
+- from: jobposts
+  to: jobpost
+  type: has_many
+  via: jobpost_id
+  occurrences: 3
+- from: admin-applications
+  to: provider
+  type: has_many
+  via: provider_id
+  occurrences: 2
+- from: admin
+  to: bonus
+  type: belongs_to
+  via: assignment_id
+  occurrences: 2
+- from: admin
+  to: group
+  type: has_many
+  via: group_id
+  occurrences: 2
+- from: admin
+  to: offer
+  type: has_many
+  via: offer_id
+  occurrences: 2
+- from: admin
+  to: provider
+  type: has_many
+  via: provider_id
+  occurrences: 2
+- from: admin
+  to: message
+  type: has_many
+  via: message_id
+  occurrences: 2
+- from: admin
+  to: reminder
+  type: has_many
+  via: reminder_id
+  occurrences: 2
+- from: fx
+  to: candidates-job-posts
+  type: belongs_to
+  via: account_id
+  occurrences: 2
+- from: iterable
+  to: user
+  type: has_many
+  via: user_id
+  occurrences: 2
+- from: job-pricing
+  to: entity
+  type: has_many
+  via: entity_id
+  occurrences: 2
+- from: license-checks
+  to: provider
+  type: has_many
+  via: provider_id
+  occurrences: 2
+- from: offers
+  to: agreements
+  type: belongs_to
+  via: offer_id
+  occurrences: 2
+- from: offers
+  to: offer
+  type: has_many
+  via: offer_id
+  occurrences: 2
+- from: placements
+  to: placement
+  type: has_many
+  via: placement_id
+  occurrences: 2
+- from: provider
+  to: notes
+  type: has_many
+  via: id
+  occurrences: 2
+- from: qualification
+  to: jobpost
+  type: has_many
+  via: jobpost_id
+  occurrences: 2
+- from: quick-apply
+  to: application
+  type: has_many
+  via: application_id
+  occurrences: 2
+- from: admin-references
+  to: provider
+  type: has_many
+  via: provider_id
+  occurrences: 2
+- from: admin-applications
+  to: validation
+  type: belongs_to
+  via: provider_id
+  occurrences: 1
+- from: admin-facility
+  to: jobposts
+  type: has_many
+  via: id
+  occurrences: 1
+- from: admin-user
+  to: action
+  type: has_many
+  via: id
+  occurrences: 1
+- from: admin
+  to: offers
+  type: belongs_to
+  via: assignment_id
+  occurrences: 1
+- from: admin
+  to: candidates
+  type: belongs_to
+  via: group_id
+  occurrences: 1
+- from: admin
+  to: candidate
+  type: has_many
+  via: candidate_id
+  occurrences: 1
+- from: admin
+  to: jobpost
+  type: has_many
+  via: jobpost_id
+  occurrences: 1
+- from: admin
+  to: mark-read
+  type: belongs_to
+  via: conversation_id
+  occurrences: 1
+- from: admin
+  to: conversation
+  type: has_many
+  via: conversation_id
+  occurrences: 1
+- from: admin
+  to: task
+  type: has_many
+  via: task_id
+  occurrences: 1
+- from: admin
+  to: status
+  type: belongs_to
+  via: call_id
+  occurrences: 1
+- from: admin
+  to: call
+  type: has_many
+  via: call_id
+  occurrences: 1
+- from: admin
+  to: attachment
+  type: belongs_to
+  via: message_id
+  occurrences: 1
+- from: admin
+  to: recording
+  type: belongs_to
+  via: message_id
+  occurrences: 1
+- from: admin
+  to: high-priority
+  type: belongs_to
+  via: provider_id
+  occurrences: 1
+- from: admin
+  to: job
+  type: has_many
+  via: job_id
+  occurrences: 1
+- from: admin
+  to: acknowledge
+  type: belongs_to
+  via: reminder_id
+  occurrences: 1
+- from: admin
+  to: routing
+  type: belongs_to
+  via: user_id
+  occurrences: 1
+- from: admin
+  to: user
+  type: has_many
+  via: user_id
+  occurrences: 1
+- from: applications
+  to: jobpost
+  type: has_many
+  via: jobpost_id
+  occurrences: 1
+- from: applications
+  to: validation
+  type: has_many
+  via: id
+  occurrences: 1
+- from: applications
+  to: work-experience-facilities
+  type: has_many
+  via: id
+  occurrences: 1
+- from: credentials
+  to: provider
+  type: has_many
+  via: provider_id
+  occurrences: 1
+- from: external-verifications
+  to: external_verification
+  type: has_many
+  via: external_verification_id
+  occurrences: 1
+- from: facility
+  to: edit
+  type: has_many
+  via: id
+  occurrences: 1
+- from: fx
+  to: users
+  type: belongs_to
+  via: account_id
+  occurrences: 1
+- from: fx
+  to: offer
+  type: has_many
+  via: id
+  occurrences: 1
+- from: fx
+  to: identities
+  type: has_many
+  via: id
+  occurrences: 1
+- from: jobposts
+  to: job-details-extractions
+  type: has_many
+  via: id
+  occurrences: 1
+- from: jobposts
+  to: jobrobotix-history
+  type: has_many
+  via: id
+  occurrences: 1
+- from: jobposts
+  to: claim
+  type: belongs_to
+  via: jobpost_id
+  occurrences: 1
+- from: jobposts
+  to: requirements
+  type: belongs_to
+  via: jobpost_id
+  occurrences: 1
+- from: jobposts
+  to: unclaim
+  type: belongs_to
+  via: jobpost_id
+  occurrences: 1
+- from: merge-facilities
+  to: preview
+  type: has_many
+  via: id
+  occurrences: 1
+- from: offers
+  to: job
+  type: has_many
+  via: job_id
+  occurrences: 1
+- from: placements
+  to: current_state
+  type: belongs_to
+  via: placement_id
+  occurrences: 1
+- from: placements
+  to: orchestration_state
+  type: belongs_to
+  via: placement_id
+  occurrences: 1
+gaps:
+- No components/definitions schemas in either contract.
+- No request or response bodies declared on any of the 498 operations.
+- No object reference documentation is published to enrich this map.

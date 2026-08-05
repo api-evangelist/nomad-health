@@ -1,0 +1,93 @@
+generated: '2026-08-04'
+method: probed
+source: >-
+  live requests against https://nomadhealth.com/api/v1/* and https://nomadhealth.com/api/*
+format: proprietary
+note: >-
+  Not RFC 9457. The harvested Swagger documents declare only HTTP 200 for every one of
+  their 498 operations — no 4xx or 5xx response is described anywhere in the contract, so
+  nothing could be derived from the spec. Every entry below was observed live. Nomad Health
+  publishes no error reference page.
+envelopes:
+- surface: /api/v1
+  shape: '{"code": "<string>", "error": "<message>"}'
+  fields:
+  - name: code
+    type: string
+    description: Short alphanumeric application error code, e.g. a0002.
+  - name: error
+    type: string
+    description: Human-readable message.
+- surface: /api
+  shape: '{"code": <int>, "data": null, "message": <string|null>}'
+  fields:
+  - name: code
+    type: integer
+    description: Mirrors the HTTP status code.
+  - name: message
+    type: string
+    description: Human-readable message; frequently null.
+  - name: data
+    type: 'null'
+    description: Always null on error.
+- surface: framework
+  shape: '{"message": "<message>"}'
+  description: Flask/Werkzeug default error body, returned for routing-level failures.
+problems:
+- status: 401
+  code: a0002
+  title: User is not authenticated
+  detail: No valid session cookie was presented.
+  envelope: /api/v1
+  remediation: >-
+    Sign in at https://nomadhealth.com/sign-in to establish a session. No API key or
+    bearer-token alternative is published.
+  evidence:
+    url: https://nomadhealth.com/api/v1/accounts/me/
+    http_status: 401
+    body: '{"code": "a0002", "error": "user is not authenticated"}'
+- status: 401
+  code: 401
+  title: Unauthorized
+  detail: Numeric-code variant of the same failure on the /api surface.
+  envelope: /api
+  evidence:
+    url: https://nomadhealth.com/api/facility/000000000000000000000000
+    http_status: 401
+    body: '{"code": 401, "data": null, "message": null}'
+- status: 403
+  title: Forbidden
+  detail: >-
+    Returned with a literal JSON null body and no code — the spec-serving endpoints
+    /api/v1/openapi/ and /api/open-api-spec/ both behave this way.
+  envelope: none
+  evidence:
+    url: https://nomadhealth.com/api/v1/openapi/
+    http_status: 403
+    body: 'null'
+- status: 405
+  title: Method Not Allowed
+  detail: The HTTP method is not allowed for the requested URL.
+  envelope: framework
+  evidence:
+    url: https://nomadhealth.com/api/v1/discipline-names/
+    http_status: 405
+    body: '{"message": "The method is not allowed for the requested URL."}'
+- status: 404
+  title: Not Found
+  detail: >-
+    Unmatched API paths fall through to the marketing application and return an HTML 404
+    page with content-type text/html, not a JSON error body. A client parsing JSON will
+    fail rather than read a structured error.
+  envelope: none
+  content_type: text/html
+  evidence:
+    url: https://nomadhealth.com/api/v1/jobposts/nonexistentid123/
+    http_status: 404
+gaps:
+  - No RFC 9457 application/problem+json.
+  - Two different error envelopes across two surfaces of the same host.
+  - 404 returns HTML from the marketing app instead of a JSON error.
+  - 403 returns a bare JSON null with no code or message.
+  - No published error-code reference; a0002 is undocumented outside the response itself.
+  - Zero 4xx/5xx responses described in either Swagger document.

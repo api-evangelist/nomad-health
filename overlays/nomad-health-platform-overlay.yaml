@@ -1,0 +1,100 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Nomad Health Platform API
+  version: 1.0.0
+extends: openapi/nomad-health-platform-openapi.yml
+x-generated: '2026-08-04'
+x-method: generated
+x-source: >-
+  API Evangelist enrichment pass. Captures our findings as an overlay so the harvested
+  Swagger 2.0 document at openapi/_original/ stays byte-faithful to what Nomad Health serves.
+actions:
+- target: $.info
+  update:
+    title: Nomad Health Platform API
+    description: >-
+      The Nomad Health production platform API, served from https://nomadhealth.com/api/v1
+      and documented by a live Swagger 2.0 contract at https://nomadhealth.com/swagger.json,
+      rendered by a Swagger UI at https://nomadhealth.com/api. Covers job posts and job
+      search, applications, credentialing, license checks, placements and placement
+      workflows, facilities and health systems, offers, qualifications, referrals, messaging
+      and notifications, plus an extensive internal administrative surface.
+    x-apievangelist-harvested: '2026-08-04'
+    x-apievangelist-source: https://nomadhealth.com/swagger.json
+    x-apievangelist-notes: >-
+      Framework-generated contract (Flask-RESTX). The upstream document declares
+      info.title "API", info.version "1.0", a single tag "default", zero definitions, zero
+      securityDefinitions, and HTTP 200 as the only response on all 476 operations. None of
+      those omissions are corrected here — they are recorded as findings in the repo's
+      conventions/, errors/ and authentication/ artifacts.
+- target: $
+  update:
+    schemes:
+    - https
+    x-apievangelist-authentication: >-
+      Session cookie established at https://nomadhealth.com/sign-in. No API key, bearer
+      token or OAuth flow is offered. See authentication/nomad-health-authentication.yml.
+    x-apievangelist-anonymous-operations:
+    - get_public_jobpost_search
+    - get_discipline_names_list
+    - get_sitemap_job_chunk_count
+    - get_sitemap_job_chunk
+    x-apievangelist-error-envelope: '{"code": "<string>", "error": "<message>"}'
+    x-apievangelist-pagination:
+      style: page-number
+      response_object: results.matches.pagination
+      fields: [page, pages, per_page, total_items, has_next, has_previous, start_item, end_item]
+    x-apievangelist-idempotency: none-published
+    x-apievangelist-request-id-header: x-request-id
+- target: $.paths['/api/v1/jobposts/public_jobpost_search/'].get
+  update:
+    summary: Search the public travel-healthcare job marketplace
+    description: >-
+      The one genuinely public operation on this API. Returns faceted job results with a
+      pagination envelope. The upstream contract declares no query parameters; the filter
+      vocabulary Nomad Health documents in its own llms.txt is recorded here.
+    x-apievangelist-filter-parameters:
+    - discipline
+    - specializations
+    - jobType
+    - locations
+    - compactState
+    - startDate
+    - shiftHoursAndDays
+    - shiftTypes
+    - contractLength
+    - minPayRateWeekly
+    - autoOffer
+    - exclusive
+    - certifications
+    - allowsNonCertified
+    x-apievangelist-auth: none
+    x-apievangelist-verified:
+      url: https://nomadhealth.com/api/v1/jobposts/public_jobpost_search/
+      http_status: 200
+      fetched: '2026-08-04'
+- target: $.paths['/api/v1/discipline-names/'].get
+  update:
+    summary: List clinician disciplines
+    x-apievangelist-auth: none
+    x-apievangelist-verified:
+      url: https://nomadhealth.com/api/v1/discipline-names/
+      http_status: 200
+      fetched: '2026-08-04'
+- target: $.paths['/api/v1/sitemap/jobs/chunk_count/'].get
+  update:
+    summary: Count the public job sitemap chunks
+    x-apievangelist-auth: none
+    x-apievangelist-verified:
+      url: https://nomadhealth.com/api/v1/sitemap/jobs/chunk_count/
+      http_status: 200
+      fetched: '2026-08-04'
+- target: $.paths['/api/v1/accounts/me/'].get
+  update:
+    summary: Retrieve the signed-in user's account
+    x-apievangelist-auth: session
+    x-apievangelist-verified:
+      url: https://nomadhealth.com/api/v1/accounts/me/
+      http_status: 401
+      body: '{"code": "a0002", "error": "user is not authenticated"}'
+      fetched: '2026-08-04'

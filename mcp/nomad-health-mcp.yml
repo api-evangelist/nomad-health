@@ -1,0 +1,127 @@
+generated: '2026-08-04'
+method: derived
+status: candidate
+source: openapi/nomad-health-platform-openapi.yml
+note: >-
+  Nomad Health publishes NO hosted or remote MCP server. Probed mcp.nomadhealth.com
+  (NXDOMAIN), https://nomadhealth.com/mcp (404), https://nomadhealth.com/sse (404), and the
+  Model Context Protocol registry and npm (no Nomad Health server). The tool list below is
+  a CANDIDATE derived from real operationIds in the harvested Swagger contract — it is what
+  an MCP server over this API would expose, not something Nomad Health ships. Every
+  source_operation below was verified verbatim in the spec.
+server:
+  name: nomad-health
+  transport: http
+  url: null
+  published: false
+probes:
+- url: https://mcp.nomadhealth.com/
+  result: NXDOMAIN
+- url: https://nomadhealth.com/mcp
+  http_status: 404
+- url: https://nomadhealth.com/sse
+  http_status: 404
+- registry: registry.modelcontextprotocol.io
+  result: no Nomad Health server
+- registry: npm
+  result: no first-party Nomad Health MCP package
+auth_note: >-
+  All but five operations on this API require a browser session cookie. An MCP server over
+  this surface would have no credential to present — see authentication/. The anonymous
+  operations (marked auth: none below) are the only ones an agent can call today.
+tools:
+- name: search_jobs
+  description: Search the public Nomad Health travel-healthcare job marketplace with faceted filters.
+  auth: none
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_public_jobpost_search
+- name: list_disciplines
+  description: List the clinician disciplines available on the marketplace.
+  auth: none
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_discipline_names_list
+- name: get_discipline_info
+  description: Retrieve detail for the clinician disciplines, including specialties.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_discipline_info_list_api
+- name: list_certification_names
+  description: List the certification names recognised by the platform.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_certification_names
+- name: list_job_chunks
+  description: Enumerate the paginated public job sitemap chunks.
+  auth: none
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_sitemap_job_chunk_count
+- name: get_job_chunk
+  description: Retrieve one chunk of public job URLs with last-modified dates.
+  auth: none
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_sitemap_job_chunk
+- name: list_regions
+  description: List the marketplace's named metro regions with state abbreviations.
+  auth: none
+  source_operation: openapi/nomad-health-api-openapi.yml#get_region_resource
+- name: get_job_requirements
+  description: Retrieve the requirements attached to a job post.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_job_post_requirements_api
+- name: get_similar_jobs
+  description: Retrieve job posts similar to a given one.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_similar_jobs_resource
+- name: get_top_matches
+  description: Retrieve the top job matches recommended for the signed-in clinician.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_top_matches
+- name: search_facilities
+  description: Search healthcare facilities on the marketplace.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_facility_search_resource
+- name: get_facility
+  description: Retrieve a facility by id or slug.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_facility_details_by_id_or_slug_resource
+- name: autocomplete_location
+  description: Autocomplete a location string for job search.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_location_autocomplete
+- name: apply_to_job
+  description: Submit an application to a job post.
+  auth: session
+  consequence: write
+  source_operation: openapi/nomad-health-platform-openapi.yml#post_application_apply_resource
+- name: list_applications
+  description: List the signed-in clinician's applications.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_quick_apply_applications_resource
+- name: get_application
+  description: Retrieve one application.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_application_resource
+- name: list_saved_searches
+  description: List the clinician's saved job searches.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_saved_search_api
+- name: create_saved_search
+  description: Create a saved job search.
+  auth: session
+  consequence: write
+  source_operation: openapi/nomad-health-platform-openapi.yml#post_saved_search_api
+- name: list_placements
+  description: List placements.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_placement_list
+- name: browse_credentials
+  description: Browse the clinician's credentialing records.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_credential_browse
+- name: submit_timecard
+  description: Submit a timecard for a placement.
+  auth: session
+  consequence: write
+  source_operation: openapi/nomad-health-platform-openapi.yml#put_timecard_submit
+- name: get_notifications
+  description: Retrieve the clinician's notification center.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_notification_center
+- name: get_account
+  description: Retrieve the signed-in user's account.
+  auth: session
+  source_operation: openapi/nomad-health-platform-openapi.yml#get_accounts_me_resource

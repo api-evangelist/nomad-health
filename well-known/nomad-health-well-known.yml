@@ -1,0 +1,74 @@
+generated: '2026-08-04'
+method: probed
+source: live GET probes of /.well-known/* on every Nomad Health host
+note: >-
+  Nomad Health publishes no /.well-known/ discovery surface on any host. Recorded as
+  observed absence, not as a gap inferred from documentation. The one machine-readable
+  discovery document Nomad Health does serve is /llms.txt at the site root (captured in
+  llms/nomad-health-llms.txt), plus two live Swagger 2.0 contracts (captured in openapi/).
+hosts:
+- host: https://nomadhealth.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /llms.txt
+    status: 200
+    file: ../llms/nomad-health-llms.txt
+  - path: /robots.txt
+    status: 200
+  - path: /sitemap.xml
+    status: 200
+- host: https://marketing.nomadhealth.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://faq.nomadhealth.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://docs.nomadhealth.com
+  note: >-
+    DNS resolves to Cloudflare but every path returns HTTP 525 (SSL handshake failed
+    between Cloudflare and the origin). This looks like a dangling DNS record rather than
+    a live documentation host — Nomad Health should either stand the origin up or remove
+    the record.
+  documents:
+  - path: /
+    status: 525
+  - path: /.well-known/agent-card.json
+    status: 525
+x-evidence:
+  fetched: '2026-08-04'
+  agent_card_probed:
+  - url: https://nomadhealth.com/.well-known/agent-card.json
+    http_status: 404
+  - url: https://nomadhealth.com/.well-known/agent.json
+    http_status: 404

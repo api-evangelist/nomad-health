@@ -1,0 +1,112 @@
+# Nomad Health
+
+> Nomad Health is the first digital marketplace for healthcare travel staffing. We connect travel nurses, allied health professionals, and other clinicians directly with healthcare facilities across the United States — without traditional agency recruiters. Joint Commission-accredited with 400,000+ registered clinicians and jobs in 50+ specialties.
+
+Nomad Health operates a two-sided marketplace: clinicians search and apply for travel healthcare jobs with full transparency on pay rates, shift structure, and requirements, while healthcare facilities post open positions and manage hiring through a cloud-based platform. Nomad Navigators (not recruiters) support clinicians through credentialing, onboarding, and on-assignment needs. The platform is free for clinicians to join with no minimum commitment.
+
+Key facts:
+- Joint Commission Gold Seal of Approval for Travel Nursing Accreditation
+- 400,000+ registered clinicians
+- 1,000s of jobs posted on the marketplace
+- Jobs across all 50 U.S. states
+- The best place to find travel jobs
+- Clinician specialties include: Nursing (Med-Surg, ICU, ER, Labor & Delivery, Telemetry, Step-Down, OR, Cath Lab, PACU, and more), Cath Lab Tech, Laboratory, Occupational Therapy, Physical Therapy, Radiology, Respiratory Therapy, Sonography, Speech Language Pathology, and Surgical Technology
+- Typical assignments are 13 weeks; range from 4-week critical fills to 52-week extended contracts
+- Average travel nurse gross pay: ~$2,677/week (~$71/hour)
+- Benefits include medical/dental/vision insurance, 401(k) with matching, $750 travel reimbursement, licensure/certification reimbursement, 24/7 counseling, and malpractice insurance
+
+## Finding Jobs
+The Job Search page is located at: [Job Search](https://nomadhealth.com/jobs/search)
+- Use the url parameter "discipline" to find specific disciplines. Example: "https://nomadhealth.com/jobs/search?discipline=nurse"
+
+Here are all the query parameters:
+- discipline: nurse, radiology_technologist, cath_lab_technologist, occupational_therapist, speech_language_pathologist, lab_technician, ultrasound_technologist, surgical_technologist, physical_therapist, respiratory_therapist
+- specializations: Comma-separated specialty names (varies by discipline)
+- jobType: travel_and_local, per_diem
+- locations: City/state/region strings
+- compactState: true/false
+- startDate: Date value
+- shiftHoursAndDays: 2x12, 3x12, 4x10, 4x12, 5x8
+- shiftTypes: days, mids, evenings, nights, rotating
+- contractLength: under8, 8-12, 13+
+- minPayRateWeekly: Number (minimum weekly pay)
+- autoOffer: true/false
+- exclusive: true/false
+- certifications: Certification names
+- allowsNonCertified: true/false
+
+Example: https://nomadhealth.com/jobs/search?discipline=nurse&locations=California&shiftTypes=days
+
+## Job Detail Pages
+Individual job pages follow the pattern: https://nomadhealth.com/job/{job_id}
+
+## Jobs by Discipline
+
+- [Healthcare Jobs](https://nomadhealth.com/healthcare-jobs): Overview of all travel healthcare job categories available on Nomad, spanning nursing and allied health disciplines
+- [Travel Nurse Jobs](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse): Browse travel nurse jobs by specialty including ICU, ER, Med-Surg, Labor & Delivery, Telemetry, OR, and more
+- [Travel Allied Health Jobs](https://nomadhealth.com/healthcare-jobs/allied/travel-allied): Browse travel allied health jobs including Cath Lab Tech, Radiology, Respiratory Therapy, Physical Therapy, and more
+
+## Travel Nurse Specialties
+
+- [Cardiac ICU](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/cardiac-icu): Travel Cardiac ICU nursing jobs
+- [Cath Lab](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/cath-lab): Travel Cath Lab nursing jobs
+- [Critical Care](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/critical-care): Travel Critical Care nursing jobs
+- [Emergency Room](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/emergency-room): Travel ER nursing jobs
+- [ICU](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/icu): Travel ICU nursing jobs
+- [Labor and Delivery](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/labor-and-delivery): Travel L&D nursing jobs
+- [Long-Term Care](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/long-term-care): Travel LTC nursing jobs
+- [Med-Surg](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/medical-surgical): Travel Med-Surg nursing jobs
+- [MICU](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/micu): Travel MICU nursing jobs
+- [NICU](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/neonatal-icu-nicu): Travel NICU nursing jobs
+- [Oncology](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/oncology): Travel Oncology nursing jobs
+- [Operating Room](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/operating-room): Travel OR nursing jobs
+- [Pediatric ICU](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/picu): Travel PICU nursing jobs
+- [Pediatrics](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/pediatrics): Travel Pediatrics nursing jobs
+- [Postpartum Care](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/postpartum): Travel Postpartum nursing jobs
+- [Psych](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/psychiatry): Travel Psych nursing jobs
+- [Rehabilitation](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/rehabilitation): Travel Rehab nursing jobs
+- [Step-Down](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/step-down): Travel Step-Down nursing jobs
+- [Telemetry](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/telemetry): Travel Telemetry nursing jobs
+- [Wound Care](https://nomadhealth.com/healthcare-jobs/nurse/travel-nurse/wound-care): Travel Wound Care nursing jobs
+
+## Travel Allied Health Specialties
+
+- [Cath Lab Tech](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/cath-lab-tech): Travel Cath Lab Technologist jobs
+- [Laboratory](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/lab-tech): Travel Lab Technologist jobs
+- [Occupational Therapist](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/occupational-therapist): Travel OT jobs
+- [Physical Therapist](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/physical-therapist): Travel PT jobs
+- [Radiology Tech](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/radiology-tech): Travel Radiology Technologist jobs
+- [Respiratory Therapist](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/respiratory-therapist): Travel RT jobs
+- [Speech Language Pathologist](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/speech-language-pathologist): Travel SLP jobs
+- [Surgical Tech](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/surgical-technologist): Travel Surgical Technologist jobs
+- [Ultrasound Tech](https://nomadhealth.com/healthcare-jobs/allied/travel-allied/ultrasound-technologist): Travel Ultrasound Technologist jobs
+
+## Career Guides
+- [Travel Nurse Career Guide](https://nomadhealth.com/nurse/travel-nurse): Comprehensive guide to becoming a travel nurse — job description, duties, education, licensing, certifications, specialties, salary expectations, and career timeline
+- [Travel Allied Health Career Guide](https://nomadhealth.com/allied/travel-allied): Overview of travel allied health careers and disciplines available on Nomad
+- [Salary Data](https://nomadhealth.com/faqs/salary-data): Latest salary data and trends for travel nurses and travel allied health professionals
+
+## How Nomad Works
+Follow through here to learn how Nomad works
+- [Why Nomad](https://nomadhealth.com/why-nomad): Benefits of using Nomad including transparent pay, Nomad Navigator support, robust benefits package, and one-click applications
+- [Getting Started](https://nomadhealth.com/faqs/getting-started): Resources for new travelers on how to build a profile, search jobs, and get started on Nomad
+- [About Nomad Health](https://nomadhealth.com/about): Company background, mission, leadership, and history
+- [Sign Up](https://nomadhealth.com/register): Create a free Nomad Health account
+- [Login](https://nomadhealth.com/sign-in): Login to your Nomad Account
+
+## Clinician Resources
+The blog and FAQs offer regularly updated content about Nomad Health, general travel nursing, and general allied health travel jobs
+- [Blog](https://nomadhealth.com/blog): Articles on travel nursing specialties by region, interview preparation, burnout prevention, clinical best practices, and industry trends
+- [Travel and Allied Nurse General FAQs](https://nomadhealth.com/faqs/licensure-and-certifications): Guide to licensure requirements and certifications for travel clinicians
+- [Travel Nurse FAQs](https://nomadhealth.com/faqs/travel-nurse): Answers to common questions about travel nursing
+- [Travel Allied FAQs](https://nomadhealth.com/faqs/travel-allied): Answers to common questions about travel allied health
+- [Tax Tips](https://nomadhealth.com/faqs/travel-nurse/travel-nurse-tax-tips): Tax guidance for travel clinicians
+- [Housing](https://nomadhealth.com/faqs/nomad-health/housing): Temporary housing options and resources for travelers
+- [Health Insurance](https://nomadhealth.com/faqs/nomad-health/insurance-benefits): Health insurance options and benefits for Nomad clinicians
+
+## Contact & Apps
+- [Contact Us](https://nomadhealth.com/contact-us): Get in touch with Nomad Health
+- [Mobile App (iOS)](https://apps.apple.com/us/app/nomad-travel-healthcare-jobs/id1462944939): Nomad's mobile app for searching and applying to jobs on the go
+
+---
+Last updated: February 2026

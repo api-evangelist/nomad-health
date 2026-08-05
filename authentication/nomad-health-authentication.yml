@@ -1,0 +1,66 @@
+generated: '2026-08-04'
+method: probed
+source: >-
+  live unauthenticated requests against https://nomadhealth.com/api/v1/* and
+  https://nomadhealth.com/api/*, plus the harvested Swagger 2.0 contracts
+note: >-
+  Neither harvested Swagger document declares a securityDefinitions block, so nothing
+  could be derived mechanically (0-working/derive-authentication.py returned no profile).
+  Nomad Health publishes no developer authentication documentation and issues no public
+  API keys — this profile is written entirely from observed runtime behaviour.
+summary:
+  types:
+  - session-cookie
+  api_key_in: []
+  oauth2_flows: []
+  public_credential_program: false
+  documented: false
+schemes:
+- name: nomad-session
+  type: session
+  in: cookie
+  description: >-
+    Application session established through the browser sign-in flow at
+    https://nomadhealth.com/sign-in. Requests without a valid session cookie receive
+    HTTP 401 with the body {"code": "a0002", "error": "user is not authenticated"} on
+    the /api/v1 surface and {"code": 401, "data": null, "message": null} on the /api
+    surface. No bearer-token, API-key or OAuth alternative is offered publicly.
+  sources:
+  - openapi/nomad-health-platform-openapi.yml
+  - openapi/nomad-health-api-openapi.yml
+  evidence:
+  - url: https://nomadhealth.com/api/v1/accounts/me/
+    http_status: 401
+    body: '{"code": "a0002", "error": "user is not authenticated"}'
+  - url: https://nomadhealth.com/api/v1/us/states/
+    http_status: 401
+    body: '{"code": "a0002", "error": "user is not authenticated"}'
+  - url: https://nomadhealth.com/api/emr_system
+    http_status: 401
+    body: '{"code": "a0002", "message": null, "data": null}'
+anonymous_operations:
+  note: >-
+    A small set of marketplace reference and job-search operations answer without any
+    credential. These are the only operations an unauthenticated client or agent can call.
+  operations:
+  - path: /api/v1/discipline-names/
+    method: get
+    http_status: 200
+  - path: /api/v1/jobposts/public_jobpost_search/
+    method: get
+    http_status: 200
+  - path: /api/v1/sitemap/jobs/chunk_count/
+    method: get
+    http_status: 200
+  - path: /api/v1/sitemap/jobs/chunk/
+    method: get
+    http_status: 200
+  - path: /api/region
+    method: get
+    http_status: 200
+gaps:
+  - No securityDefinitions in either published Swagger document, so the contract does not
+    state how to authenticate any of its 498 operations.
+  - No API key, personal access token or OAuth 2.0 authorization server is offered — an
+    integrator or agent has no first-class credential to obtain.
+  - No /.well-known/oauth-authorization-server or /.well-known/openid-configuration.

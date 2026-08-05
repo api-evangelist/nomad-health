@@ -1,0 +1,190 @@
+generated: '2026-08-04'
+method: derived
+source: mcp/nomad-health-mcp.yml, openapi/nomad-health-platform-openapi.yml, openapi/nomad-health-api-openapi.yml
+note: >-
+  Nomad Health ships no MCP server and no GraphQL endpoint, so this crosswalk binds the
+  CANDIDATE tool set in mcp/nomad-health-mcp.yml to the real operationIds in the two
+  harvested Swagger 2.0 contracts. Every operationId below was grepped verbatim out of the
+  spec. Confidence is high throughout because the binding is 1:1 to a named operation —
+  but the tools themselves are candidates, not a published surface.
+surfaces:
+  openapi:
+  - file: openapi/nomad-health-platform-openapi.yml
+    live: https://nomadhealth.com/swagger.json
+    gated: false
+    operations: 476
+  - file: openapi/nomad-health-api-openapi.yml
+    live: https://nomadhealth.com/api/swagger.json
+    gated: false
+    operations: 22
+  graphql:
+    endpoint: null
+    note: https://nomadhealth.com/graphql returns 404; no GraphQL surface exists.
+  mcp:
+    url: null
+    gated: null
+    note: No MCP server published; tools/list could not be called because there is nothing to call.
+crosswalk:
+- tool: search_jobs
+  category: discovery
+  rest: [get_public_jobpost_search]
+  binding: rest
+  confidence: high
+  note: >-
+    The only genuinely public write-free entry point. Its filter vocabulary is documented in
+    llms.txt but declared nowhere in the spec — the operation declares zero query parameters,
+    so a tool cannot inherit a real inputSchema from the contract.
+- tool: list_disciplines
+  category: reference
+  rest: [get_discipline_names_list]
+  binding: rest
+  confidence: high
+- tool: get_discipline_info
+  category: reference
+  rest: [get_discipline_info_list_api]
+  binding: rest
+  confidence: high
+- tool: list_certification_names
+  category: reference
+  rest: [get_certification_names]
+  binding: rest
+  confidence: high
+- tool: list_job_chunks
+  category: discovery
+  rest: [get_sitemap_job_chunk_count]
+  binding: rest
+  confidence: high
+- tool: get_job_chunk
+  category: discovery
+  rest: [get_sitemap_job_chunk]
+  binding: rest
+  confidence: high
+- tool: list_regions
+  category: reference
+  rest: [get_region_resource]
+  binding: rest
+  confidence: high
+  note: Lives on the sibling /api surface, not /api/v1.
+- tool: get_job_requirements
+  category: jobs
+  rest: [get_job_post_requirements_api]
+  binding: rest
+  confidence: high
+- tool: get_similar_jobs
+  category: recommendations
+  rest: [get_similar_jobs_resource]
+  binding: rest
+  confidence: high
+- tool: get_top_matches
+  category: recommendations
+  rest: [get_top_matches, get_job_post_top_matches_api]
+  binding: rest
+  confidence: medium
+  note: Two operations with the same intent exist, one per surface; a tool would have to pick.
+- tool: search_facilities
+  category: facilities
+  rest: [get_facility_search_resource]
+  binding: rest
+  confidence: high
+- tool: get_facility
+  category: facilities
+  rest: [get_facility_details_by_id_or_slug_resource, get_facility_api]
+  binding: rest
+  confidence: medium
+  note: Duplicated across both surfaces with different id semantics (id-or-slug vs id).
+- tool: autocomplete_location
+  category: search-support
+  rest: [get_location_autocomplete]
+  binding: rest
+  confidence: high
+- tool: apply_to_job
+  category: applications
+  rest: [post_application_apply_resource, post_submit_application_api]
+  binding: rest
+  confidence: medium
+  note: >-
+    Two apply paths across the two surfaces. Consequential write with no idempotency key —
+    a retried agent call would risk a duplicate application.
+- tool: list_applications
+  category: applications
+  rest: [get_quick_apply_applications_resource]
+  binding: rest
+  confidence: high
+- tool: get_application
+  category: applications
+  rest: [get_application_resource]
+  binding: rest
+  confidence: high
+- tool: list_saved_searches
+  category: search-support
+  rest: [get_saved_search_api]
+  binding: rest
+  confidence: high
+- tool: create_saved_search
+  category: search-support
+  rest: [post_saved_search_api]
+  binding: rest
+  confidence: high
+- tool: list_placements
+  category: placements
+  rest: [get_placement_list]
+  binding: rest
+  confidence: high
+- tool: browse_credentials
+  category: credentialing
+  rest: [get_credential_browse]
+  binding: rest
+  confidence: high
+- tool: submit_timecard
+  category: credentialing
+  rest: [put_timecard_submit]
+  binding: rest
+  confidence: high
+- tool: get_notifications
+  category: notifications
+  rest: [get_notification_center]
+  binding: rest
+  confidence: high
+- tool: get_account
+  category: account
+  rest: [get_accounts_me_resource]
+  binding: rest
+  confidence: high
+mcp_only: []
+rest_only:
+- capability: administration
+  operations: 97
+  note: >-
+    The /api/v1/admin/* tree plus the admin-* resources (agency, applications, documents,
+    facility, lead, saved-search, vms, accounts, jobposts, license-checks, placements,
+    profile-evaluation, users) — internal staff tooling, deliberately not modelled as tools.
+- capability: vendor-webhook-receivers
+  operations: 30
+  note: >-
+    twilio/, zendesk/, sendgrid/, hellosign/ and iterable/ paths are INBOUND receivers for
+    Nomad Health's own third-party vendors. They are not events Nomad Health publishes to
+    integrators and are not tool candidates.
+- capability: rules-engine
+  operations: 11
+  note: rules-engine/ and rules-engine-admin/ plus rule-parameters — internal policy tooling.
+- capability: fx-experimentation
+  operations: 22
+  note: The fx/ tree — internal feature-experimentation endpoints.
+- capability: onboarding-and-profile
+  operations: 30
+  note: >-
+    onboarding/, progressive-profiling/, profile_evaluation/, user_assessment/, assessments/,
+    packet/, documents/, qualification/ — session-bound clinician workflows that would need a
+    credential model before they could be exposed as tools.
+coverage:
+  tools_named: 23
+  tools_bound: 23
+  mcp_only: 0
+  rest_ops_total: 498
+  rest_ops_with_a_tool: 26
+  rest_ops_anonymous: 5
+  note: >-
+    Tool coverage is deliberately thin relative to 498 operations because the great majority
+    of the surface is internal administration or session-bound clinician workflow. The
+    binding constraint is not tooling — it is that Nomad Health offers no machine credential,
+    so 493 of 498 operations are unreachable by any agent.

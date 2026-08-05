@@ -1,18 +1,88 @@
 aid: nomad-health
 name: Nomad Health
-description: 'Nomad Health is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Nomad Health operates a digital marketplace for healthcare travel staffing,
+  connecting travel nurses, allied health professionals and other clinicians directly
+  with healthcare facilities across all fifty U.S. states. The two-sided platform lets
+  clinicians search and apply for travel assignments with transparency on pay rate,
+  shift structure and requirements, while facilities post open positions and manage
+  hiring through a cloud-based system; Nomad Navigators support clinicians through
+  credentialing, onboarding and on-assignment needs. Nomad Health holds the Joint
+  Commission Gold Seal of Approval for Travel Nursing Accreditation and reports more
+  than 400,000 registered clinicians across 50-plus specialties spanning nursing,
+  cath lab, laboratory, occupational therapy, physical therapy, radiology, respiratory
+  therapy, sonography, speech language pathology and surgical technology. The company
+  runs no public developer program, but serves a live Swagger 2.0 contract and a
+  Swagger UI from its production application host covering job search, applications,
+  credentialing, placements, facilities and messaging.'
+image: https://marketing.nomadhealth.com/favicon/apple-icon-114x114.png
 url: https://raw.githubusercontent.com/api-evangelist/nomad-health/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-04'
 modified: '2026-08-04'
 tags:
 - Company
-apis: []
+- Healthcare
+- Staffing
+- Jobs
+- Marketplace
+- Travel Nursing
+- Allied Health
+- Credentialing
+- Recruiting
+- Human Resources
+apis:
+- aid: nomad-health:platform-api
+  name: Nomad Health Platform API
+  description: 'The Nomad Health production platform API, documented by a live Swagger
+    2.0 contract served at https://nomadhealth.com/swagger.json and rendered by a
+    Swagger UI at https://nomadhealth.com/api. 384 paths / 476 operations covering
+    job posts and job search, applications and the application center, credentialing
+    and license checks, placements and placement workflows, facilities and health
+    systems, providers, offers, qualifications, referrals, messaging and notifications,
+    plus an extensive administrative surface. Most operations require an authenticated
+    session; a small number of marketplace reference and job-search operations answer
+    anonymously.'
+  humanURL: https://nomadhealth.com/api
+  baseURL: https://nomadhealth.com/api/v1
+  tags:
+  - Jobs
+  - Healthcare
+  - Staffing
+  - Credentialing
+  - Placements
+  properties:
+  - type: OpenAPI
+    url: openapi/nomad-health-platform-openapi.yml
+  - type: Swagger
+    url: openapi/_original/nomad-health-platform-swagger-original.json
+  - type: APIReference
+    url: https://nomadhealth.com/api
+  - type: Overlay
+    url: overlays/nomad-health-platform-overlay.yaml
+- aid: nomad-health:marketplace-api
+  name: Nomad Health Marketplace API
+  description: 'A second live Swagger 2.0 contract served at https://nomadhealth.com/api/swagger.json
+    with basePath /api, covering 18 paths / 22 operations for job application submission,
+    facility detail, facility autocomplete, facility job posts and weather, job
+    preferences, top job matches, region reference data, EMR systems, nurse
+    certifications, mobile notification preferences, one-time links, references and
+    the waitlist. Region reference data answers anonymously; the remainder require
+    an authenticated session.'
+  humanURL: https://nomadhealth.com/api
+  baseURL: https://nomadhealth.com/api
+  tags:
+  - Jobs
+  - Facilities
+  - Healthcare
+  properties:
+  - type: OpenAPI
+    url: openapi/nomad-health-api-openapi.yml
+  - type: Swagger
+    url: openapi/_original/nomad-health-api-swagger-original.json
+  - type: Overlay
+    url: overlays/nomad-health-api-overlay.yaml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +90,74 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.hiive.com/securities/nomad-health-stock
+  url: https://nomadhealth.com
+- type: APIReference
+  url: https://nomadhealth.com/api
+- type: Blog
+  url: https://nomadhealth.com/blog
+- type: Support
+  url: https://nomadhealth.com/faqs
+- type: HelpCenter
+  url: https://faq.nomadhealth.com/hc/en-us
+- type: SignUp
+  url: https://nomadhealth.com/auth/register
+- type: Login
+  url: https://nomadhealth.com/sign-in
+- type: TermsOfService
+  url: https://nomadhealth.com/tos
+- type: PrivacyPolicy
+  url: https://nomadhealth.com/privacy
+- type: GitHubOrganization
+  url: https://github.com/NomadHealth
+- type: LLMsTxt
+  url: llms/nomad-health-llms.txt
+- type: WellKnown
+  url: well-known/nomad-health-well-known.yml
+- type: Authentication
+  url: authentication/nomad-health-authentication.yml
+- type: Conventions
+  url: conventions/nomad-health-conventions.yml
+- type: ErrorCatalog
+  url: errors/nomad-health-problem-types.yml
+- type: Conformance
+  url: conformance/nomad-health-conformance.yml
+- type: DataModel
+  url: data-model/nomad-health-data-model.yml
+- type: Lifecycle
+  url: lifecycle/nomad-health-lifecycle.yml
+- type: MCPServer
+  url: mcp/nomad-health-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/nomad-health-tool-crosswalk.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/nomad-health-domain-security.yml
+x-enrichment:
+  date: '2026-08-04'
+  status: enriched
+  artifacts_added: 21
+  pass: local-v1
+x-coverage:
+  state: covered
+  reason: contract-discovery-hit
+  detail: >-
+    STEP 0b paid off — the docs host docs.nomadhealth.com returns HTTP 525 and there is no
+    developer portal, but two live Swagger 2.0 contracts (498 operations total) are served
+    from the production application host at https://nomadhealth.com/swagger.json and
+    https://nomadhealth.com/api/swagger.json, with a Swagger UI at https://nomadhealth.com/api.
+    Nomad Health also publishes a real /llms.txt. The remaining wall is credentials, not
+    contracts: 493 of 498 operations require a browser session cookie and no API key, token
+    or OAuth flow is offered.
+  evidence:
+  - url: https://nomadhealth.com/swagger.json
+    status: 200
+  - url: https://nomadhealth.com/api/swagger.json
+    status: 200
+  - url: https://nomadhealth.com/llms.txt
+    status: 200
+  - url: https://docs.nomadhealth.com/
+    status: 525
+  - url: https://nomadhealth.com/api/v1/accounts/me/
+    status: 401
+  checked: '2026-08-04'

@@ -1,0 +1,100 @@
+generated: '2026-08-04'
+method: derived
+source: >-
+  openapi/nomad-health-platform-openapi.yml, openapi/nomad-health-api-openapi.yml, live
+  probes, and the public Nomad Health site
+note: >-
+  No compliance or certification page is published on nomadhealth.com (/security, /trust
+  and /compliance all return 404, and trust.nomadhealth.com / security.nomadhealth.com do
+  not resolve). No Compliance pointer is emitted, because no compliance program is
+  published to point at. The one third-party accreditation Nomad Health does state
+  publicly is a healthcare-operations credential, not an information-security one.
+standards:
+- id: openapi-3
+  conforms: false
+  evidence: Both published contracts are Swagger 2.0, not OpenAPI 3.x.
+- id: swagger-2.0
+  conforms: true
+  evidence: >-
+    https://nomadhealth.com/swagger.json and https://nomadhealth.com/api/swagger.json both
+    declare "swagger": "2.0" and parse.
+- id: oauth2
+  conforms: false
+  evidence: No oauth2 securityDefinitions in either contract; no authorization server.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404.
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: false
+  evidence: /.well-known/oauth-authorization-server returns 404.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: >-
+    Errors use two proprietary envelopes; no application/problem+json is returned.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: /.well-known/security.txt returns 404 on every host.
+- id: rfc8615-well-known-uris
+  conforms: false
+  evidence: No /.well-known/ documents are served on any host.
+- id: rfc9727-api-catalog
+  conforms: false
+  evidence: /.well-known/api-catalog returns 404.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: No Sunset or Deprecation headers observed; no deprecation policy published.
+- id: json-api
+  conforms: false
+  evidence: >-
+    The /api/v1 collection envelope uses data/links members but carries no type or id
+    members, so it is JSON:API-flavoured rather than conformant.
+- id: llms-txt
+  conforms: true
+  evidence: >-
+    https://nomadhealth.com/llms.txt returns 200 text/plain in valid llms.txt form (H1,
+    blockquote summary, sectioned link lists). Captured verbatim at
+    llms/nomad-health-llms.txt.
+- id: a2a-agent-card
+  conforms: false
+  evidence: >-
+    /.well-known/agent-card.json and /.well-known/agent.json both return 404 on every host.
+- id: mcp
+  conforms: false
+  evidence: No hosted MCP server was found on any Nomad Health host or in any MCP registry.
+- id: asyncapi
+  conforms: false
+  evidence: >-
+    No AsyncAPI document and no outbound event or webhook surface offered to consumers.
+    The twilio/, zendesk/, sendgrid/, hellosign/ and iterable/ paths in the platform
+    contract are INBOUND receivers for Nomad Health's own third-party vendors, not events
+    Nomad Health publishes to integrators.
+- id: hsts
+  conforms: true
+  evidence: 'strict-transport-security: max-age=31536000; includeSubDomains; preload'
+- id: dnssec
+  conforms: false
+  evidence: probed — no DNSSEC on nomadhealth.com (security/nomad-health-domain-security.yml)
+- id: caa
+  conforms: false
+  evidence: probed — no CAA records on nomadhealth.com
+- id: dmarc
+  conforms: true
+  evidence: probed — DMARC present with policy reject
+accreditations:
+- name: Joint Commission Gold Seal of Approval for Travel Nursing Accreditation
+  domain: healthcare-staffing-operations
+  source: https://nomadhealth.com/llms.txt
+  note: >-
+    A healthcare staffing accreditation stated in Nomad Health's own llms.txt. It is not an
+    information-security or data-protection certification and is not treated as one.
+security_certifications_published:
+  soc2: not-published
+  iso27001: not-published
+  hipaa: not-published
+  pci_dss: not-published
+  note: >-
+    Nomad Health handles clinician licensure, credentialing and identity documents, so a
+    published security posture would be expected. None is discoverable: /security 404,
+    /trust 404, trust.nomadhealth.com NXDOMAIN. The privacy policy at
+    https://nomadhealth.com/privacy describes encryption and access controls in prose but
+    names no certification.

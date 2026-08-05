@@ -1,0 +1,129 @@
+generated: '2026-08-04'
+method: probed
+source: >-
+  live requests against the Nomad Health API surfaces plus the harvested Swagger 2.0
+  contracts in openapi/
+note: >-
+  Nomad Health publishes no developer conventions documentation. Everything below is either
+  read out of the harvested contracts or observed on live unauthenticated calls.
+authentication:
+  style: session-cookie
+  documented: false
+  see: authentication/nomad-health-authentication.yml
+versioning:
+  scheme: uri-path
+  current: v1
+  surfaces:
+  - base: https://nomadhealth.com/api/v1
+    spec: https://nomadhealth.com/swagger.json
+  - base: https://nomadhealth.com/api
+    spec: https://nomadhealth.com/api/swagger.json
+    note: unversioned sibling surface
+  policy_url: null
+  note: >-
+    Two live contracts share one host. /api/v1 is version-tagged; the /api surface carries
+    no version segment at all, so a breaking change there has no version to move to.
+idempotency:
+  supported: false
+  header: null
+  evidence: >-
+    No Idempotency-Key (or equivalent) header appears in either Swagger document — neither
+    declares a single header parameter across 498 operations — and no idempotency contract
+    is documented. Recorded as observed absence; no Idempotency pointer is emitted.
+pagination:
+  style: page-number
+  documented: false
+  request_params:
+  - name: page
+  - name: per_page
+  response_object: results.matches.pagination
+  response_fields:
+  - page
+  - pages
+  - per_page
+  - total_items
+  - has_next
+  - has_previous
+  - start_item
+  - end_item
+  evidence:
+    url: https://nomadhealth.com/api/v1/jobposts/public_jobpost_search/
+    http_status: 200
+    observed: '{"page": 1, "pages": 1000, "per_page": 10, "total_items": 10000, "has_next": true, "has_previous": false, "start_item": 1, "end_item": 10}'
+  note: >-
+    The pagination envelope is real and well-formed, but none of it is declared in the
+    Swagger contract — the spec describes zero query parameters for this operation.
+filtering:
+  style: query-parameters
+  documented_in: llms/nomad-health-llms.txt
+  note: >-
+    The public job-search filter vocabulary is the one part of the surface Nomad Health
+    genuinely documents for machines — its /llms.txt enumerates the query parameters for
+    the human-facing search URL.
+  parameters:
+  - discipline
+  - specializations
+  - jobType
+  - locations
+  - compactState
+  - startDate
+  - shiftHoursAndDays
+  - shiftTypes
+  - contractLength
+  - minPayRateWeekly
+  - autoOffer
+  - exclusive
+  - certifications
+  - allowsNonCertified
+response_envelopes:
+- surface: /api/v1 (collection reference)
+  shape: '{"data": [{"data": {...}, "links": {"self": "..."}}]}'
+  note: JSON:API-flavoured but not JSON:API conformant (no type/id members).
+  evidence:
+    url: https://nomadhealth.com/api/v1/discipline-names/
+    http_status: 200
+- surface: /api/v1 (search)
+  shape: '{"results": {"count_no_filters": n, "facets": {...}, "matches": {"items": [], "pagination": {}}}}'
+- surface: /api
+  shape: '{"code": 200, "data": [...]}'
+  evidence:
+    url: https://nomadhealth.com/api/region
+    http_status: 200
+error_envelope:
+  see: errors/nomad-health-problem-types.yml
+  format: proprietary
+  rfc9457: false
+request_tracing:
+  request_id_header: x-request-id
+  observed: true
+  format: uuid
+  evidence:
+    url: https://nomadhealth.com/api/v1/discipline-names/
+    header: 'x-request-id: 73b12de1-ef2b-4366-a46f-d8b8815a7556'
+  build_header: x-app-version
+  build_note: >-
+    Responses carry an x-app-version header holding a git commit SHA — a usable deploy
+    marker in the absence of any changelog.
+rate_limiting:
+  signaled: false
+  headers_observed: []
+  note: >-
+    No RateLimit, X-RateLimit-* or Retry-After headers were returned on any observed
+    response. Absence recorded; a limit may still be enforced without being signalled.
+field_expansion:
+  supported: null
+  note: Not documented and not declared in the contract.
+metadata:
+  supported: null
+  note: Not documented and not declared in the contract.
+content_negotiation:
+  request: application/json
+  response: application/json
+  note: >-
+    Unmatched paths under /api break negotiation and return text/html from the marketing
+    application.
+cross_links:
+  errors: errors/nomad-health-problem-types.yml
+  authentication: authentication/nomad-health-authentication.yml
+  lifecycle: lifecycle/nomad-health-lifecycle.yml
+  conformance: conformance/nomad-health-conformance.yml

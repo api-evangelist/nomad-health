@@ -1,0 +1,60 @@
+generated: '2026-08-04'
+method: probed
+source: live probes of nomadhealth.com plus the harvested Swagger contracts
+versioning:
+  scheme: uri-path
+  current: v1
+  docs: null
+  note: >-
+    The /api/v1 surface is version-tagged in the path; the sibling /api surface carries no
+    version segment. Neither Swagger document declares a meaningful info.version — both
+    read "1.0" with title "API", the Flask-RESTX default.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    No deprecation or sunset policy is published, and no Sunset/Deprecation response
+    headers were observed. No Deprecation pointer is emitted.
+deprecated_operations: []
+deprecated_operations_note: >-
+  Neither Swagger document marks any operation deprecated: true.
+status_page:
+  url: null
+  probed:
+  - url: https://nomadhealth.com/status
+    http_status: 404
+  - host: status.nomadhealth.com
+    dns: NXDOMAIN
+  note: >-
+    No status page exists on any Nomad Health host or on a third-party status provider we
+    could find. No StatusPage pointer is emitted.
+sla:
+  url: null
+  uptime_target: null
+changelog:
+  url: null
+  note: >-
+    No dated changelog or release-notes page. The only version signal exposed is the
+    x-app-version response header, which carries a git commit SHA
+    (6b404037037a05044351b6bd17ee690f1dd3144a observed 2026-08-04) — a deploy marker, not a
+    changelog. No ChangeLog pointer is emitted.
+support:
+  faq: https://nomadhealth.com/faqs
+  help_center: https://faq.nomadhealth.com/hc/en-us
+  developer_support: null
+observed_lifecycle_events:
+  - date: '2026-05-01'
+    event: >-
+      Nomad Health transitioned to a partner-hosted marketplace model, sourcing listings
+      from partner agencies rather than operating as a direct staffing agency. Recorded
+      from third-party reporting, not from a Nomad Health changelog; the platform publishes
+      no first-party record of the change and the API contract carries no version bump.
+    source: https://travelhealthcarepay.com/2026/04/29/nomad-health-review-2026-what-travel-nurses-need-to-know-after-the-may-1-pivot/
+    confidence: medium
+gaps:
+  - No status page.
+  - No deprecation or sunset policy.
+  - No changelog or release notes.
+  - No SLA.
+  - Contract info.version is the framework default and does not track releases.

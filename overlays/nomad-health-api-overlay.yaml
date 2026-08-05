@@ -1,0 +1,64 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the Nomad Health Marketplace API
+  version: 1.0.0
+extends: openapi/nomad-health-api-openapi.yml
+x-generated: '2026-08-04'
+x-method: generated
+x-source: >-
+  API Evangelist enrichment pass over the contract served at
+  https://nomadhealth.com/api/swagger.json.
+actions:
+- target: $.info
+  update:
+    title: Nomad Health Marketplace API
+    description: >-
+      The unversioned Nomad Health marketplace surface at https://nomadhealth.com/api —
+      22 operations covering application submission, facility detail, autocomplete, facility
+      job posts and weather, job preferences, top matches, region reference data, EMR
+      systems, nurse certifications, mobile notification preferences, one-time links,
+      references and the waitlist.
+    x-apievangelist-harvested: '2026-08-04'
+    x-apievangelist-source: https://nomadhealth.com/api/swagger.json
+    x-apievangelist-notes: >-
+      Sibling of the /api/v1 platform contract on the same host. Carries no version segment,
+      a different error envelope, and overlapping capabilities (facility detail, top
+      matches, apply) — a real surface divergence recorded in mcp/nomad-health-tool-crosswalk.yml.
+- target: $
+  update:
+    schemes:
+    - https
+    x-apievangelist-authentication: session cookie; no API key or OAuth offered
+    x-apievangelist-error-envelope: '{"code": <int>, "data": null, "message": <string|null>}'
+    x-apievangelist-anonymous-operations:
+    - get_region_resource
+- target: $.paths['/region'].get
+  update:
+    summary: List marketplace metro regions
+    description: Returns named metro regions with 24-character ObjectId ids and state abbreviations.
+    x-apievangelist-auth: none
+    x-apievangelist-verified:
+      url: https://nomadhealth.com/api/region
+      http_status: 200
+      fetched: '2026-08-04'
+- target: $.paths['/emr_system'].get
+  update:
+    summary: List supported EMR systems
+    x-apievangelist-auth: session
+    x-apievangelist-verified:
+      url: https://nomadhealth.com/api/emr_system
+      http_status: 401
+      body: '{"code": "a0002", "message": null, "data": null}'
+      fetched: '2026-08-04'
+- target: $.paths['/open-api-spec/'].get
+  update:
+    summary: Retrieve the OpenAPI specification
+    description: >-
+      Advertised in the contract but forbidden anonymously — returns HTTP 403 with a literal
+      JSON null body. The sibling /api/v1/openapi/ behaves identically. The two swagger.json
+      documents are the only readable contracts.
+    x-apievangelist-verified:
+      url: https://nomadhealth.com/api/open-api-spec/
+      http_status: 403
+      body: 'null'
+      fetched: '2026-08-04'

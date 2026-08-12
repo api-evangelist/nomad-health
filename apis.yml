@@ -33,62 +33,30 @@ tags:
 - Recruiting
 - Human Resources
 apis:
-- aid: nomad-health:platform-api
-  name: Nomad Health Platform API
-  description: 'The Nomad Health production platform API, documented by a live Swagger
-    2.0 contract served at https://nomadhealth.com/swagger.json and rendered by a
-    Swagger UI at https://nomadhealth.com/api. 384 paths / 476 operations covering
-    job posts and job search, applications and the application center, credentialing
-    and license checks, placements and placement workflows, facilities and health
-    systems, providers, offers, qualifications, referrals, messaging and notifications,
-    plus an extensive administrative surface. Most operations require an authenticated
-    session; a small number of marketplace reference and job-search operations answer
-    anonymously.'
+- aid: nomad-health:nomad-health-default-api
+  name: Nomad Health Default API
+  description: Default namespace
   humanURL: https://nomadhealth.com/api
   baseURL: https://nomadhealth.com/api/v1
   tags:
-  - Jobs
-  - Healthcare
-  - Staffing
-  - Credentialing
-  - Placements
+  - default
   properties:
   - type: OpenAPI
-    url: openapi/nomad-health-platform-openapi.yml
+    url: openapi/nomad-health-default-api-openapi.yml
   - type: Swagger
     url: openapi/_original/nomad-health-platform-swagger-original.json
   - type: APIReference
     url: https://nomadhealth.com/api
-  - type: Overlay
-    url: overlays/nomad-health-platform-overlay.yaml
-- aid: nomad-health:marketplace-api
-  name: Nomad Health Marketplace API
-  description: 'A second live Swagger 2.0 contract served at https://nomadhealth.com/api/swagger.json
-    with basePath /api, covering 18 paths / 22 operations for job application submission,
-    facility detail, facility autocomplete, facility job posts and weather, job
-    preferences, top job matches, region reference data, EMR systems, nurse
-    certifications, mobile notification preferences, one-time links, references and
-    the waitlist. Region reference data answers anonymously; the remainder require
-    an authenticated session.'
-  humanURL: https://nomadhealth.com/api
-  baseURL: https://nomadhealth.com/api
-  tags:
-  - Jobs
-  - Facilities
-  - Healthcare
-  properties:
-  - type: OpenAPI
-    url: openapi/nomad-health-api-openapi.yml
   - type: Swagger
     url: openapi/_original/nomad-health-api-swagger-original.json
-  - type: Overlay
-    url: overlays/nomad-health-api-overlay.yaml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/nomad-health-api-overlay.yaml
 - type: Website
   url: https://nomadhealth.com
 - type: APIReference

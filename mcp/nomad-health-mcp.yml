@@ -2,12 +2,10 @@ generated: '2026-08-04'
 method: derived
 status: candidate
 source: openapi/nomad-health-platform-openapi.yml
-note: >-
-  Nomad Health publishes NO hosted or remote MCP server. Probed mcp.nomadhealth.com
-  (NXDOMAIN), https://nomadhealth.com/mcp (404), https://nomadhealth.com/sse (404), and the
-  Model Context Protocol registry and npm (no Nomad Health server). The tool list below is
-  a CANDIDATE derived from real operationIds in the harvested Swagger contract — it is what
-  an MCP server over this API would expose, not something Nomad Health ships. Every
+note: Nomad Health publishes NO hosted or remote MCP server. Probed mcp.nomadhealth.com (NXDOMAIN), https://nomadhealth.com/mcp
+  (404), https://nomadhealth.com/sse (404), and the Model Context Protocol registry and npm (no Nomad
+  Health server). The tool list below is a CANDIDATE derived from real operationIds in the harvested Swagger
+  contract — it is what an MCP server over this API would expose, not something Nomad Health ships. Every
   source_operation below was verified verbatim in the spec.
 server:
   name: nomad-health
@@ -25,10 +23,9 @@ probes:
   result: no Nomad Health server
 - registry: npm
   result: no first-party Nomad Health MCP package
-auth_note: >-
-  All but five operations on this API require a browser session cookie. An MCP server over
-  this surface would have no credential to present — see authentication/. The anonymous
-  operations (marked auth: none below) are the only ones an agent can call today.
+auth_note: 'All but five operations on this API require a browser session cookie. An MCP server over this
+  surface would have no credential to present — see authentication/. The anonymous operations (marked
+  auth: none below) are the only ones an agent can call today.'
 tools:
 - name: search_jobs
   description: Search the public Nomad Health travel-healthcare job marketplace with faceted filters.
@@ -125,3 +122,9 @@ tools:
   description: Retrieve the signed-in user's account.
   auth: session
   source_operation: openapi/nomad-health-platform-openapi.yml#get_accounts_me_resource
+deployment:
+  mode: none
+  verified: derived
+  tools: 23
+  checked: '2026-08-12'
+  source: catalog MCP census

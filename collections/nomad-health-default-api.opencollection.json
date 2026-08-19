@@ -1,0 +1,6493 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Nomad Health Default API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "default",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "get_admin_reference_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/admin-references/:provider_id",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_reference_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/admin-references/:provider_id",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_admin_reference_detail_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/admin-references/:provider_id/:reference_id",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_admin_reference_detail_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/admin-references/:provider_id/:reference_id",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reference_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_submit_application_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/apply/:jobpost_id/submit/",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Returns full list of dictionary EmrSystem objects",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/emr_system"
+          },
+          "docs": "Returns full list of dictionary EmrSystem objects"
+        },
+        {
+          "info": {
+            "name": "Get route for the facility autocomplete API",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/facility/facility_autocomplete"
+          },
+          "docs": "Args:\n    q (str): Taken from the QueryString to build the prefix\n\nReturns:\n    Reponse with data as a List of dictionaries (defined in FacilityAutocompleteResponse)"
+        },
+        {
+          "info": {
+            "name": "Set the hero image of a facility by moving the given",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/facility/:facility_id/photo/:photo_id",
+            "params": [
+              {
+                "name": "facility_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "photo_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "photo to the front of the facility.photos list."
+        },
+        {
+          "info": {
+            "name": "get_facility_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/facility/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_facilty_job_posts_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/facility/:id/jobposts/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_facility_weather_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/facility/:id/weather",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_post_preference_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/job-preferences/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_job_post_preference_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/job-preferences/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_job_post_preference_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/job-preferences/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_post_top_matches_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/jobposts/top-matches/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_push_notification_preferences_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/notifications/mobile-preferences/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_nurse_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/nurse/certifications"
+          }
+        },
+        {
+          "info": {
+            "name": "Generates a one time link for a given url",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/one-time-link/"
+          },
+          "docs": "Generates a one time link for a given url"
+        },
+        {
+          "info": {
+            "name": "get_open_api_spec_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/open-api-spec/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_region_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/region"
+          }
+        },
+        {
+          "info": {
+            "name": "get_user_profile_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/user/:user_id/profile/",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_waitlist_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/waitlist"
+          }
+        },
+        {
+          "info": {
+            "name": "get_account_manager_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/account-manager/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_account_manager_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/account-manager/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_accounts_me_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/accounts/me/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_accounts_me_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/accounts/me/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_accounts_me_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/accounts/me/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_accounts_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-accounts/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_agency_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-agency/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_agency_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-agency/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_agency_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-agency/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_admin_agency_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin-agency/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_data_reviews_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-application-review/data-reviews/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_external_verifications_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-application-review/external-verifications/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_application_review_sections_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-application-review/sections/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_application_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-applications/:provider_id/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_admin_application_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin-applications/:provider_id/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_application_validation_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-applications/:provider_id/validation/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_documents_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-documents/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_documents_upload_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-documents/upload/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_facility_admin_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-facility/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_facility_admin_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin-facility/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_facility_admin_job_posts_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-facility/:id/jobposts/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_jobposts_search_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-jobposts/search/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_lead_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-lead/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_lead_details_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-lead/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_admin_lead_details_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin-lead/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_license_checks_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-license-checks/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_placements_search_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-placements/search/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_profile_evaluation_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-profile-evaluation/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_saved_search_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-saved-search"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_saved_search_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-saved-search"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_admin_saved_search_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin-saved-search"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_saved_search_delete_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-saved-search/delete"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_user_create_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-user/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_user_form_options_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-user/form-options/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_user_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-user/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_admin_user_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin-user/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_user_action_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-user/:id/action/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_users_v1_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-users/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_vms_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-vms/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_vms_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin-vms/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_vms_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin-vms/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_admin_vms_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin-vms/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_assignments_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/assignments"
+          }
+        },
+        {
+          "info": {
+            "name": "post_assignments_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/assignments"
+          }
+        },
+        {
+          "info": {
+            "name": "put_update_assignment",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/assignments/:assignment_id",
+            "params": [
+              {
+                "name": "assignment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_add_assignment_bonus",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/assignments/:assignment_id/bonus",
+            "params": [
+              {
+                "name": "assignment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_update_assignment_bonus",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/assignments/:assignment_id/bonus/:bonus_id",
+            "params": [
+              {
+                "name": "assignment_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "bonus_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_get_assignment_offers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/assignments/:assignment_id/offers",
+            "params": [
+              {
+                "name": "assignment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "List all credential candidate groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credential-candidate-group/"
+          },
+          "docs": "List all credential candidate groups"
+        },
+        {
+          "info": {
+            "name": "Create a new credential candidate group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credential-candidate-group/"
+          },
+          "docs": "Create a new credential candidate group"
+        },
+        {
+          "info": {
+            "name": "Create a new credential candidate group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credential-candidate-group/documents/"
+          },
+          "docs": "Create a new credential candidate group"
+        },
+        {
+          "info": {
+            "name": "Get a specific credential candidate group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credential-candidate-group/:group_id/",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a specific credential candidate group"
+        },
+        {
+          "info": {
+            "name": "Update a credential candidate group",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credential-candidate-group/:group_id/",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a credential candidate group"
+        },
+        {
+          "info": {
+            "name": "Create a new credential candidate within a group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credential-candidate-group/:group_id/candidates/",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Create a new credential candidate within a group"
+        },
+        {
+          "info": {
+            "name": "Get a credential candidate by ID",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credential-candidate/:candidate_id/",
+            "params": [
+              {
+                "name": "candidate_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a credential candidate by ID"
+        },
+        {
+          "info": {
+            "name": "Update a credential candidate",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credential-candidate/:candidate_id/",
+            "params": [
+              {
+                "name": "candidate_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update a credential candidate"
+        },
+        {
+          "info": {
+            "name": "get_assignees",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/assignees/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_get_category_definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/categories/definition/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_clinician_search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/clinicians/search/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_clinician_lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/clinicians/view/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_provider_credentials_browse",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/credentials/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_credential_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/credentials/update/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_fx_requirement_status_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/fx-compliance/requirements/status-update/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_fx_clinician_lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/fx-compliance/view/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_create_requirement_type",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirement-types/create/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_requirement_type_search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirement-types/search/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_requirement_type_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirement-types/update/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_clone_requirements",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirements/clone"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_requirement_application_question_complete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirements/complete-application-question/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_admin_requirements_complete",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirements/complete/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_create_requirements",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirements/create/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_delete_requirement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirements/delete/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_placement_requirements_initialize",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirements/initialize/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_requirement_reset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirements/reset/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_requirement_status_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/requirements/status-update/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_facility_template_browse",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/templates/browse/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_templates_bulk_create_from_placement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/templates/bulk-create-from-placement/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_requirement_source_browse",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/templates/source/browse/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_requirement_source_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/templates/source/create/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_admin_requirement_source_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/templates/source/update/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_templates_create",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/templates/template/create/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_templates_deactivate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/templates/template/delete/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_admin_templates_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/templates/template/update/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_timecard_export",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/timecards/export/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_create_timecards",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/timecards/requirements/create/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_timecard_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/timecards/requirements/list/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_admin_update_requirement",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/timecards/requirements/update/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_timecard_get",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/credentialing/timecards/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_preferences_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/job-preferences/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_browse_offers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/browse/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_create_offers",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/create/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_bill_rate_modifiers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/default-rates/:jobpost_id",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_publish_offer",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/publish/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_update_acceptance_status",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/status/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_update_offers_contract",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/update-contract"
+          }
+        },
+        {
+          "info": {
+            "name": "put_update_offers_notes",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/update-notes"
+          }
+        },
+        {
+          "info": {
+            "name": "put_update_offers",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/update/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_view_offer",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/view/:offer_id/",
+            "params": [
+              {
+                "name": "offer_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_upsert_offer_zendesk_ticket",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/offers/zendesk/:offer_id",
+            "params": [
+              {
+                "name": "offer_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Acknowledges a provider's recent events for a logged-in premier navigator",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/acknowledge-recent-events/"
+          },
+          "docs": "Acknowledges a provider's recent events for a logged-in premier navigator"
+        },
+        {
+          "info": {
+            "name": "Updates the availability date for a provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/availability-date/:provider_id/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates the availability date for a provider"
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_available_voice_endpoints_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/available-voice-endpoints/"
+          }
+        },
+        {
+          "info": {
+            "name": "Claims a provider for a logged-in premier navigator",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/claim-provider/"
+          },
+          "docs": "Claims a provider for a logged-in premier navigator"
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_admin_claimed_queue_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/claimed-queue/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_admin_jobpost_communication_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/jobpost-communication/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_premier_navigator_admin_jobpost_communication_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/jobpost-communication/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_admin_live_jobs_v2_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/live-jobs-v2/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_admin_live_jobs_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/live-jobs/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_messages_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_conversations_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/conversations/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_mark_conversation_read_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/conversations/:conversation_id/mark-read/",
+            "params": [
+              {
+                "name": "conversation_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_mark_messages_read_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/mark-read/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_premier_navigator_send_message_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/send/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_suggested_message_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/suggested-messages/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_premier_navigator_generate_suggested_message_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/suggested-messages/generate/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_get_suggested_message_task_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/suggested-messages/task/:task_id/",
+            "params": [
+              {
+                "name": "task_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_message_unread_count_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/unread-count/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_voice_message_status_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/voice-calls/:call_id/status/",
+            "params": [
+              {
+                "name": "call_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_mms_media_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/:message_id/attachment/:attachment_id/",
+            "params": [
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "attachment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_voice_message_recording_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/messages/:message_id/recording/",
+            "params": [
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Marks a provider as high priority for a logged-in premier navigator",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/provider/:provider_id/high-priority/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Marks a provider as high priority for a logged-in premier navigator"
+        },
+        {
+          "info": {
+            "name": "Get providers that match a job's specialization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/providers-for-job/:job_id/",
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint supports 3 tabs in the ui:\n\nAll:\n- Cln's Specializations match the job, expanded by specialty matrix\n- Uses token-based pagination (search_before/search_after)\n- Sorted by apply intent score by default\n\n\"My Matching Clinicians\":\n- Clinicians claimed by the requesting PN\n\n\"Unclaimed Matching Clinicians\":\n- Clinicians not claimed by any PN\n- At least minimum qualified for the job\n- Capped at 25 records (no pagination)\n\n\"Claimed Matching Clinicians\" - this UI is used by PN Managers an"
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_reminders_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/reminders/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_premier_navigator_reminders_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/reminders/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_premier_navigator_reminder_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/reminders/:reminder_id/",
+            "params": [
+              {
+                "name": "reminder_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_premier_navigator_reminder_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/reminders/:reminder_id/",
+            "params": [
+              {
+                "name": "reminder_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_premier_navigator_reminder_acknowledge_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/reminders/:reminder_id/acknowledge/",
+            "params": [
+              {
+                "name": "reminder_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Unclaims a provider from a logged-in premier navigator",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/unclaim-provider/"
+          },
+          "docs": "Unclaims a provider from a logged-in premier navigator"
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_admin_unclaimed_queue_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/unclaimed-queue/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_admin_user_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/users/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_admin_user_routing_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/users/:user_id/routing/",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "Updates the routing config for a premier navigator",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/users/:user_id/routing/",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Updates the routing config for a premier navigator"
+        },
+        {
+          "info": {
+            "name": "post_premier_navigator_verify_specialization_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/verify-specialization/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_premier_navigator_outbound_voice_call_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/voice-calls/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_premier_navigator_voice_inbound_availability_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/voice-inbound-availability/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_premier_navigator_voice_inbound_availability_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin/premier-navigator/voice-inbound-availability/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_prioritized_placements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/prioritized-placements/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_provider_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/admin/providers/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_referrals_referral_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/admin/referrals/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_agency_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/agency/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_agency_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/agency/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_autopilot_users_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application-autopilot-user/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_application_autopilot_users_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/application-autopilot-user/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_application_autopilot_users_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/application-autopilot-user/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_autopilot_users_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application-autopilot-users/list"
+          }
+        },
+        {
+          "info": {
+            "name": "post_application_autopilot_users_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/application-autopilot-users/list"
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_cart_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application-cart/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_application_cart_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/application-cart/"
+          }
+        },
+        {
+          "info": {
+            "name": "delete_application_cart_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/application-cart/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_center_items_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application-center/items/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_application_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/application/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_application_apply_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/application/apply/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_application_data_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/application/data/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_credential_candidates_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/application/data/submit/credential-candidates/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_data_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application/data/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_application_data_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/application/data/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_application_data_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/application/data/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_form_schemas_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application/form-schemas/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_sections_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application/sections/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_validation_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application/validation/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_vetting_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application/vetting/"
+          }
+        },
+        {
+          "info": {
+            "name": "List all applications and their status details for a provider,",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application_center/applications/"
+          },
+          "docs": "filtered by status. For the application center page."
+        },
+        {
+          "info": {
+            "name": "get_application_center_app_vetting",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/application_center/vetting/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_application_center_withdraw_app",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/application_center/withdraw/"
+          }
+        },
+        {
+          "info": {
+            "name": "Checks a user's easy-apply status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/applications/easy-apply/status/"
+          },
+          "docs": "Checks a user's easy-apply status"
+        },
+        {
+          "info": {
+            "name": "get_job_post_application",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/applications/jobpost/:jobpost_id",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/applications/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_application_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/applications/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_validation_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/applications/:id/validation/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_work_experience_facilities_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/applications/:id/work-experience-facilities/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_assessments_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/assessments/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_audit_events_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/audit-events/:entity/:id/",
+            "params": [
+              {
+                "name": "entity",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_auth_login_link_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/auth/login-link/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_auth_login_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/auth/login/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_auth_logout_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/auth/logout/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_reauthenticate_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/auth/reauthenticate/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_badge_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/badge/all/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_campaign_categories_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/campaign/categories"
+          }
+        },
+        {
+          "info": {
+            "name": "get_campaign_jobs_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/campaign/jobs"
+          }
+        },
+        {
+          "info": {
+            "name": "get_campaign_statistics_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/campaign/statistics"
+          }
+        },
+        {
+          "info": {
+            "name": "get_campaign_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/campaign/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_campaign_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/campaign/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_campaign_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/campaign/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_campaigns_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/campaigns/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_campaigns_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/campaigns/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_certification_names",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/certification-names/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_certifications_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/certifications/all/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_certifications_clinical",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/certifications/clinical/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_communication_settings_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/communications/settings/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_communication_settings_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/communications/settings/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_confirm_email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/confirm_email"
+          }
+        },
+        {
+          "info": {
+            "name": "get_credential_candidate_sections_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credential-candidate/sections/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_get_category_definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/categories/definition/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_category_schema_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/categories/schema/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_get_valid_categories_by_scope",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/categories/scope/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_clinician_lookup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/clinicians/view/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_credential_browse",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/credentials/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_requirement_application_question_complete",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/requirements/complete-application-question/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_requirements_complete",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/requirements/complete/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_reset_requirement",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/requirements/reset/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_timecards_by_placement_browse_current",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/timecards/browse/current/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_timecard_complete",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/timecards/complete/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_timecard_shift_types",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/timecards/shifts/shift_types/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_timecard_submit",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/timecards/submit/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_timecard_update",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/credentialing/timecards/update/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_credentials_provider_data_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentials/provider-data/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "NOTE: \"state_nursing_license\" category will be includes after finishing WFP-266",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/credentials/timeline/:provider_id/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "NOTE: \"state_nursing_license\" category will be includes after finishing WFP-266"
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_facilities_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/facilities/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_facility_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/facilities/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_health_systems_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/health_systems/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_health_system_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/health_systems/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_msps_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/msp/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_msp_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/msp/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_specializations_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/specializations/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_specialization_detail_by_codes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/specializations/codes/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_specialization_detail_by_code",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/specializations/codes/:code/",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_demand_entity_specialization_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/demand_entity/specializations/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_discipline_info_list_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/discipline-info/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_discipline_names_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/discipline-names/"
+          }
+        },
+        {
+          "info": {
+            "name": "Fetch documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/documents/"
+          },
+          "docs": "Fetch documents"
+        },
+        {
+          "info": {
+            "name": "post_documents_provider_upload_api_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/documents/provider/upload/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_dyna_home_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/dyna-home/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_education_types_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/education-types/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_event_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/events/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/events/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_get_valid_external_verification_authorities_for_provider_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/external-verification-authorities-for-provider/"
+          }
+        },
+        {
+          "info": {
+            "name": "delete_delete_external_verification_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/external-verifications/:external_verification_id/",
+            "params": [
+              {
+                "name": "external_verification_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_facility_base_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/facility/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_facility_form_options_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/facility/form-options/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_facility_search_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/facility/search/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_facility_details_by_id_or_slug_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/facility/:id_or_slug/",
+            "params": [
+              {
+                "name": "id_or_slug",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_facility_edit_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/facility/:id/edit/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_facility_edit_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/facility/:id/edit/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_fx_accounts_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_fx_accounts_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/"
+          }
+        },
+        {
+          "info": {
+            "name": "Retrieves a list of Candidates Job Posts for a facility",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:account_id/candidates-job-posts/",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "NOTE: the Bill Rate Insight average can contain either arithmetic mean or median"
+        },
+        {
+          "info": {
+            "name": "Retrieves a single Candidates Job Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:account_id/candidates-job-posts/:id/",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "NOTE: the Bill Rate Insight average can contain either arithmetic mean or median"
+        },
+        {
+          "info": {
+            "name": "patch_candidates_job_posts_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:account_id/candidates-job-posts/:id/",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_fx_account_users_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:account_id/users/:id/",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_fx_account_users_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:account_id/users/:id/",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_fx_account_users_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:account_id/users/:id/",
+            "params": [
+              {
+                "name": "account_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_fx_accounts_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_fx_accounts_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_fx_account_users_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:id/users/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_fx_account_users_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/fx/accounts/:id/users/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_candidates_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/candidates/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_candidates_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/candidates/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_candidates_detail_offer_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/candidates/:id/offer/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_candidates_detail_offer_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/fx/candidates/:id/offer/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_fx_users_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/users/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_fx_users_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/fx/users/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_fx_users_me_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/users/me/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_fx_users_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/fx/users/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_fx_users_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/fx/users/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_fx_users_identities_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/fx/users/:id/identities/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_health_system_search_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/health-system/search/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_health_system_autocomplete_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/health-systems-autocomplete"
+          }
+        },
+        {
+          "info": {
+            "name": "This endpoint will return all of the matching health systems according",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/health-systems/"
+          },
+          "docs": "to the given query."
+        },
+        {
+          "info": {
+            "name": "This endpoint will create a new health system and return the newly created entity",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/health-systems/"
+          },
+          "docs": "This endpoint will create a new health system and return the newly created entity"
+        },
+        {
+          "info": {
+            "name": "This endpoint will get the entire health system object according to the specified id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/health-systems/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint will get the entire health system object according to the specified id"
+        },
+        {
+          "info": {
+            "name": "This endpoint will update the given fields on the health system entity,",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/health-systems/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "it will return the updated health system."
+        },
+        {
+          "info": {
+            "name": "post_hellosign_signature_request_event",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/hellosign/signature-request-events/"
+          }
+        },
+        {
+          "info": {
+            "name": "List all incidents unless filtered by provided query parameters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/incidents/"
+          },
+          "docs": "List all incidents unless filtered by provided query parameters"
+        },
+        {
+          "info": {
+            "name": "Create a new incident",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/incidents/"
+          },
+          "docs": "Create a new incident"
+        },
+        {
+          "info": {
+            "name": "Details about an incident",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/incidents/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Details about an incident"
+        },
+        {
+          "info": {
+            "name": "Update given fields and return updated incident",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/incidents/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Update given fields and return updated incident"
+        },
+        {
+          "info": {
+            "name": "Delete an incident",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/incidents/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete an incident"
+        },
+        {
+          "info": {
+            "name": "get_data_class_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/internal/communications/dataclass-schemas/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_data_class",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/internal/communications/dataclass-schemas/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_channel_unsubscribes",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/iterable/channel-unsubscribes"
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_digest_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/iterable/datafeed/job-digest/:user_id",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_iterable_job_digest_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/iterable/datafeed/sample/:user_id",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_sms_channel_subscribes",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/iterable/sms-subscribes"
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_commitments_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/job-commitments/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_job_commitments_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/job-commitments/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_digest_preferences_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/job-digest-preferences/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_job_digest_preferences_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/job-digest-preferences/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_pricing_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/job-pricing/bill-rate-modifiers/:entity_type/:entity_id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_job_pricing_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/job-pricing/bill-rate-modifiers/:entity_type/:entity_id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_pricing_job_posts_by_entity_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/job-pricing/jobposts/:entity_type/:entity_id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_source_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/job_source/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_job_source_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/job_source/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_source_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/job_source/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_job_source_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/job_source/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_job_post_search_current_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/jobpost-searches/current/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_job_post_evaluation_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/jobpost_evaluation/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_jobpost_search_categories_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/categories/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_public_jobpost_search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/public_jobpost_search/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_job_matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/recommendations/admin/job-matches/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_missing_requirements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/recommendations/admin/missing-requirements/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_similar_jobs_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/recommendations/similar-jobposts/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_top_matches",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/recommendations/top-matches/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_jobposts_search",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/search/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_details_extraction_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/:id/job-details-extractions/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_robotix_history_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/:id/jobrobotix-history/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_job_post_claim_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/:jobpost_id/claim",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_job_post_requirements_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/:jobpost_id/requirements/",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_job_post_unclaim_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/jobposts/:jobpost_id/unclaim",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_lead_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/lead/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_lead_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/lead/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_license_checks_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/license-checks/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_license_checks_summary_by_provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/license-checks/provider/:provider_id/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_license_checks_refresh",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/license-checks/refresh/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_license_checks_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/license-checks/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_license_checks_report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/license-checks/:output_type/:provider_id/",
+            "params": [
+              {
+                "name": "output_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_location_autocomplete",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/location/location_autocomplete"
+          }
+        },
+        {
+          "info": {
+            "name": "get_place_details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/location/place_details"
+          }
+        },
+        {
+          "info": {
+            "name": "get_marketing_tags_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/marketing-tags"
+          }
+        },
+        {
+          "info": {
+            "name": "get_merge_facilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/merge-facilities/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_merge_facilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/merge-facilities/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_merge_facilities_preview",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/merge-facilities/:id/preview/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_messages",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/messages/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_messages_by_thread",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/messages/by-thread/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_messages_documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/messages/documents/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_parent_thread_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/messages/parent-thread-info/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_thread_documents",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/messages/thread-documents/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_native_app_minimum_version_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/native-app/minimum-version/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_notification_center",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/notification-center/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_notification_center_archive",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/notification-center/archive/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_mark_read_unread",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/notification-center/update-read/"
+          }
+        },
+        {
+          "info": {
+            "name": "Atlas Search API for autocomplete suggestions on Nurse Facility collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/nurse-facility-autocomplete/"
+          },
+          "docs": "Atlas Search API for autocomplete suggestions on Nurse Facility collection"
+        },
+        {
+          "info": {
+            "name": "get_calculate_pay_rate",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/offers/calculate_rates/:job_id",
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_calculate_pay_rate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/offers/calculate_rates/:job_id",
+            "params": [
+              {
+                "name": "job_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_offer_agreements_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/offers/:offer_id/agreements",
+            "params": [
+              {
+                "name": "offer_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_offer_agreements_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/offers/:offer_id/agreements",
+            "params": [
+              {
+                "name": "offer_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_custom_agreement_upload_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/offers/:offer_id/agreements/upload",
+            "params": [
+              {
+                "name": "offer_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_onboarding_completed_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/onboarding/completed/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_credentials_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/onboarding/credentials/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_onboarding_metadata_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/onboarding/metadata/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_onboarding_metadata_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/onboarding/metadata/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_one_click_apply_carousel_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/one-click-apply/carousel/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_open_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/openapi/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_admin_packet_cover_sheet_reply_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/packet/admin-cover-sheet-reply/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_packet_cover_sheet_reply_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/packet/admin-cover-sheet-reply/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_packet_cover_sheet_form_choices_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/packet/cover-sheet-form-choices/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_packet_cover_sheet_forms_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/packet/cover-sheet-forms/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_packet_cover_sheet_forms_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/packet/cover-sheet-forms/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_packet_cover_sheet_forms_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/packet/cover-sheet-forms/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_packet_cover_sheet_forms_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/packet/cover-sheet-forms/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_packet_cover_sheet_reply_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/packet/cover-sheet-reply/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_packet_cover_sheet_reply_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/packet/cover-sheet-reply/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_placement_assignee",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/placement-assignee/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_placement_workflow_definition_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/placement-workflow-definitions/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_placement_workflow_definition_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/placement-workflow-definitions/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_placement_workflow_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/placement-workflows/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_placement_workflow_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/placement-workflows/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "This endpoint will return all of the matching placements according to the given query",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/placements/"
+          },
+          "docs": "This endpoint will return all of the matching placements according to the given query"
+        },
+        {
+          "info": {
+            "name": "post_placement_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/placements/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_placement_list",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/placements/"
+          }
+        },
+        {
+          "info": {
+            "name": "This endpoint will get the entire placement object according to the specified id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/placements/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint will get the entire placement object according to the specified id"
+        },
+        {
+          "info": {
+            "name": "This endpoint will update the given fields on the placement entity, it will return the",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/placements/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "updated placement."
+        },
+        {
+          "info": {
+            "name": "get_admin_orchestration_current_state_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/placements/:placement_id/current_state/",
+            "params": [
+              {
+                "name": "placement_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_admin_orchestration_next_state_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/placements/:placement_id/orchestration_state/",
+            "params": [
+              {
+                "name": "placement_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_profile_evaluation_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/profile_evaluation/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_progressive_profiling_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/progressive-profiling/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_provider_activity_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/provider-activity/:provider_id/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_provider_bookmarks_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/provider-bookmarks/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_provider_bookmarks_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/provider-bookmarks/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_provider_bookmarks_detail",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/provider-bookmarks/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "ES-powered API for autocomplete suggestions generated from the facility collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/provider-facility-autocomplete/"
+          },
+          "docs": "ES-powered API for autocomplete suggestions generated from the facility collection"
+        },
+        {
+          "info": {
+            "name": "post_provider_sizzle_agent_post_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/provider-sizzle-agent/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_provider_sizzle_agent_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/provider-sizzle-agent/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_provider_sizzle_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/provider-sizzle/:provider_id/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_provider_sizzle_approve_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/provider-sizzle/:provider_id/approve/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_provider_sizzle_edit_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/provider-sizzle/:provider_id/edit/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_provider_sizzle_reject_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/provider-sizzle/:provider_id/reject/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_provider_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/provider/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_provider_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/provider/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_provider_notes_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/provider/:id/notes/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_provider_note_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/provider/:id/notes/:note_id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "note_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_provider_note_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/provider/:id/notes/:note_id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "note_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_public_reference_form_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/public/reference_form/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_qualified_providers_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/qualification/jobpost/:jobpost_id/",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_qualified_jobposts_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/qualification/provider/:provider_id/",
+            "params": [
+              {
+                "name": "provider_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_qualification_state_summary_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/qualification/state/jobpost/:jobpost_id/",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_quick_apply_application_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/quick-apply/application/:application_id/",
+            "params": [
+              {
+                "name": "application_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_quick_apply_application_resume_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/quick-apply/application/:application_id/resume/",
+            "params": [
+              {
+                "name": "application_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_quick_apply_applications_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/quick-apply/applications/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_quick_apply_applications_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/quick-apply/applications/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_job_recommendations_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/recommendation/provider/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_referral_campaign_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/referrals/campaigns/active/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_referrals_referral_invite_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/referrals/invite/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_referrals_referral_url_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/referrals/referral-url/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_referrals_referred_users_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/referrals/referred-users/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_referrals_referral_details_by_user_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/referrals/user/:user_id/referral/",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_referrals_validate_code_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/referrals/validate-code/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_reset_password",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/reset-password/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_reset_password_check_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/reset-password/check/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_reset_password_update_password_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/reset-password/update-password/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_rule_parameters_hierarchy_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/rule-parameters/hierarchy/job_post/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_rule_parameters_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/rule-parameters/:entity_type/:id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_rule_parameters_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/rule-parameters/:entity_type/:id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_rules_engine_admin_entity_config_values_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/config_values/:entity_type/:entity_id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_rules_engine_admin_entity_config_value_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/config_values/:entity_type/:entity_id/:config_name/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "config_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_rules_engine_admin_entity_config_value_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/config_values/:entity_type/:entity_id/:config_name/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "config_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_rules_engine_admin_entity_config_value_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/config_values/:entity_type/:entity_id/:config_name/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "config_name",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_rules_engine_admin_configs_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/configs/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_rules_engine_admin_forms_rule_instance_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/forms/rule-instances/:entity_type/:entity_id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_rules_engine_admin_forms_rule_instance_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/forms/rule-instances/:entity_type/:entity_id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_rules_engine_admin_forms_rule_instance_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/forms/rule-instances/:entity_type/:entity_id/:rule_instance_id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "rule_instance_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_rules_engine_admin_forms_rule_instance_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/forms/rule-instances/:entity_type/:entity_id/:rule_instance_id/",
+            "params": [
+              {
+                "name": "entity_type",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "entity_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "rule_instance_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_rules_engine_admin_forms_rules_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/forms/rules/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_rules_engine_admin_rules_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine-admin/rules/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_jobpost_rules_resolution_preview_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/rules-engine/jobpost-rules-resolution-preview/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_sar_debug_tool_recommendations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/sar-debug-tool/recommendations/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_saved_admin_view_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/saved-admin-view/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_saved_admin_view_list_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/saved-admin-view/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_saved_admin_view_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/saved-admin-view/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_saved_admin_view_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/saved-admin-view/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "delete_saved_admin_view_detail_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/saved-admin-view/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_saved_search_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/saved-search"
+          }
+        },
+        {
+          "info": {
+            "name": "post_saved_search_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/saved-search"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_saved_search_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/saved-search"
+          }
+        },
+        {
+          "info": {
+            "name": "post_saved_search_delete_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/saved-search/delete"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_inbound_email",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/sendgrid/premier-navigator/inbound-email/"
+          }
+        },
+        {
+          "info": {
+            "name": "This endpoint will return all of the matching shift mappings according",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/shift-mappings/"
+          },
+          "docs": "to the given query."
+        },
+        {
+          "info": {
+            "name": "This endpoint will create a shift mapping with the provided fields,",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/shift-mappings/"
+          },
+          "docs": "it will return the created shift mapping."
+        },
+        {
+          "info": {
+            "name": "This endpoint will get the entire shift mapping object according to the specified id",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/shift-mappings/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "This endpoint will get the entire shift mapping object according to the specified id"
+        },
+        {
+          "info": {
+            "name": "This endpoint will update the given fields on the shift mapping entity,",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/shift-mappings/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "it will return the updated shift mapping."
+        },
+        {
+          "info": {
+            "name": "Delete a shift mapping",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://nomadhealth.com/api/api/v1/shift-mappings/:id/",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a shift mapping"
+        },
+        {
+          "info": {
+            "name": "get_sitemap_job_chunk",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/sitemap/jobs/chunk/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_sitemap_job_chunk_count",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/sitemap/jobs/chunk_count/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_specializations_name_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/specializations/name/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_timecard_manual_upload_api_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/timecard/manual-upload/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_placements_toa",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/toa/placements/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_twilio_delivery_status_events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/delivery-status-events/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_twilio_incoming_message_events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/incoming-message-events/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_delivery_status_events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/delivery-status-events/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_incoming_message_events",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/incoming-message-events/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_voice_call_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/incoming-voice-call/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_incoming_voice_navigator_answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/incoming-voice-navigator-answer/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_outbound_voice_dial",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/outbound-voice-dial/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_outbound_voice_hold",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/outbound-voice-hold/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_outbound_voice_provider_answer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/outbound-voice-provider-answer/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_voice_amd_status_callback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/voice-amd-status-callback/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_twilio_premier_navigator_voice_auth_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/voice-auth/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_voice_call_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/voice-call/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_voice_dial_action",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/voice-dial-action/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_voice_intelligence_transcript_webhook",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/voice-intelligence-transcript-webhook/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_voice_recording_status_callback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/voice-recording-status-callback/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_pn_voice_status_callback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/twilio/premier-navigator/voice-status-callback/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_update_qualifications_compliance_prereqs",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/update-qualifications/compliance-prereqs/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_us_states",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/us/states/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_assessments_document_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/user_assessment/pdf/:user_assessment_id/",
+            "params": [
+              {
+                "name": "user_assessment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "API for GET an assessment and user_assessments for provider",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/user_assessment/:assessment_id/",
+            "params": [
+              {
+                "name": "assessment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "API for GET an assessment and user_assessments for provider"
+        },
+        {
+          "info": {
+            "name": "post_assessment_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/user_assessment/:assessment_id/",
+            "params": [
+              {
+                "name": "assessment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_assessment_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/user_assessment/:assessment_id/",
+            "params": [
+              {
+                "name": "assessment_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_users_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/users/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_user_account_settings_api",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/users/account-settings"
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_autopilot_users_self_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/users/application-autopilot"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_application_autopilot_users_self_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/users/application-autopilot"
+          }
+        },
+        {
+          "info": {
+            "name": "get_application_autopilot_users_self_app_confirmation_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/users/application-autopilot/:jobpost_id",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "patch_application_autopilot_users_self_app_confirmation_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/users/application-autopilot/:jobpost_id",
+            "params": [
+              {
+                "name": "jobpost_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "put_users_deactivate_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/users/deactivate/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_user_identities_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/users/identities/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_incomplete_user_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/users/incomplete/"
+          }
+        },
+        {
+          "info": {
+            "name": "put_incomplete_user_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://nomadhealth.com/api/api/v1/users/incomplete/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_user_location_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/users/last-known-location/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_users_self_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/users/me/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_user_promotional_sms_consent_settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/users/promotional-sms-consent/"
+          }
+        },
+        {
+          "info": {
+            "name": "This POST updates the is_subscribed value within sms_notification_settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/users/promotional-sms-consent/"
+          },
+          "docs": "job_alert."
+        },
+        {
+          "info": {
+            "name": "get_user_search_status_expiration_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/users/search-status-expiration/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_user_notification_settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/users/settings/notification-settings/"
+          }
+        },
+        {
+          "info": {
+            "name": "patch_user_notification_settings",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://nomadhealth.com/api/api/v1/users/settings/notification-settings/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_resend_email_verification_settings_resource",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/users/settings/resend-email-verification/"
+          }
+        },
+        {
+          "info": {
+            "name": "get_vmsapi",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/vms"
+          }
+        },
+        {
+          "info": {
+            "name": "get_vms_submission_info",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/vms_submission/:object_descriptor/info",
+            "params": [
+              {
+                "name": "object_descriptor",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "get_vms_submission",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://nomadhealth.com/api/api/v1/vms_submission/:placement_id",
+            "params": [
+              {
+                "name": "placement_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_vms_submission",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/vms_submission/:placement_id",
+            "params": [
+              {
+                "name": "placement_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          }
+        },
+        {
+          "info": {
+            "name": "post_user_persona_information",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/zendesk/webhooks/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_zendesk_attachment_linked",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/zendesk/webhooks/attachment-linked/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_zendesk_comment_added",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/zendesk/webhooks/comment-added/"
+          }
+        },
+        {
+          "info": {
+            "name": "post_zendesk_comment_created",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/zendesk/webhooks/comment-created/"
+          }
+        },
+        {
+          "info": {
+            "name": "Receives Zendesk metadata update webhooks",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/zendesk/webhooks/metadata-update/"
+          },
+          "docs": "Handles the following event types:\n- zen:event-type:ticket.subject_changed\n- zen:event-type:ticket.status_changed\n- zen:event-type:ticket.submitter_changed\n- zen:event-type:ticket.requester_changed\n- zen:event-type:ticket.agent_assignment_changed\n- zen:event-type:ticket.tags_changed"
+        },
+        {
+          "info": {
+            "name": "post_zendesk_ticket_closed",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://nomadhealth.com/api/api/v1/zendesk/webhooks/ticket-closed/"
+          }
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

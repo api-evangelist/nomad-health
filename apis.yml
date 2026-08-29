@@ -14,6 +14,18 @@ description: 'Nomad Health operates a digital marketplace for healthcare travel 
   runs no public developer program, but serves a live Swagger 2.0 contract and a
   Swagger UI from its production application host covering job search, applications,
   credentialing, placements, facilities and messaging.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://marketing.nomadhealth.com/favicon/apple-icon-114x114.png
 url: https://raw.githubusercontent.com/api-evangelist/nomad-health/refs/heads/main/apis.yml
 x-type: company

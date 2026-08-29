@@ -1,0 +1,28 @@
+slug: nomad-health
+provider: Nomad Health
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Healthcare Providers
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: default
+  spec_file: nomad-health-default-api-openapi.yml
+  capability_id: BC-300.10
+  capability_id_l1: BC-300
+  capability_name: Talent Acquisition Management
+  confidence: 0.7
+  evidence: POST /apply/{jobpost_id}/submit/ post_submit_application_api; GET /facility/{id}/jobposts/
+    get_facilty_job_posts_api
+  reason: 'Catch-all ''default'' tag carrying most of a travel-clinician staffing marketplace: job post
+    retrieval, application submission, job preferences and facility profiles. That is sourcing/recruiting
+    workflow, i.e. Talent Acquisition, regardless of the clinical staffing context. Confidence held at
+    0.7 because the tag is an undifferentiated bucket of 498 operations that also includes ancillary lookups
+    (EMR systems, facility weather).'

@@ -5,8 +5,9 @@ info:
   description: 'Operations tagged default across 2 of this provider''s published API definitions: nomad-health-api-openapi.yml, nomad-health-platform-openapi.yml. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://nomadhealth.com/api
+- url: https://nomadhealth.com/
 tags:
-- name: default
+- name: Default
   description: Default namespace
 paths:
   /admin-references/{provider_id}:
@@ -22,14 +23,20 @@ paths:
           description: Success
       operationId: get_admin_reference_api
       tags:
-      - default
+      - Default
+      summary: Get admin reference api
+      x-summary-source: derived
     post:
       responses:
         '200':
           description: Success
       operationId: post_admin_reference_api
       tags:
-      - default
+      - Default
+      summary: Post admin reference api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /admin-references/{provider_id}/{reference_id}:
     parameters:
     - name: provider_id
@@ -48,14 +55,20 @@ paths:
           description: Success
       operationId: put_admin_reference_detail_api
       tags:
-      - default
+      - Default
+      summary: Put admin reference detail api
+      x-summary-source: derived
     delete:
       responses:
         '200':
           description: Success
       operationId: delete_admin_reference_detail_api
       tags:
-      - default
+      - Default
+      summary: Delete admin reference detail api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /apply/{jobpost_id}/submit/:
     parameters:
     - name: jobpost_id
@@ -69,7 +82,11 @@ paths:
           description: Success
       operationId: post_submit_application_api
       tags:
-      - default
+      - Default
+      summary: Post submit application api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /emr_system:
     get:
       responses:
@@ -78,17 +95,28 @@ paths:
       summary: Returns full list of dictionary EmrSystem objects
       operationId: get_emr_api
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/api
   /facility/facility_autocomplete:
     get:
       responses:
         '200':
           description: Success
       summary: Get route for the facility autocomplete API
-      description: "Args:\n    q (str): Taken from the QueryString to build the prefix\n\nReturns:\n    Reponse with data as a List of dictionaries (defined in FacilityAutocompleteResponse)"
+      description: 'Args:
+
+        q (str): Taken from the QueryString to build the prefix
+
+
+        Returns:
+
+        Reponse with data as a List of dictionaries (defined in FacilityAutocompleteResponse)'
       operationId: get_facility_autocomplete_api
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/api
   /facility/{facility_id}/photo/{photo_id}:
     parameters:
     - name: facility_id
@@ -109,7 +137,9 @@ paths:
       description: photo to the front of the facility.photos list.
       operationId: put_facility_photo_api
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/api
   /facility/{id}:
     parameters:
     - name: id
@@ -123,7 +153,11 @@ paths:
           description: Success
       operationId: get_facility_api
       tags:
-      - default
+      - Default
+      summary: Get facility api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /facility/{id}/jobposts/:
     parameters:
     - name: id
@@ -137,7 +171,11 @@ paths:
           description: Success
       operationId: get_facilty_job_posts_api
       tags:
-      - default
+      - Default
+      summary: Get facilty job posts api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /facility/{id}/weather:
     parameters:
     - name: id
@@ -151,7 +189,11 @@ paths:
           description: Success
       operationId: get_facility_weather_api
       tags:
-      - default
+      - Default
+      summary: Get facility weather api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /job-preferences/:
     put:
       responses:
@@ -159,21 +201,29 @@ paths:
           description: Success
       operationId: put_job_post_preference_api
       tags:
-      - default
+      - Default
+      summary: Put job post preference api
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_job_post_preference_api
       tags:
-      - default
+      - Default
+      summary: Get job post preference api
+      x-summary-source: derived
     post:
       responses:
         '200':
           description: Success
       operationId: post_job_post_preference_api
       tags:
-      - default
+      - Default
+      summary: Post job post preference api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /jobposts/top-matches/:
     get:
       responses:
@@ -181,7 +231,11 @@ paths:
           description: Success
       operationId: get_job_post_top_matches_api
       tags:
-      - default
+      - Default
+      summary: Get job post top matches api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /notifications/mobile-preferences/:
     post:
       responses:
@@ -189,7 +243,11 @@ paths:
           description: Success
       operationId: post_push_notification_preferences_api
       tags:
-      - default
+      - Default
+      summary: Post push notification preferences api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /nurse/certifications:
     get:
       responses:
@@ -197,7 +255,11 @@ paths:
           description: Success
       operationId: get_nurse_api
       tags:
-      - default
+      - Default
+      summary: Get nurse api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /one-time-link/:
     post:
       responses:
@@ -206,7 +268,9 @@ paths:
       summary: Generates a one time link for a given url
       operationId: post_one_time_link_api
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/api
   /open-api-spec/:
     get:
       responses:
@@ -214,7 +278,11 @@ paths:
           description: Success
       operationId: get_open_api_spec_api
       tags:
-      - default
+      - Default
+      summary: Get open api spec api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /region:
     get:
       responses:
@@ -222,7 +290,11 @@ paths:
           description: Success
       operationId: get_region_resource
       tags:
-      - default
+      - Default
+      summary: Get region resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /user/{user_id}/profile/:
     parameters:
     - name: user_id
@@ -236,7 +308,11 @@ paths:
           description: Success
       operationId: get_user_profile_api
       tags:
-      - default
+      - Default
+      summary: Get user profile api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /waitlist:
     get:
       responses:
@@ -244,7 +320,11 @@ paths:
           description: Success
       operationId: get_waitlist_api
       tags:
-      - default
+      - Default
+      summary: Get waitlist api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/api
   /api/v1/account-manager/:
     get:
       responses:
@@ -252,7 +332,11 @@ paths:
           description: Success
       operationId: get_account_manager_list_resource
       tags:
-      - default
+      - Default
+      summary: Get account manager list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/account-manager/{id}/:
     parameters:
     - name: id
@@ -266,7 +350,11 @@ paths:
           description: Success
       operationId: get_account_manager_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get account manager detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/accounts/me/:
     put:
       responses:
@@ -274,21 +362,29 @@ paths:
           description: Success
       operationId: put_accounts_me_resource
       tags:
-      - default
+      - Default
+      summary: Put accounts me resource
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_accounts_me_resource
       tags:
-      - default
+      - Default
+      summary: Patch accounts me resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_accounts_me_resource
       tags:
-      - default
+      - Default
+      summary: Get accounts me resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-accounts/{id}/:
     parameters:
     - name: id
@@ -302,7 +398,11 @@ paths:
           description: Success
       operationId: get_admin_accounts_resource
       tags:
-      - default
+      - Default
+      summary: Get admin accounts resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-agency/:
     post:
       responses:
@@ -310,14 +410,20 @@ paths:
           description: Success
       operationId: post_admin_agency_resource
       tags:
-      - default
+      - Default
+      summary: Post admin agency resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_agency_resource
       tags:
-      - default
+      - Default
+      summary: Get admin agency resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-agency/{id}/:
     parameters:
     - name: id
@@ -331,14 +437,20 @@ paths:
           description: Success
       operationId: patch_admin_agency_detail_resource
       tags:
-      - default
+      - Default
+      summary: Patch admin agency detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_agency_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get admin agency detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-application-review/data-reviews/:
     post:
       responses:
@@ -346,7 +458,11 @@ paths:
           description: Success
       operationId: post_admin_data_reviews_list_resource
       tags:
-      - default
+      - Default
+      summary: Post admin data reviews list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-application-review/external-verifications/:
     post:
       responses:
@@ -354,7 +470,11 @@ paths:
           description: Success
       operationId: post_admin_external_verifications_resource
       tags:
-      - default
+      - Default
+      summary: Post admin external verifications resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-application-review/sections/:
     get:
       responses:
@@ -362,7 +482,11 @@ paths:
           description: Success
       operationId: get_admin_application_review_sections_list_resource
       tags:
-      - default
+      - Default
+      summary: Get admin application review sections list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-applications/{provider_id}/:
     parameters:
     - name: provider_id
@@ -376,14 +500,20 @@ paths:
           description: Success
       operationId: patch_admin_application_resource
       tags:
-      - default
+      - Default
+      summary: Patch admin application resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_application_resource
       tags:
-      - default
+      - Default
+      summary: Get admin application resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-applications/{provider_id}/validation/:
     parameters:
     - name: provider_id
@@ -397,7 +527,11 @@ paths:
           description: Success
       operationId: get_admin_application_validation_resource
       tags:
-      - default
+      - Default
+      summary: Get admin application validation resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-documents/:
     get:
       responses:
@@ -405,7 +539,11 @@ paths:
           description: Success
       operationId: get_admin_documents_resource
       tags:
-      - default
+      - Default
+      summary: Get admin documents resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-documents/upload/:
     post:
       responses:
@@ -413,7 +551,11 @@ paths:
           description: Success
       operationId: post_admin_documents_upload_resource
       tags:
-      - default
+      - Default
+      summary: Post admin documents upload resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-facility/{id}/:
     parameters:
     - name: id
@@ -427,14 +569,20 @@ paths:
           description: Success
       operationId: patch_facility_admin_resource
       tags:
-      - default
+      - Default
+      summary: Patch facility admin resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_facility_admin_resource
       tags:
-      - default
+      - Default
+      summary: Get facility admin resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-facility/{id}/jobposts/:
     parameters:
     - name: id
@@ -448,7 +596,11 @@ paths:
           description: Success
       operationId: get_facility_admin_job_posts_resource
       tags:
-      - default
+      - Default
+      summary: Get facility admin job posts resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-jobposts/search/:
     get:
       responses:
@@ -456,7 +608,11 @@ paths:
           description: Success
       operationId: get_admin_jobposts_search_resource
       tags:
-      - default
+      - Default
+      summary: Get admin jobposts search resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-lead/:
     get:
       responses:
@@ -464,7 +620,11 @@ paths:
           description: Success
       operationId: get_admin_lead_resource
       tags:
-      - default
+      - Default
+      summary: Get admin lead resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-lead/{id}/:
     parameters:
     - name: id
@@ -478,14 +638,20 @@ paths:
           description: Success
       operationId: patch_admin_lead_details_resource
       tags:
-      - default
+      - Default
+      summary: Patch admin lead details resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_lead_details_resource
       tags:
-      - default
+      - Default
+      summary: Get admin lead details resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-license-checks/:
     get:
       responses:
@@ -493,7 +659,11 @@ paths:
           description: Success
       operationId: get_admin_license_checks_list
       tags:
-      - default
+      - Default
+      summary: Get admin license checks list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-placements/search/:
     get:
       responses:
@@ -501,7 +671,11 @@ paths:
           description: Success
       operationId: get_admin_placements_search_resource
       tags:
-      - default
+      - Default
+      summary: Get admin placements search resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-profile-evaluation/:
     post:
       responses:
@@ -509,7 +683,11 @@ paths:
           description: Success
       operationId: post_admin_profile_evaluation_api
       tags:
-      - default
+      - Default
+      summary: Post admin profile evaluation api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-saved-search:
     post:
       responses:
@@ -517,21 +695,29 @@ paths:
           description: Success
       operationId: post_admin_saved_search_api
       tags:
-      - default
+      - Default
+      summary: Post admin saved search api
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_admin_saved_search_api
       tags:
-      - default
+      - Default
+      summary: Patch admin saved search api
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_saved_search_api
       tags:
-      - default
+      - Default
+      summary: Get admin saved search api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-saved-search/delete:
     post:
       responses:
@@ -539,7 +725,11 @@ paths:
           description: Success
       operationId: post_admin_saved_search_delete_api
       tags:
-      - default
+      - Default
+      summary: Post admin saved search delete api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-user/:
     post:
       responses:
@@ -547,7 +737,11 @@ paths:
           description: Success
       operationId: post_admin_user_create_resource
       tags:
-      - default
+      - Default
+      summary: Post admin user create resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-user/form-options/:
     get:
       responses:
@@ -555,7 +749,11 @@ paths:
           description: Success
       operationId: get_admin_user_form_options_resource
       tags:
-      - default
+      - Default
+      summary: Get admin user form options resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-user/{id}/:
     parameters:
     - name: id
@@ -569,14 +767,20 @@ paths:
           description: Success
       operationId: put_admin_user_detail_resource
       tags:
-      - default
+      - Default
+      summary: Put admin user detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_user_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get admin user detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-user/{id}/action/:
     parameters:
     - name: id
@@ -590,7 +794,11 @@ paths:
           description: Success
       operationId: post_admin_user_action_resource
       tags:
-      - default
+      - Default
+      summary: Post admin user action resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-users/:
     get:
       responses:
@@ -598,7 +806,11 @@ paths:
           description: Success
       operationId: get_admin_users_v1_api
       tags:
-      - default
+      - Default
+      summary: Get admin users v1 api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-vms/:
     post:
       responses:
@@ -606,14 +818,20 @@ paths:
           description: Success
       operationId: post_admin_vms_resource
       tags:
-      - default
+      - Default
+      summary: Post admin vms resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_vms_resource
       tags:
-      - default
+      - Default
+      summary: Get admin vms resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin-vms/{id}/:
     parameters:
     - name: id
@@ -627,14 +845,20 @@ paths:
           description: Success
       operationId: patch_admin_vms_detail_resource
       tags:
-      - default
+      - Default
+      summary: Patch admin vms detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_vms_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get admin vms detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/assignments:
     post:
       responses:
@@ -642,14 +866,20 @@ paths:
           description: Success
       operationId: post_assignments_resource
       tags:
-      - default
+      - Default
+      summary: Post assignments resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_assignments_resource
       tags:
-      - default
+      - Default
+      summary: Get assignments resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/assignments/{assignment_id}:
     parameters:
     - name: assignment_id
@@ -663,7 +893,11 @@ paths:
           description: Success
       operationId: put_update_assignment
       tags:
-      - default
+      - Default
+      summary: Put update assignment
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/assignments/{assignment_id}/bonus:
     parameters:
     - name: assignment_id
@@ -677,7 +911,11 @@ paths:
           description: Success
       operationId: post_add_assignment_bonus
       tags:
-      - default
+      - Default
+      summary: Post add assignment bonus
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/assignments/{assignment_id}/bonus/{bonus_id}:
     parameters:
     - name: assignment_id
@@ -696,7 +934,11 @@ paths:
           description: Success
       operationId: put_update_assignment_bonus
       tags:
-      - default
+      - Default
+      summary: Put update assignment bonus
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/assignments/{assignment_id}/offers:
     parameters:
     - name: assignment_id
@@ -710,7 +952,11 @@ paths:
           description: Success
       operationId: get_get_assignment_offers
       tags:
-      - default
+      - Default
+      summary: Get get assignment offers
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credential-candidate-group/:
     post:
       responses:
@@ -719,7 +965,7 @@ paths:
       summary: Create a new credential candidate group
       operationId: post_admin_credential_candidate_group_resource
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
@@ -727,7 +973,9 @@ paths:
       summary: List all credential candidate groups
       operationId: get_admin_credential_candidate_group_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credential-candidate-group/documents/:
     post:
       responses:
@@ -736,7 +984,9 @@ paths:
       summary: Create a new credential candidate group
       operationId: post_admin_credential_candidate_group_documents_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credential-candidate-group/{group_id}/:
     parameters:
     - name: group_id
@@ -751,7 +1001,7 @@ paths:
       summary: Update a credential candidate group
       operationId: put_admin_credential_candidate_group_detail_resource
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
@@ -759,7 +1009,9 @@ paths:
       summary: Get a specific credential candidate group
       operationId: get_admin_credential_candidate_group_detail_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credential-candidate-group/{group_id}/candidates/:
     parameters:
     - name: group_id
@@ -774,7 +1026,9 @@ paths:
       summary: Create a new credential candidate within a group
       operationId: post_admin_credential_candidate_group_candidate_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credential-candidate/{candidate_id}/:
     parameters:
     - name: candidate_id
@@ -789,7 +1043,7 @@ paths:
       summary: Update a credential candidate
       operationId: put_admin_credential_candidate_resource
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
@@ -797,7 +1051,9 @@ paths:
       summary: Get a credential candidate by ID
       operationId: get_admin_credential_candidate_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/assignees/:
     get:
       responses:
@@ -805,7 +1061,11 @@ paths:
           description: Success
       operationId: get_assignees
       tags:
-      - default
+      - Default
+      summary: Get assignees
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/categories/definition/:
     get:
       responses:
@@ -813,7 +1073,11 @@ paths:
           description: Success
       operationId: get_admin_get_category_definition
       tags:
-      - default
+      - Default
+      summary: Get admin get category definition
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/clinicians/search/:
     get:
       responses:
@@ -821,7 +1085,11 @@ paths:
           description: Success
       operationId: get_clinician_search
       tags:
-      - default
+      - Default
+      summary: Get clinician search
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/clinicians/view/:
     get:
       responses:
@@ -829,7 +1097,11 @@ paths:
           description: Success
       operationId: get_admin_clinician_lookup
       tags:
-      - default
+      - Default
+      summary: Get admin clinician lookup
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/credentials/:
     get:
       responses:
@@ -837,7 +1109,11 @@ paths:
           description: Success
       operationId: get_provider_credentials_browse
       tags:
-      - default
+      - Default
+      summary: Get provider credentials browse
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/credentials/update/:
     post:
       responses:
@@ -845,7 +1121,11 @@ paths:
           description: Success
       operationId: post_credential_update
       tags:
-      - default
+      - Default
+      summary: Post credential update
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/fx-compliance/requirements/status-update/:
     patch:
       responses:
@@ -853,7 +1133,11 @@ paths:
           description: Success
       operationId: patch_fx_requirement_status_update
       tags:
-      - default
+      - Default
+      summary: Patch fx requirement status update
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/fx-compliance/view/:
     get:
       responses:
@@ -861,7 +1145,11 @@ paths:
           description: Success
       operationId: get_fx_clinician_lookup
       tags:
-      - default
+      - Default
+      summary: Get fx clinician lookup
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirement-types/create/:
     post:
       responses:
@@ -869,7 +1157,11 @@ paths:
           description: Success
       operationId: post_create_requirement_type
       tags:
-      - default
+      - Default
+      summary: Post create requirement type
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirement-types/search/:
     get:
       responses:
@@ -877,7 +1169,11 @@ paths:
           description: Success
       operationId: get_requirement_type_search
       tags:
-      - default
+      - Default
+      summary: Get requirement type search
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirement-types/update/:
     post:
       responses:
@@ -885,7 +1181,11 @@ paths:
           description: Success
       operationId: post_requirement_type_update
       tags:
-      - default
+      - Default
+      summary: Post requirement type update
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirements/clone:
     post:
       responses:
@@ -893,7 +1193,11 @@ paths:
           description: Success
       operationId: post_clone_requirements
       tags:
-      - default
+      - Default
+      summary: Post clone requirements
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirements/complete-application-question/:
     post:
       responses:
@@ -901,7 +1205,11 @@ paths:
           description: Success
       operationId: post_admin_requirement_application_question_complete
       tags:
-      - default
+      - Default
+      summary: Post admin requirement application question complete
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirements/complete/:
     put:
       responses:
@@ -909,7 +1217,11 @@ paths:
           description: Success
       operationId: put_admin_requirements_complete
       tags:
-      - default
+      - Default
+      summary: Put admin requirements complete
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirements/create/:
     post:
       responses:
@@ -917,7 +1229,11 @@ paths:
           description: Success
       operationId: post_create_requirements
       tags:
-      - default
+      - Default
+      summary: Post create requirements
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirements/delete/:
     post:
       responses:
@@ -925,7 +1241,11 @@ paths:
           description: Success
       operationId: post_delete_requirement
       tags:
-      - default
+      - Default
+      summary: Post delete requirement
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirements/initialize/:
     post:
       responses:
@@ -933,7 +1253,11 @@ paths:
           description: Success
       operationId: post_placement_requirements_initialize
       tags:
-      - default
+      - Default
+      summary: Post placement requirements initialize
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirements/reset/:
     post:
       responses:
@@ -941,7 +1265,11 @@ paths:
           description: Success
       operationId: post_requirement_reset
       tags:
-      - default
+      - Default
+      summary: Post requirement reset
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/requirements/status-update/:
     post:
       responses:
@@ -949,7 +1277,11 @@ paths:
           description: Success
       operationId: post_admin_requirement_status_update
       tags:
-      - default
+      - Default
+      summary: Post admin requirement status update
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/templates/browse/:
     get:
       responses:
@@ -957,7 +1289,11 @@ paths:
           description: Success
       operationId: get_facility_template_browse
       tags:
-      - default
+      - Default
+      summary: Get facility template browse
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/templates/bulk-create-from-placement/:
     post:
       responses:
@@ -965,7 +1301,11 @@ paths:
           description: Success
       operationId: post_templates_bulk_create_from_placement
       tags:
-      - default
+      - Default
+      summary: Post templates bulk create from placement
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/templates/source/browse/:
     get:
       responses:
@@ -973,7 +1313,11 @@ paths:
           description: Success
       operationId: get_requirement_source_browse
       tags:
-      - default
+      - Default
+      summary: Get requirement source browse
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/templates/source/create/:
     post:
       responses:
@@ -981,7 +1325,11 @@ paths:
           description: Success
       operationId: post_admin_requirement_source_create
       tags:
-      - default
+      - Default
+      summary: Post admin requirement source create
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/templates/source/update/:
     put:
       responses:
@@ -989,7 +1337,11 @@ paths:
           description: Success
       operationId: put_admin_requirement_source_update
       tags:
-      - default
+      - Default
+      summary: Put admin requirement source update
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/templates/template/create/:
     post:
       responses:
@@ -997,7 +1349,11 @@ paths:
           description: Success
       operationId: post_admin_templates_create
       tags:
-      - default
+      - Default
+      summary: Post admin templates create
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/templates/template/delete/:
     post:
       responses:
@@ -1005,7 +1361,11 @@ paths:
           description: Success
       operationId: post_admin_templates_deactivate
       tags:
-      - default
+      - Default
+      summary: Post admin templates deactivate
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/templates/template/update/:
     put:
       responses:
@@ -1013,7 +1373,11 @@ paths:
           description: Success
       operationId: put_admin_templates_update
       tags:
-      - default
+      - Default
+      summary: Put admin templates update
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/timecards/export/:
     get:
       responses:
@@ -1021,7 +1385,11 @@ paths:
           description: Success
       operationId: get_admin_timecard_export
       tags:
-      - default
+      - Default
+      summary: Get admin timecard export
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/timecards/requirements/create/:
     post:
       responses:
@@ -1029,7 +1397,11 @@ paths:
           description: Success
       operationId: post_admin_create_timecards
       tags:
-      - default
+      - Default
+      summary: Post admin create timecards
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/timecards/requirements/list/:
     get:
       responses:
@@ -1037,7 +1409,11 @@ paths:
           description: Success
       operationId: get_admin_timecard_list
       tags:
-      - default
+      - Default
+      summary: Get admin timecard list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/timecards/requirements/update/:
     patch:
       responses:
@@ -1045,7 +1421,11 @@ paths:
           description: Success
       operationId: patch_admin_update_requirement
       tags:
-      - default
+      - Default
+      summary: Patch admin update requirement
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/credentialing/timecards/{id}/:
     parameters:
     - name: id
@@ -1059,7 +1439,11 @@ paths:
           description: Success
       operationId: get_admin_timecard_get
       tags:
-      - default
+      - Default
+      summary: Get admin timecard get
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/job-preferences/:
     get:
       responses:
@@ -1067,7 +1451,11 @@ paths:
           description: Success
       operationId: get_job_preferences_resource
       tags:
-      - default
+      - Default
+      summary: Get job preferences resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/browse/:
     get:
       responses:
@@ -1075,7 +1463,11 @@ paths:
           description: Success
       operationId: get_browse_offers
       tags:
-      - default
+      - Default
+      summary: Get browse offers
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/create/:
     post:
       responses:
@@ -1083,7 +1475,11 @@ paths:
           description: Success
       operationId: post_create_offers
       tags:
-      - default
+      - Default
+      summary: Post create offers
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/default-rates/{jobpost_id}:
     parameters:
     - name: jobpost_id
@@ -1097,7 +1493,11 @@ paths:
           description: Success
       operationId: get_bill_rate_modifiers
       tags:
-      - default
+      - Default
+      summary: Get bill rate modifiers
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/publish/:
     put:
       responses:
@@ -1105,7 +1505,11 @@ paths:
           description: Success
       operationId: put_publish_offer
       tags:
-      - default
+      - Default
+      summary: Put publish offer
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/status/:
     put:
       responses:
@@ -1113,7 +1517,11 @@ paths:
           description: Success
       operationId: put_update_acceptance_status
       tags:
-      - default
+      - Default
+      summary: Put update acceptance status
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/update-contract:
     put:
       responses:
@@ -1121,7 +1529,11 @@ paths:
           description: Success
       operationId: put_update_offers_contract
       tags:
-      - default
+      - Default
+      summary: Put update offers contract
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/update-notes:
     put:
       responses:
@@ -1129,7 +1541,11 @@ paths:
           description: Success
       operationId: put_update_offers_notes
       tags:
-      - default
+      - Default
+      summary: Put update offers notes
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/update/:
     put:
       responses:
@@ -1137,7 +1553,11 @@ paths:
           description: Success
       operationId: put_update_offers
       tags:
-      - default
+      - Default
+      summary: Put update offers
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/view/{offer_id}/:
     parameters:
     - name: offer_id
@@ -1151,7 +1571,11 @@ paths:
           description: Success
       operationId: get_view_offer
       tags:
-      - default
+      - Default
+      summary: Get view offer
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/offers/zendesk/{offer_id}:
     parameters:
     - name: offer_id
@@ -1165,7 +1589,11 @@ paths:
           description: Success
       operationId: post_upsert_offer_zendesk_ticket
       tags:
-      - default
+      - Default
+      summary: Post upsert offer zendesk ticket
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/acknowledge-recent-events/:
     put:
       responses:
@@ -1174,7 +1602,9 @@ paths:
       summary: Acknowledges a provider's recent events for a logged-in premier navigator
       operationId: put_premier_navigator_admin_acknowledge_recent_events_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/availability-date/{provider_id}/:
     parameters:
     - name: provider_id
@@ -1189,7 +1619,9 @@ paths:
       summary: Updates the availability date for a provider
       operationId: put_premier_navigator_availability_date_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/available-voice-endpoints/:
     get:
       responses:
@@ -1197,7 +1629,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_available_voice_endpoints_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator available voice endpoints resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/claim-provider/:
     put:
       responses:
@@ -1206,7 +1642,9 @@ paths:
       summary: Claims a provider for a logged-in premier navigator
       operationId: put_premier_navigator_admin_claim_provider_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/claimed-queue/:
     get:
       responses:
@@ -1214,7 +1652,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_admin_claimed_queue_list_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator admin claimed queue list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/jobpost-communication/:
     post:
       responses:
@@ -1222,14 +1664,20 @@ paths:
           description: Success
       operationId: post_premier_navigator_admin_jobpost_communication_resource
       tags:
-      - default
+      - Default
+      summary: Post premier navigator admin jobpost communication resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_premier_navigator_admin_jobpost_communication_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator admin jobpost communication resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/live-jobs-v2/:
     get:
       responses:
@@ -1237,7 +1685,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_admin_live_jobs_v2_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator admin live jobs v2 resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/live-jobs/:
     get:
       responses:
@@ -1245,7 +1697,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_admin_live_jobs_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator admin live jobs resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/:
     get:
       responses:
@@ -1253,7 +1709,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_messages_list_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator messages list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/conversations/:
     get:
       responses:
@@ -1261,7 +1721,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_conversations_list_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator conversations list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/conversations/{conversation_id}/mark-read/:
     parameters:
     - name: conversation_id
@@ -1275,7 +1739,11 @@ paths:
           description: Success
       operationId: post_mark_conversation_read_resource
       tags:
-      - default
+      - Default
+      summary: Post mark conversation read resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/mark-read/:
     post:
       responses:
@@ -1283,7 +1751,11 @@ paths:
           description: Success
       operationId: post_mark_messages_read_resource
       tags:
-      - default
+      - Default
+      summary: Post mark messages read resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/send/:
     post:
       responses:
@@ -1291,7 +1763,11 @@ paths:
           description: Success
       operationId: post_premier_navigator_send_message_resource
       tags:
-      - default
+      - Default
+      summary: Post premier navigator send message resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/suggested-messages/:
     get:
       responses:
@@ -1299,7 +1775,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_suggested_message_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator suggested message resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/suggested-messages/generate/:
     post:
       responses:
@@ -1307,7 +1787,11 @@ paths:
           description: Success
       operationId: post_premier_navigator_generate_suggested_message_resource
       tags:
-      - default
+      - Default
+      summary: Post premier navigator generate suggested message resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/suggested-messages/task/{task_id}/:
     parameters:
     - name: task_id
@@ -1321,7 +1805,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_get_suggested_message_task_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator get suggested message task resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/unread-count/:
     get:
       responses:
@@ -1329,7 +1817,11 @@ paths:
           description: Success
       operationId: get_message_unread_count_resource
       tags:
-      - default
+      - Default
+      summary: Get message unread count resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/voice-calls/{call_id}/status/:
     parameters:
     - name: call_id
@@ -1343,7 +1835,11 @@ paths:
           description: Success
       operationId: get_voice_message_status_resource
       tags:
-      - default
+      - Default
+      summary: Get voice message status resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/{message_id}/attachment/{attachment_id}/:
     parameters:
     - name: message_id
@@ -1362,7 +1858,11 @@ paths:
           description: Success
       operationId: get_mms_media_resource
       tags:
-      - default
+      - Default
+      summary: Get mms media resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/messages/{message_id}/recording/:
     parameters:
     - name: message_id
@@ -1376,7 +1876,11 @@ paths:
           description: Success
       operationId: get_voice_message_recording_resource
       tags:
-      - default
+      - Default
+      summary: Get voice message recording resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/provider/{provider_id}/high-priority/:
     parameters:
     - name: provider_id
@@ -1391,7 +1895,9 @@ paths:
       summary: Marks a provider as high priority for a logged-in premier navigator
       operationId: post_premier_navigator_provider_high_priority_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/providers-for-job/{job_id}/:
     parameters:
     - name: job_id
@@ -1442,7 +1948,9 @@ paths:
         *** this maps to claimed BY THE AUTHED CALLER, not claimed BY ANY PN ***'
       operationId: get_premier_navigator_providers_for_job_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/reminders/:
     post:
       responses:
@@ -1450,14 +1958,20 @@ paths:
           description: Success
       operationId: post_premier_navigator_reminders_list_resource
       tags:
-      - default
+      - Default
+      summary: Post premier navigator reminders list resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_premier_navigator_reminders_list_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator reminders list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/reminders/{reminder_id}/:
     parameters:
     - name: reminder_id
@@ -1471,14 +1985,20 @@ paths:
           description: Success
       operationId: delete_premier_navigator_reminder_resource
       tags:
-      - default
+      - Default
+      summary: Delete premier navigator reminder resource
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_premier_navigator_reminder_resource
       tags:
-      - default
+      - Default
+      summary: Patch premier navigator reminder resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/reminders/{reminder_id}/acknowledge/:
     parameters:
     - name: reminder_id
@@ -1492,7 +2012,11 @@ paths:
           description: Success
       operationId: patch_premier_navigator_reminder_acknowledge_resource
       tags:
-      - default
+      - Default
+      summary: Patch premier navigator reminder acknowledge resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/unclaim-provider/:
     put:
       responses:
@@ -1501,7 +2025,9 @@ paths:
       summary: Unclaims a provider from a logged-in premier navigator
       operationId: put_premier_navigator_admin_unclaim_provider_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/unclaimed-queue/:
     get:
       responses:
@@ -1509,7 +2035,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_admin_unclaimed_queue_list_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator admin unclaimed queue list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/users/:
     get:
       responses:
@@ -1517,7 +2047,11 @@ paths:
           description: Success
       operationId: get_premier_navigator_admin_user_list_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator admin user list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/users/{user_id}/routing/:
     parameters:
     - name: user_id
@@ -1532,14 +2066,18 @@ paths:
       summary: Updates the routing config for a premier navigator
       operationId: put_premier_navigator_admin_user_routing_resource
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
           description: Success
       operationId: get_premier_navigator_admin_user_routing_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator admin user routing resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/verify-specialization/:
     post:
       responses:
@@ -1547,7 +2085,11 @@ paths:
           description: Success
       operationId: post_premier_navigator_verify_specialization_resource
       tags:
-      - default
+      - Default
+      summary: Post premier navigator verify specialization resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/voice-calls/:
     post:
       responses:
@@ -1555,7 +2097,11 @@ paths:
           description: Success
       operationId: post_premier_navigator_outbound_voice_call_resource
       tags:
-      - default
+      - Default
+      summary: Post premier navigator outbound voice call resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/premier-navigator/voice-inbound-availability/:
     patch:
       responses:
@@ -1563,14 +2109,20 @@ paths:
           description: Success
       operationId: patch_premier_navigator_voice_inbound_availability_resource
       tags:
-      - default
+      - Default
+      summary: Patch premier navigator voice inbound availability resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_premier_navigator_voice_inbound_availability_resource
       tags:
-      - default
+      - Default
+      summary: Get premier navigator voice inbound availability resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/prioritized-placements/:
     get:
       responses:
@@ -1578,7 +2130,11 @@ paths:
           description: Success
       operationId: get_prioritized_placements
       tags:
-      - default
+      - Default
+      summary: Get prioritized placements
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/providers/:
     get:
       responses:
@@ -1586,7 +2142,11 @@ paths:
           description: Success
       operationId: get_admin_provider_resource
       tags:
-      - default
+      - Default
+      summary: Get admin provider resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/admin/referrals/{id}/:
     parameters:
     - name: id
@@ -1600,7 +2160,11 @@ paths:
           description: Success
       operationId: patch_referrals_referral_resource
       tags:
-      - default
+      - Default
+      summary: Patch referrals referral resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/agency/:
     get:
       responses:
@@ -1608,7 +2172,11 @@ paths:
           description: Success
       operationId: get_agency_resource
       tags:
-      - default
+      - Default
+      summary: Get agency resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/agency/{id}/:
     parameters:
     - name: id
@@ -1622,7 +2190,11 @@ paths:
           description: Success
       operationId: get_agency_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get agency detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application-autopilot-user/{id}:
     parameters:
     - name: id
@@ -1636,21 +2208,29 @@ paths:
           description: Success
       operationId: delete_application_autopilot_users_resource
       tags:
-      - default
+      - Default
+      summary: Delete application autopilot users resource
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_application_autopilot_users_resource
       tags:
-      - default
+      - Default
+      summary: Patch application autopilot users resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_application_autopilot_users_resource
       tags:
-      - default
+      - Default
+      summary: Get application autopilot users resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application-autopilot-users/list:
     post:
       responses:
@@ -1658,14 +2238,20 @@ paths:
           description: Success
       operationId: post_application_autopilot_users_list_resource
       tags:
-      - default
+      - Default
+      summary: Post application autopilot users list resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_application_autopilot_users_list_resource
       tags:
-      - default
+      - Default
+      summary: Get application autopilot users list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application-cart/:
     post:
       responses:
@@ -1673,14 +2259,20 @@ paths:
           description: Success
       operationId: post_application_cart_resource
       tags:
-      - default
+      - Default
+      summary: Post application cart resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_application_cart_resource
       tags:
-      - default
+      - Default
+      summary: Get application cart resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application-cart/{id}/:
     parameters:
     - name: id
@@ -1694,7 +2286,11 @@ paths:
           description: Success
       operationId: delete_application_cart_detail_resource
       tags:
-      - default
+      - Default
+      summary: Delete application cart detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application-center/items/:
     get:
       responses:
@@ -1702,7 +2298,11 @@ paths:
           description: Success
       operationId: get_application_center_items_resource
       tags:
-      - default
+      - Default
+      summary: Get application center items resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/:
     patch:
       responses:
@@ -1710,14 +2310,20 @@ paths:
           description: Success
       operationId: patch_application_resource
       tags:
-      - default
+      - Default
+      summary: Patch application resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_application_resource
       tags:
-      - default
+      - Default
+      summary: Get application resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/apply/:
     post:
       responses:
@@ -1725,7 +2331,11 @@ paths:
           description: Success
       operationId: post_application_apply_resource
       tags:
-      - default
+      - Default
+      summary: Post application apply resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/data/:
     post:
       responses:
@@ -1733,7 +2343,11 @@ paths:
           description: Success
       operationId: post_application_data_list_resource
       tags:
-      - default
+      - Default
+      summary: Post application data list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/data/submit/credential-candidates/:
     put:
       responses:
@@ -1741,7 +2355,11 @@ paths:
           description: Success
       operationId: put_credential_candidates_resource
       tags:
-      - default
+      - Default
+      summary: Put credential candidates resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/data/{id}/:
     parameters:
     - name: id
@@ -1755,21 +2373,29 @@ paths:
           description: Success
       operationId: delete_application_data_detail_resource
       tags:
-      - default
+      - Default
+      summary: Delete application data detail resource
+      x-summary-source: derived
     put:
       responses:
         '200':
           description: Success
       operationId: put_application_data_detail_resource
       tags:
-      - default
+      - Default
+      summary: Put application data detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_application_data_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get application data detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/form-schemas/:
     get:
       responses:
@@ -1777,7 +2403,11 @@ paths:
           description: Success
       operationId: get_application_form_schemas_list_resource
       tags:
-      - default
+      - Default
+      summary: Get application form schemas list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/sections/:
     get:
       responses:
@@ -1785,7 +2415,11 @@ paths:
           description: Success
       operationId: get_application_sections_list_resource
       tags:
-      - default
+      - Default
+      summary: Get application sections list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/validation/:
     get:
       responses:
@@ -1793,7 +2427,11 @@ paths:
           description: Success
       operationId: get_application_validation_resource
       tags:
-      - default
+      - Default
+      summary: Get application validation resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application/vetting/:
     get:
       responses:
@@ -1801,7 +2439,11 @@ paths:
           description: Success
       operationId: get_application_vetting_resource
       tags:
-      - default
+      - Default
+      summary: Get application vetting resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application_center/applications/:
     get:
       responses:
@@ -1811,7 +2453,9 @@ paths:
       description: filtered by status. For the application center page.
       operationId: get_application_center
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application_center/vetting/:
     get:
       responses:
@@ -1819,7 +2463,11 @@ paths:
           description: Success
       operationId: get_application_center_app_vetting
       tags:
-      - default
+      - Default
+      summary: Get application center app vetting
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/application_center/withdraw/:
     post:
       responses:
@@ -1827,7 +2475,11 @@ paths:
           description: Success
       operationId: post_application_center_withdraw_app
       tags:
-      - default
+      - Default
+      summary: Post application center withdraw app
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/applications/easy-apply/status/:
     get:
       responses:
@@ -1836,7 +2488,9 @@ paths:
       summary: Checks a user's easy-apply status
       operationId: get_easy_apply_status_api
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/applications/jobpost/{jobpost_id}:
     parameters:
     - name: jobpost_id
@@ -1850,7 +2504,11 @@ paths:
           description: Success
       operationId: get_job_post_application
       tags:
-      - default
+      - Default
+      summary: Get job post application
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/applications/{id}/:
     parameters:
     - name: id
@@ -1864,14 +2522,20 @@ paths:
           description: Success
       operationId: patch_application_resource
       tags:
-      - default
+      - Default
+      summary: Patch application resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_application_resource
       tags:
-      - default
+      - Default
+      summary: Get application resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/applications/{id}/validation/:
     parameters:
     - name: id
@@ -1885,7 +2549,11 @@ paths:
           description: Success
       operationId: get_application_validation_resource
       tags:
-      - default
+      - Default
+      summary: Get application validation resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/applications/{id}/work-experience-facilities/:
     parameters:
     - name: id
@@ -1899,7 +2567,11 @@ paths:
           description: Success
       operationId: get_application_work_experience_facilities_resource
       tags:
-      - default
+      - Default
+      summary: Get application work experience facilities resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/assessments/:
     post:
       responses:
@@ -1907,7 +2579,11 @@ paths:
           description: Success
       operationId: post_assessments_api
       tags:
-      - default
+      - Default
+      summary: Post assessments api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/audit-events/{entity}/{id}/:
     parameters:
     - name: entity
@@ -1926,7 +2602,11 @@ paths:
           description: Success
       operationId: get_audit_events_list
       tags:
-      - default
+      - Default
+      summary: Get audit events list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/auth/login-link/:
     post:
       responses:
@@ -1934,7 +2614,11 @@ paths:
           description: Success
       operationId: post_auth_login_link_resource
       tags:
-      - default
+      - Default
+      summary: Post auth login link resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/auth/login/:
     post:
       responses:
@@ -1942,7 +2626,11 @@ paths:
           description: Success
       operationId: post_auth_login_resource
       tags:
-      - default
+      - Default
+      summary: Post auth login resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/auth/logout/:
     post:
       responses:
@@ -1950,7 +2638,11 @@ paths:
           description: Success
       operationId: post_auth_logout_resource
       tags:
-      - default
+      - Default
+      summary: Post auth logout resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/auth/reauthenticate/:
     post:
       responses:
@@ -1958,7 +2650,11 @@ paths:
           description: Success
       operationId: post_reauthenticate_resource
       tags:
-      - default
+      - Default
+      summary: Post reauthenticate resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/badge/all/:
     get:
       responses:
@@ -1966,7 +2662,11 @@ paths:
           description: Success
       operationId: get_badge_resource
       tags:
-      - default
+      - Default
+      summary: Get badge resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/campaign/categories:
     get:
       responses:
@@ -1974,7 +2674,11 @@ paths:
           description: Success
       operationId: get_campaign_categories_api
       tags:
-      - default
+      - Default
+      summary: Get campaign categories api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/campaign/jobs:
     get:
       responses:
@@ -1982,7 +2686,11 @@ paths:
           description: Success
       operationId: get_campaign_jobs_api
       tags:
-      - default
+      - Default
+      summary: Get campaign jobs api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/campaign/statistics:
     get:
       responses:
@@ -1990,7 +2698,11 @@ paths:
           description: Success
       operationId: get_campaign_statistics_api
       tags:
-      - default
+      - Default
+      summary: Get campaign statistics api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/campaign/{id}:
     parameters:
     - name: id
@@ -2004,21 +2716,29 @@ paths:
           description: Success
       operationId: delete_campaign_api
       tags:
-      - default
+      - Default
+      summary: Delete campaign api
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_campaign_api
       tags:
-      - default
+      - Default
+      summary: Patch campaign api
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_campaign_api
       tags:
-      - default
+      - Default
+      summary: Get campaign api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/campaigns/:
     post:
       responses:
@@ -2026,14 +2746,20 @@ paths:
           description: Success
       operationId: post_campaigns_api
       tags:
-      - default
+      - Default
+      summary: Post campaigns api
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_campaigns_api
       tags:
-      - default
+      - Default
+      summary: Get campaigns api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/certification-names/:
     get:
       responses:
@@ -2041,7 +2767,11 @@ paths:
           description: Success
       operationId: get_certification_names
       tags:
-      - default
+      - Default
+      summary: Get certification names
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/certifications/all/:
     get:
       responses:
@@ -2049,7 +2779,11 @@ paths:
           description: Success
       operationId: get_certifications_resource
       tags:
-      - default
+      - Default
+      summary: Get certifications resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/certifications/clinical/:
     get:
       responses:
@@ -2057,7 +2791,11 @@ paths:
           description: Success
       operationId: get_certifications_clinical
       tags:
-      - default
+      - Default
+      summary: Get certifications clinical
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/communications/settings/:
     post:
       responses:
@@ -2065,14 +2803,20 @@ paths:
           description: Success
       operationId: post_communication_settings_resource
       tags:
-      - default
+      - Default
+      summary: Post communication settings resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_communication_settings_resource
       tags:
-      - default
+      - Default
+      summary: Get communication settings resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/confirm_email:
     post:
       responses:
@@ -2080,7 +2824,11 @@ paths:
           description: Success
       operationId: post_confirm_email
       tags:
-      - default
+      - Default
+      summary: Post confirm email
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credential-candidate/sections/:
     get:
       responses:
@@ -2088,7 +2836,11 @@ paths:
           description: Success
       operationId: get_credential_candidate_sections_list_resource
       tags:
-      - default
+      - Default
+      summary: Get credential candidate sections list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/categories/definition/:
     get:
       responses:
@@ -2096,7 +2848,11 @@ paths:
           description: Success
       operationId: get_get_category_definition
       tags:
-      - default
+      - Default
+      summary: Get get category definition
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/categories/schema/:
     get:
       responses:
@@ -2104,7 +2860,11 @@ paths:
           description: Success
       operationId: get_category_schema_detail
       tags:
-      - default
+      - Default
+      summary: Get category schema detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/categories/scope/:
     get:
       responses:
@@ -2112,7 +2872,11 @@ paths:
           description: Success
       operationId: get_get_valid_categories_by_scope
       tags:
-      - default
+      - Default
+      summary: Get get valid categories by scope
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/clinicians/view/:
     get:
       responses:
@@ -2120,7 +2884,11 @@ paths:
           description: Success
       operationId: get_clinician_lookup
       tags:
-      - default
+      - Default
+      summary: Get clinician lookup
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/credentials/:
     get:
       responses:
@@ -2128,7 +2896,11 @@ paths:
           description: Success
       operationId: get_credential_browse
       tags:
-      - default
+      - Default
+      summary: Get credential browse
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/requirements/complete-application-question/:
     post:
       responses:
@@ -2136,7 +2908,11 @@ paths:
           description: Success
       operationId: post_requirement_application_question_complete
       tags:
-      - default
+      - Default
+      summary: Post requirement application question complete
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/requirements/complete/:
     put:
       responses:
@@ -2144,7 +2920,11 @@ paths:
           description: Success
       operationId: put_requirements_complete
       tags:
-      - default
+      - Default
+      summary: Put requirements complete
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/requirements/reset/:
     post:
       responses:
@@ -2152,7 +2932,11 @@ paths:
           description: Success
       operationId: post_reset_requirement
       tags:
-      - default
+      - Default
+      summary: Post reset requirement
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/timecards/browse/current/:
     get:
       responses:
@@ -2160,7 +2944,11 @@ paths:
           description: Success
       operationId: get_timecards_by_placement_browse_current
       tags:
-      - default
+      - Default
+      summary: Get timecards by placement browse current
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/timecards/complete/:
     put:
       responses:
@@ -2168,7 +2956,11 @@ paths:
           description: Success
       operationId: put_timecard_complete
       tags:
-      - default
+      - Default
+      summary: Put timecard complete
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/timecards/shifts/shift_types/:
     get:
       responses:
@@ -2176,7 +2968,11 @@ paths:
           description: Success
       operationId: get_timecard_shift_types
       tags:
-      - default
+      - Default
+      summary: Get timecard shift types
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/timecards/submit/:
     put:
       responses:
@@ -2184,7 +2980,11 @@ paths:
           description: Success
       operationId: put_timecard_submit
       tags:
-      - default
+      - Default
+      summary: Put timecard submit
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentialing/timecards/update/:
     post:
       responses:
@@ -2192,7 +2992,11 @@ paths:
           description: Success
       operationId: post_timecard_update
       tags:
-      - default
+      - Default
+      summary: Post timecard update
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentials/provider-data/{id}/:
     parameters:
     - name: id
@@ -2206,7 +3010,11 @@ paths:
           description: Success
       operationId: get_credentials_provider_data_resource
       tags:
-      - default
+      - Default
+      summary: Get credentials provider data resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/credentials/timeline/{provider_id}/:
     parameters:
     - name: provider_id
@@ -2221,7 +3029,9 @@ paths:
       summary: 'NOTE: "state_nursing_license" category will be includes after finishing WFP-266'
       operationId: get_admin_timeline_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/facilities/:
     get:
       responses:
@@ -2229,7 +3039,11 @@ paths:
           description: Success
       operationId: get_demand_entity_facilities_detail
       tags:
-      - default
+      - Default
+      summary: Get demand entity facilities detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/facilities/{id}/:
     parameters:
     - name: id
@@ -2243,7 +3057,11 @@ paths:
           description: Success
       operationId: get_demand_entity_facility_detail
       tags:
-      - default
+      - Default
+      summary: Get demand entity facility detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/health_systems/:
     get:
       responses:
@@ -2251,7 +3069,11 @@ paths:
           description: Success
       operationId: get_demand_entity_health_systems_detail
       tags:
-      - default
+      - Default
+      summary: Get demand entity health systems detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/health_systems/{id}/:
     parameters:
     - name: id
@@ -2265,7 +3087,11 @@ paths:
           description: Success
       operationId: get_demand_entity_health_system_detail
       tags:
-      - default
+      - Default
+      summary: Get demand entity health system detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/msp/:
     get:
       responses:
@@ -2273,7 +3099,11 @@ paths:
           description: Success
       operationId: get_demand_entity_msps_detail
       tags:
-      - default
+      - Default
+      summary: Get demand entity msps detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/msp/{id}/:
     parameters:
     - name: id
@@ -2287,7 +3117,11 @@ paths:
           description: Success
       operationId: get_demand_entity_msp_detail
       tags:
-      - default
+      - Default
+      summary: Get demand entity msp detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/specializations/:
     get:
       responses:
@@ -2295,7 +3129,11 @@ paths:
           description: Success
       operationId: get_demand_entity_specializations_detail
       tags:
-      - default
+      - Default
+      summary: Get demand entity specializations detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/specializations/codes/:
     get:
       responses:
@@ -2303,7 +3141,11 @@ paths:
           description: Success
       operationId: get_demand_entity_specialization_detail_by_codes
       tags:
-      - default
+      - Default
+      summary: Get demand entity specialization detail by codes
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/specializations/codes/{code}/:
     parameters:
     - name: code
@@ -2317,7 +3159,11 @@ paths:
           description: Success
       operationId: get_demand_entity_specialization_detail_by_code
       tags:
-      - default
+      - Default
+      summary: Get demand entity specialization detail by code
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/demand_entity/specializations/{id}/:
     parameters:
     - name: id
@@ -2331,7 +3177,11 @@ paths:
           description: Success
       operationId: get_demand_entity_specialization_detail
       tags:
-      - default
+      - Default
+      summary: Get demand entity specialization detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/discipline-info/:
     get:
       responses:
@@ -2339,7 +3189,11 @@ paths:
           description: Success
       operationId: get_discipline_info_list_api
       tags:
-      - default
+      - Default
+      summary: Get discipline info list api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/discipline-names/:
     get:
       responses:
@@ -2347,7 +3201,11 @@ paths:
           description: Success
       operationId: get_discipline_names_list
       tags:
-      - default
+      - Default
+      summary: Get discipline names list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/documents/:
     get:
       responses:
@@ -2356,7 +3214,9 @@ paths:
       summary: Fetch documents
       operationId: get_documents_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/documents/provider/upload/:
     post:
       responses:
@@ -2364,7 +3224,11 @@ paths:
           description: Success
       operationId: post_documents_provider_upload_api_resource
       tags:
-      - default
+      - Default
+      summary: Post documents provider upload api resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/dyna-home/:
     get:
       responses:
@@ -2372,7 +3236,11 @@ paths:
           description: Success
       operationId: get_dyna_home_list_resource
       tags:
-      - default
+      - Default
+      summary: Get dyna home list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/education-types/:
     get:
       responses:
@@ -2380,7 +3248,11 @@ paths:
           description: Success
       operationId: get_education_types_resource
       tags:
-      - default
+      - Default
+      summary: Get education types resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/events/:
     get:
       responses:
@@ -2388,7 +3260,11 @@ paths:
           description: Success
       operationId: get_event_list
       tags:
-      - default
+      - Default
+      summary: Get event list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/events/{id}/:
     parameters:
     - name: id
@@ -2402,7 +3278,11 @@ paths:
           description: Success
       operationId: get_events
       tags:
-      - default
+      - Default
+      summary: Get events
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/external-verification-authorities-for-provider/:
     get:
       responses:
@@ -2410,7 +3290,11 @@ paths:
           description: Success
       operationId: get_get_valid_external_verification_authorities_for_provider_resource
       tags:
-      - default
+      - Default
+      summary: Get get valid external verification authorities for provider resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/external-verifications/{external_verification_id}/:
     parameters:
     - name: external_verification_id
@@ -2424,7 +3308,11 @@ paths:
           description: Success
       operationId: delete_delete_external_verification_resource
       tags:
-      - default
+      - Default
+      summary: Delete delete external verification resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/facility/:
     post:
       responses:
@@ -2432,7 +3320,11 @@ paths:
           description: Success
       operationId: post_facility_base_resource
       tags:
-      - default
+      - Default
+      summary: Post facility base resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/facility/form-options/:
     get:
       responses:
@@ -2440,7 +3332,11 @@ paths:
           description: Success
       operationId: get_facility_form_options_resource
       tags:
-      - default
+      - Default
+      summary: Get facility form options resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/facility/search/:
     get:
       responses:
@@ -2448,7 +3344,11 @@ paths:
           description: Success
       operationId: get_facility_search_resource
       tags:
-      - default
+      - Default
+      summary: Get facility search resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/facility/{id_or_slug}/:
     parameters:
     - name: id_or_slug
@@ -2462,7 +3362,11 @@ paths:
           description: Success
       operationId: get_facility_details_by_id_or_slug_resource
       tags:
-      - default
+      - Default
+      summary: Get facility details by id or slug resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/facility/{id}/edit/:
     parameters:
     - name: id
@@ -2476,14 +3380,20 @@ paths:
           description: Success
       operationId: put_facility_edit_resource
       tags:
-      - default
+      - Default
+      summary: Put facility edit resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_facility_edit_resource
       tags:
-      - default
+      - Default
+      summary: Get facility edit resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/accounts/:
     post:
       responses:
@@ -2491,14 +3401,20 @@ paths:
           description: Success
       operationId: post_fx_accounts_list_resource
       tags:
-      - default
+      - Default
+      summary: Post fx accounts list resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_fx_accounts_list_resource
       tags:
-      - default
+      - Default
+      summary: Get fx accounts list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/accounts/{account_id}/candidates-job-posts/:
     parameters:
     - name: account_id
@@ -2514,7 +3430,9 @@ paths:
       description: 'NOTE: the Bill Rate Insight average can contain either arithmetic mean or median'
       operationId: get_candidates_job_posts_list_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/accounts/{account_id}/candidates-job-posts/{id}/:
     parameters:
     - name: account_id
@@ -2533,7 +3451,9 @@ paths:
           description: Success
       operationId: patch_candidates_job_posts_detail_resource
       tags:
-      - default
+      - Default
+      summary: Patch candidates job posts detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
@@ -2542,7 +3462,9 @@ paths:
       description: 'NOTE: the Bill Rate Insight average can contain either arithmetic mean or median'
       operationId: get_candidates_job_posts_detail_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/accounts/{account_id}/users/{id}/:
     parameters:
     - name: account_id
@@ -2561,21 +3483,29 @@ paths:
           description: Success
       operationId: delete_fx_account_users_detail_resource
       tags:
-      - default
+      - Default
+      summary: Delete fx account users detail resource
+      x-summary-source: derived
     put:
       responses:
         '200':
           description: Success
       operationId: put_fx_account_users_detail_resource
       tags:
-      - default
+      - Default
+      summary: Put fx account users detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_fx_account_users_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get fx account users detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/accounts/{id}/:
     parameters:
     - name: id
@@ -2589,14 +3519,20 @@ paths:
           description: Success
       operationId: put_fx_accounts_detail_resource
       tags:
-      - default
+      - Default
+      summary: Put fx accounts detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_fx_accounts_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get fx accounts detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/accounts/{id}/users/:
     parameters:
     - name: id
@@ -2610,14 +3546,20 @@ paths:
           description: Success
       operationId: post_fx_account_users_resource
       tags:
-      - default
+      - Default
+      summary: Post fx account users resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_fx_account_users_resource
       tags:
-      - default
+      - Default
+      summary: Get fx account users resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/candidates/:
     get:
       responses:
@@ -2625,7 +3567,11 @@ paths:
           description: Success
       operationId: get_candidates_list_resource
       tags:
-      - default
+      - Default
+      summary: Get candidates list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/candidates/{id}/:
     parameters:
     - name: id
@@ -2639,7 +3585,11 @@ paths:
           description: Success
       operationId: get_candidates_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get candidates detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/candidates/{id}/offer/:
     parameters:
     - name: id
@@ -2653,14 +3603,20 @@ paths:
           description: Success
       operationId: post_candidates_detail_offer_resource
       tags:
-      - default
+      - Default
+      summary: Post candidates detail offer resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_candidates_detail_offer_resource
       tags:
-      - default
+      - Default
+      summary: Get candidates detail offer resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/users/:
     post:
       responses:
@@ -2668,14 +3624,20 @@ paths:
           description: Success
       operationId: post_fx_users_list_resource
       tags:
-      - default
+      - Default
+      summary: Post fx users list resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_fx_users_list_resource
       tags:
-      - default
+      - Default
+      summary: Get fx users list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/users/me/:
     get:
       responses:
@@ -2683,7 +3645,11 @@ paths:
           description: Success
       operationId: get_fx_users_me_resource
       tags:
-      - default
+      - Default
+      summary: Get fx users me resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/users/{id}/:
     parameters:
     - name: id
@@ -2697,14 +3663,20 @@ paths:
           description: Success
       operationId: put_fx_users_detail_resource
       tags:
-      - default
+      - Default
+      summary: Put fx users detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_fx_users_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get fx users detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/fx/users/{id}/identities/:
     parameters:
     - name: id
@@ -2718,7 +3690,11 @@ paths:
           description: Success
       operationId: post_fx_users_identities_resource
       tags:
-      - default
+      - Default
+      summary: Post fx users identities resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/health-system/search/:
     get:
       responses:
@@ -2726,7 +3702,11 @@ paths:
           description: Success
       operationId: get_health_system_search_resource
       tags:
-      - default
+      - Default
+      summary: Get health system search resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/health-systems-autocomplete:
     get:
       responses:
@@ -2734,16 +3714,20 @@ paths:
           description: Success
       operationId: get_health_system_autocomplete_resource
       tags:
-      - default
+      - Default
+      summary: Get health system autocomplete resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/health-systems/:
     post:
       responses:
         '200':
           description: Success
-      summary: This endpoint will create a new health system and return the newly created entity
+      summary: This endpoint will create a new health system and return the newly created…
       operationId: post_health_system_list
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
@@ -2752,7 +3736,9 @@ paths:
       description: to the given query.
       operationId: get_health_system_list
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/health-systems/{id}/:
     parameters:
     - name: id
@@ -2768,15 +3754,17 @@ paths:
       description: it will return the updated health system.
       operationId: patch_health_system_detail
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
           description: Success
-      summary: This endpoint will get the entire health system object according to the specified id
+      summary: This endpoint will get the entire health system object according to the…
       operationId: get_health_system_detail
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/hellosign/signature-request-events/:
     post:
       responses:
@@ -2784,7 +3772,11 @@ paths:
           description: Success
       operationId: post_hellosign_signature_request_event
       tags:
-      - default
+      - Default
+      summary: Post hellosign signature request event
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/incidents/:
     post:
       responses:
@@ -2793,7 +3785,7 @@ paths:
       summary: Create a new incident
       operationId: post_incidents_list
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
@@ -2801,7 +3793,9 @@ paths:
       summary: List all incidents unless filtered by provided query parameters
       operationId: get_incidents_list
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/incidents/{id}/:
     parameters:
     - name: id
@@ -2816,7 +3810,7 @@ paths:
       summary: Delete an incident
       operationId: delete_incidents_detail
       tags:
-      - default
+      - Default
     patch:
       responses:
         '200':
@@ -2824,7 +3818,7 @@ paths:
       summary: Update given fields and return updated incident
       operationId: patch_incidents_detail
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
@@ -2832,7 +3826,9 @@ paths:
       summary: Details about an incident
       operationId: get_incidents_detail
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/internal/communications/dataclass-schemas/:
     get:
       responses:
@@ -2840,7 +3836,11 @@ paths:
           description: Success
       operationId: get_data_class_list
       tags:
-      - default
+      - Default
+      summary: Get data class list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/internal/communications/dataclass-schemas/{id}/:
     parameters:
     - name: id
@@ -2854,7 +3854,11 @@ paths:
           description: Success
       operationId: get_data_class
       tags:
-      - default
+      - Default
+      summary: Get data class
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/iterable/channel-unsubscribes:
     patch:
       responses:
@@ -2862,7 +3866,11 @@ paths:
           description: Success
       operationId: patch_channel_unsubscribes
       tags:
-      - default
+      - Default
+      summary: Patch channel unsubscribes
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/iterable/datafeed/job-digest/{user_id}:
     parameters:
     - name: user_id
@@ -2876,7 +3884,11 @@ paths:
           description: Success
       operationId: get_job_digest_resource
       tags:
-      - default
+      - Default
+      summary: Get job digest resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/iterable/datafeed/sample/{user_id}:
     parameters:
     - name: user_id
@@ -2890,7 +3902,11 @@ paths:
           description: Success
       operationId: get_iterable_job_digest_api
       tags:
-      - default
+      - Default
+      summary: Get iterable job digest api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/iterable/sms-subscribes:
     patch:
       responses:
@@ -2898,7 +3914,11 @@ paths:
           description: Success
       operationId: patch_sms_channel_subscribes
       tags:
-      - default
+      - Default
+      summary: Patch sms channel subscribes
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/job-commitments/:
     patch:
       responses:
@@ -2906,14 +3926,20 @@ paths:
           description: Success
       operationId: patch_job_commitments_resource
       tags:
-      - default
+      - Default
+      summary: Patch job commitments resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_job_commitments_resource
       tags:
-      - default
+      - Default
+      summary: Get job commitments resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/job-digest-preferences/:
     patch:
       responses:
@@ -2921,14 +3947,20 @@ paths:
           description: Success
       operationId: patch_job_digest_preferences_resource
       tags:
-      - default
+      - Default
+      summary: Patch job digest preferences resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_job_digest_preferences_resource
       tags:
-      - default
+      - Default
+      summary: Get job digest preferences resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/job-pricing/bill-rate-modifiers/{entity_type}/{entity_id}/:
     parameters:
     - name: entity_type
@@ -2947,14 +3979,20 @@ paths:
           description: Success
       operationId: post_job_pricing_detail_resource
       tags:
-      - default
+      - Default
+      summary: Post job pricing detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_job_pricing_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get job pricing detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/job-pricing/jobposts/{entity_type}/{entity_id}/:
     parameters:
     - name: entity_type
@@ -2973,7 +4011,11 @@ paths:
           description: Success
       operationId: get_job_pricing_job_posts_by_entity_resource
       tags:
-      - default
+      - Default
+      summary: Get job pricing job posts by entity resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/job_source/:
     post:
       responses:
@@ -2981,14 +4023,20 @@ paths:
           description: Success
       operationId: post_job_source_resource
       tags:
-      - default
+      - Default
+      summary: Post job source resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_job_source_resource
       tags:
-      - default
+      - Default
+      summary: Get job source resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/job_source/{id}/:
     parameters:
     - name: id
@@ -3002,14 +4050,20 @@ paths:
           description: Success
       operationId: patch_job_source_detail_resource
       tags:
-      - default
+      - Default
+      summary: Patch job source detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_job_source_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get job source detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobpost-searches/current/:
     patch:
       responses:
@@ -3017,7 +4071,11 @@ paths:
           description: Success
       operationId: patch_job_post_search_current_resource
       tags:
-      - default
+      - Default
+      summary: Patch job post search current resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobpost_evaluation/:
     post:
       responses:
@@ -3025,7 +4083,11 @@ paths:
           description: Success
       operationId: post_job_post_evaluation_api
       tags:
-      - default
+      - Default
+      summary: Post job post evaluation api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/categories/:
     get:
       responses:
@@ -3033,7 +4095,11 @@ paths:
           description: Success
       operationId: get_jobpost_search_categories_api
       tags:
-      - default
+      - Default
+      summary: Get jobpost search categories api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/public_jobpost_search/:
     get:
       responses:
@@ -3041,7 +4107,11 @@ paths:
           description: Success
       operationId: get_public_jobpost_search
       tags:
-      - default
+      - Default
+      summary: Get public jobpost search
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/recommendations/admin/job-matches/:
     get:
       responses:
@@ -3049,7 +4119,11 @@ paths:
           description: Success
       operationId: get_admin_job_matches
       tags:
-      - default
+      - Default
+      summary: Get admin job matches
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/recommendations/admin/missing-requirements/:
     get:
       responses:
@@ -3057,7 +4131,11 @@ paths:
           description: Success
       operationId: get_missing_requirements
       tags:
-      - default
+      - Default
+      summary: Get missing requirements
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/recommendations/similar-jobposts/:
     get:
       responses:
@@ -3065,7 +4143,11 @@ paths:
           description: Success
       operationId: get_similar_jobs_resource
       tags:
-      - default
+      - Default
+      summary: Get similar jobs resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/recommendations/top-matches/:
     get:
       responses:
@@ -3073,7 +4155,11 @@ paths:
           description: Success
       operationId: get_top_matches
       tags:
-      - default
+      - Default
+      summary: Get top matches
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/search/:
     get:
       responses:
@@ -3081,7 +4167,11 @@ paths:
           description: Success
       operationId: get_jobposts_search
       tags:
-      - default
+      - Default
+      summary: Get jobposts search
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/{id}/job-details-extractions/:
     parameters:
     - name: id
@@ -3095,7 +4185,11 @@ paths:
           description: Success
       operationId: get_job_details_extraction_list_resource
       tags:
-      - default
+      - Default
+      summary: Get job details extraction list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/{id}/jobrobotix-history/:
     parameters:
     - name: id
@@ -3109,7 +4203,11 @@ paths:
           description: Success
       operationId: get_job_robotix_history_list
       tags:
-      - default
+      - Default
+      summary: Get job robotix history list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/{jobpost_id}/claim:
     parameters:
     - name: jobpost_id
@@ -3123,7 +4221,11 @@ paths:
           description: Success
       operationId: post_job_post_claim_resource
       tags:
-      - default
+      - Default
+      summary: Post job post claim resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/{jobpost_id}/requirements/:
     parameters:
     - name: jobpost_id
@@ -3137,7 +4239,11 @@ paths:
           description: Success
       operationId: get_job_post_requirements_api
       tags:
-      - default
+      - Default
+      summary: Get job post requirements api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/jobposts/{jobpost_id}/unclaim:
     parameters:
     - name: jobpost_id
@@ -3151,7 +4257,11 @@ paths:
           description: Success
       operationId: post_job_post_unclaim_resource
       tags:
-      - default
+      - Default
+      summary: Post job post unclaim resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/lead/:
     post:
       responses:
@@ -3159,14 +4269,20 @@ paths:
           description: Success
       operationId: post_lead_resource
       tags:
-      - default
+      - Default
+      summary: Post lead resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_lead_resource
       tags:
-      - default
+      - Default
+      summary: Get lead resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/license-checks/:
     get:
       responses:
@@ -3174,7 +4290,11 @@ paths:
           description: Success
       operationId: get_license_checks_list
       tags:
-      - default
+      - Default
+      summary: Get license checks list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/license-checks/provider/{provider_id}/:
     parameters:
     - name: provider_id
@@ -3188,7 +4308,11 @@ paths:
           description: Success
       operationId: get_license_checks_summary_by_provider
       tags:
-      - default
+      - Default
+      summary: Get license checks summary by provider
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/license-checks/refresh/:
     put:
       responses:
@@ -3196,7 +4320,11 @@ paths:
           description: Success
       operationId: put_license_checks_refresh
       tags:
-      - default
+      - Default
+      summary: Put license checks refresh
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/license-checks/{id}/:
     parameters:
     - name: id
@@ -3210,7 +4338,11 @@ paths:
           description: Success
       operationId: get_license_checks_detail
       tags:
-      - default
+      - Default
+      summary: Get license checks detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/license-checks/{output_type}/{provider_id}/:
     parameters:
     - name: output_type
@@ -3229,7 +4361,11 @@ paths:
           description: Success
       operationId: get_license_checks_report
       tags:
-      - default
+      - Default
+      summary: Get license checks report
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/location/location_autocomplete:
     get:
       responses:
@@ -3237,7 +4373,11 @@ paths:
           description: Success
       operationId: get_location_autocomplete
       tags:
-      - default
+      - Default
+      summary: Get location autocomplete
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/location/place_details:
     get:
       responses:
@@ -3245,7 +4385,11 @@ paths:
           description: Success
       operationId: get_place_details
       tags:
-      - default
+      - Default
+      summary: Get place details
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/marketing-tags:
     get:
       responses:
@@ -3253,7 +4397,11 @@ paths:
           description: Success
       operationId: get_marketing_tags_api
       tags:
-      - default
+      - Default
+      summary: Get marketing tags api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/merge-facilities/{id}/:
     parameters:
     - name: id
@@ -3267,14 +4415,20 @@ paths:
           description: Success
       operationId: post_merge_facilities
       tags:
-      - default
+      - Default
+      summary: Post merge facilities
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_merge_facilities
       tags:
-      - default
+      - Default
+      summary: Get merge facilities
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/merge-facilities/{id}/preview/:
     parameters:
     - name: id
@@ -3288,7 +4442,11 @@ paths:
           description: Success
       operationId: post_merge_facilities_preview
       tags:
-      - default
+      - Default
+      summary: Post merge facilities preview
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/messages/:
     post:
       responses:
@@ -3296,7 +4454,11 @@ paths:
           description: Success
       operationId: post_messages
       tags:
-      - default
+      - Default
+      summary: Post messages
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/messages/by-thread/:
     get:
       responses:
@@ -3304,7 +4466,11 @@ paths:
           description: Success
       operationId: get_messages_by_thread
       tags:
-      - default
+      - Default
+      summary: Get messages by thread
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/messages/documents/:
     post:
       responses:
@@ -3312,7 +4478,11 @@ paths:
           description: Success
       operationId: post_messages_documents
       tags:
-      - default
+      - Default
+      summary: Post messages documents
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/messages/parent-thread-info/:
     get:
       responses:
@@ -3320,7 +4490,11 @@ paths:
           description: Success
       operationId: get_parent_thread_info
       tags:
-      - default
+      - Default
+      summary: Get parent thread info
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/messages/thread-documents/:
     get:
       responses:
@@ -3328,7 +4502,11 @@ paths:
           description: Success
       operationId: get_thread_documents
       tags:
-      - default
+      - Default
+      summary: Get thread documents
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/native-app/minimum-version/:
     get:
       responses:
@@ -3336,7 +4514,11 @@ paths:
           description: Success
       operationId: get_native_app_minimum_version_resource
       tags:
-      - default
+      - Default
+      summary: Get native app minimum version resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/notification-center/:
     get:
       responses:
@@ -3344,7 +4526,11 @@ paths:
           description: Success
       operationId: get_notification_center
       tags:
-      - default
+      - Default
+      summary: Get notification center
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/notification-center/archive/:
     post:
       responses:
@@ -3352,7 +4538,11 @@ paths:
           description: Success
       operationId: post_notification_center_archive
       tags:
-      - default
+      - Default
+      summary: Post notification center archive
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/notification-center/update-read/:
     post:
       responses:
@@ -3360,7 +4550,11 @@ paths:
           description: Success
       operationId: post_mark_read_unread
       tags:
-      - default
+      - Default
+      summary: Post mark read unread
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/nurse-facility-autocomplete/:
     get:
       responses:
@@ -3369,7 +4563,9 @@ paths:
       summary: Atlas Search API for autocomplete suggestions on Nurse Facility collection
       operationId: get_nurse_facility_autocomplete_resource
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/offers/calculate_rates/{job_id}:
     parameters:
     - name: job_id
@@ -3383,14 +4579,20 @@ paths:
           description: Success
       operationId: post_calculate_pay_rate
       tags:
-      - default
+      - Default
+      summary: Post calculate pay rate
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_calculate_pay_rate
       tags:
-      - default
+      - Default
+      summary: Get calculate pay rate
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/offers/{offer_id}/agreements:
     parameters:
     - name: offer_id
@@ -3404,14 +4606,20 @@ paths:
           description: Success
       operationId: post_offer_agreements_resource
       tags:
-      - default
+      - Default
+      summary: Post offer agreements resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_offer_agreements_resource
       tags:
-      - default
+      - Default
+      summary: Get offer agreements resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/offers/{offer_id}/agreements/upload:
     parameters:
     - name: offer_id
@@ -3425,7 +4633,11 @@ paths:
           description: Success
       operationId: post_custom_agreement_upload_resource
       tags:
-      - default
+      - Default
+      summary: Post custom agreement upload resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/onboarding/completed/:
     post:
       responses:
@@ -3433,7 +4645,11 @@ paths:
           description: Success
       operationId: post_onboarding_completed_resource
       tags:
-      - default
+      - Default
+      summary: Post onboarding completed resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/onboarding/credentials/:
     post:
       responses:
@@ -3441,7 +4657,11 @@ paths:
           description: Success
       operationId: post_credentials_resource
       tags:
-      - default
+      - Default
+      summary: Post credentials resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/onboarding/metadata/:
     post:
       responses:
@@ -3449,14 +4669,20 @@ paths:
           description: Success
       operationId: post_onboarding_metadata_resource
       tags:
-      - default
+      - Default
+      summary: Post onboarding metadata resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_onboarding_metadata_resource
       tags:
-      - default
+      - Default
+      summary: Get onboarding metadata resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/one-click-apply/carousel/:
     get:
       responses:
@@ -3464,7 +4690,11 @@ paths:
           description: Success
       operationId: get_one_click_apply_carousel_api
       tags:
-      - default
+      - Default
+      summary: Get one click apply carousel api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/openapi/:
     get:
       responses:
@@ -3472,7 +4702,11 @@ paths:
           description: Success
       operationId: get_open_api
       tags:
-      - default
+      - Default
+      summary: Get open api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/packet/admin-cover-sheet-reply/:
     post:
       responses:
@@ -3480,14 +4714,20 @@ paths:
           description: Success
       operationId: post_admin_packet_cover_sheet_reply_resource
       tags:
-      - default
+      - Default
+      summary: Post admin packet cover sheet reply resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_admin_packet_cover_sheet_reply_resource
       tags:
-      - default
+      - Default
+      summary: Get admin packet cover sheet reply resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/packet/cover-sheet-form-choices/:
     get:
       responses:
@@ -3495,7 +4735,11 @@ paths:
           description: Success
       operationId: get_packet_cover_sheet_form_choices_resource
       tags:
-      - default
+      - Default
+      summary: Get packet cover sheet form choices resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/packet/cover-sheet-forms/:
     post:
       responses:
@@ -3503,14 +4747,20 @@ paths:
           description: Success
       operationId: post_packet_cover_sheet_forms_list_resource
       tags:
-      - default
+      - Default
+      summary: Post packet cover sheet forms list resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_packet_cover_sheet_forms_list_resource
       tags:
-      - default
+      - Default
+      summary: Get packet cover sheet forms list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/packet/cover-sheet-forms/{id}/:
     parameters:
     - name: id
@@ -3524,14 +4774,20 @@ paths:
           description: Success
       operationId: put_packet_cover_sheet_forms_detail_resource
       tags:
-      - default
+      - Default
+      summary: Put packet cover sheet forms detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_packet_cover_sheet_forms_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get packet cover sheet forms detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/packet/cover-sheet-reply/:
     post:
       responses:
@@ -3539,14 +4795,20 @@ paths:
           description: Success
       operationId: post_packet_cover_sheet_reply_resource
       tags:
-      - default
+      - Default
+      summary: Post packet cover sheet reply resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_packet_cover_sheet_reply_resource
       tags:
-      - default
+      - Default
+      summary: Get packet cover sheet reply resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/placement-assignee/{id}/:
     parameters:
     - name: id
@@ -3560,7 +4822,11 @@ paths:
           description: Success
       operationId: get_placement_assignee
       tags:
-      - default
+      - Default
+      summary: Get placement assignee
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/placement-workflow-definitions/:
     get:
       responses:
@@ -3568,7 +4834,11 @@ paths:
           description: Success
       operationId: get_placement_workflow_definition_list
       tags:
-      - default
+      - Default
+      summary: Get placement workflow definition list
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/placement-workflow-definitions/{id}/:
     parameters:
     - name: id
@@ -3582,7 +4852,11 @@ paths:
           description: Success
       operationId: get_placement_workflow_definition_detail
       tags:
-      - default
+      - Default
+      summary: Get placement workflow definition detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/placement-workflows/{id}/:
     parameters:
     - name: id
@@ -3596,14 +4870,20 @@ paths:
           description: Success
       operationId: put_placement_workflow_detail
       tags:
-      - default
+      - Default
+      summary: Put placement workflow detail
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_placement_workflow_detail
       tags:
-      - default
+      - Default
+      summary: Get placement workflow detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/placements/:
     post:
       responses:
@@ -3611,22 +4891,28 @@ paths:
           description: Success
       operationId: post_placement_list
       tags:
-      - default
+      - Default
+      summary: Post placement list
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_placement_list
       tags:
-      - default
+      - Default
+      summary: Patch placement list
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
-      summary: This endpoint will return all of the matching placements according to the given query
+      summary: This endpoint will return all of the matching placements according to the given…
       operationId: get_placement_list
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/placements/{id}/:
     parameters:
     - name: id
@@ -3638,11 +4924,11 @@ paths:
       responses:
         '200':
           description: Success
-      summary: This endpoint will update the given fields on the placement entity, it will return the
+      summary: This endpoint will update the given fields on the placement entity, it will…
       description: updated placement.
       operationId: patch_placement_detail
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
@@ -3650,7 +4936,9 @@ paths:
       summary: This endpoint will get the entire placement object according to the specified id
       operationId: get_placement_detail
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/placements/{placement_id}/current_state/:
     parameters:
     - name: placement_id
@@ -3664,7 +4952,11 @@ paths:
           description: Success
       operationId: get_admin_orchestration_current_state_resource
       tags:
-      - default
+      - Default
+      summary: Get admin orchestration current state resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/placements/{placement_id}/orchestration_state/:
     parameters:
     - name: placement_id
@@ -3678,7 +4970,11 @@ paths:
           description: Success
       operationId: post_admin_orchestration_next_state_resource
       tags:
-      - default
+      - Default
+      summary: Post admin orchestration next state resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/profile_evaluation/:
     post:
       responses:
@@ -3686,7 +4982,11 @@ paths:
           description: Success
       operationId: post_profile_evaluation_api
       tags:
-      - default
+      - Default
+      summary: Post profile evaluation api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/progressive-profiling/:
     get:
       responses:
@@ -3694,7 +4994,11 @@ paths:
           description: Success
       operationId: get_progressive_profiling_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get progressive profiling detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-activity/{provider_id}/:
     parameters:
     - name: provider_id
@@ -3708,7 +5012,11 @@ paths:
           description: Success
       operationId: get_provider_activity_resource
       tags:
-      - default
+      - Default
+      summary: Get provider activity resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-bookmarks/{id}/:
     parameters:
     - name: id
@@ -3722,30 +5030,40 @@ paths:
           description: Success
       operationId: put_provider_bookmarks_detail
       tags:
-      - default
+      - Default
+      summary: Put provider bookmarks detail
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_provider_bookmarks_detail
       tags:
-      - default
+      - Default
+      summary: Patch provider bookmarks detail
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_provider_bookmarks_detail
       tags:
-      - default
+      - Default
+      summary: Get provider bookmarks detail
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-facility-autocomplete/:
     get:
       responses:
         '200':
           description: Success
-      summary: ES-powered API for autocomplete suggestions generated from the facility collection
+      summary: ES-powered API for autocomplete suggestions generated from the facility…
       operationId: get_provider_facility_autocomplete
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-sizzle-agent/:
     post:
       responses:
@@ -3753,7 +5071,11 @@ paths:
           description: Success
       operationId: post_provider_sizzle_agent_post_resource
       tags:
-      - default
+      - Default
+      summary: Post provider sizzle agent post resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-sizzle-agent/{id}/:
     parameters:
     - name: id
@@ -3767,7 +5089,11 @@ paths:
           description: Success
       operationId: get_provider_sizzle_agent_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get provider sizzle agent detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-sizzle/{provider_id}/:
     parameters:
     - name: provider_id
@@ -3781,7 +5107,11 @@ paths:
           description: Success
       operationId: get_provider_sizzle_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get provider sizzle detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-sizzle/{provider_id}/approve/:
     parameters:
     - name: provider_id
@@ -3795,7 +5125,11 @@ paths:
           description: Success
       operationId: post_provider_sizzle_approve_resource
       tags:
-      - default
+      - Default
+      summary: Post provider sizzle approve resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-sizzle/{provider_id}/edit/:
     parameters:
     - name: provider_id
@@ -3809,7 +5143,11 @@ paths:
           description: Success
       operationId: post_provider_sizzle_edit_resource
       tags:
-      - default
+      - Default
+      summary: Post provider sizzle edit resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider-sizzle/{provider_id}/reject/:
     parameters:
     - name: provider_id
@@ -3823,7 +5161,11 @@ paths:
           description: Success
       operationId: post_provider_sizzle_reject_resource
       tags:
-      - default
+      - Default
+      summary: Post provider sizzle reject resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider/{id}/:
     parameters:
     - name: id
@@ -3837,14 +5179,20 @@ paths:
           description: Success
       operationId: patch_provider_resource
       tags:
-      - default
+      - Default
+      summary: Patch provider resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_provider_resource
       tags:
-      - default
+      - Default
+      summary: Get provider resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider/{id}/notes/:
     parameters:
     - name: id
@@ -3858,7 +5206,11 @@ paths:
           description: Success
       operationId: post_provider_notes_resource
       tags:
-      - default
+      - Default
+      summary: Post provider notes resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/provider/{id}/notes/{note_id}/:
     parameters:
     - name: id
@@ -3877,14 +5229,20 @@ paths:
           description: Success
       operationId: delete_provider_note_detail_resource
       tags:
-      - default
+      - Default
+      summary: Delete provider note detail resource
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_provider_note_detail_resource
       tags:
-      - default
+      - Default
+      summary: Patch provider note detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/public/reference_form/:
     get:
       responses:
@@ -3892,7 +5250,11 @@ paths:
           description: Success
       operationId: get_public_reference_form_resource
       tags:
-      - default
+      - Default
+      summary: Get public reference form resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/qualification/jobpost/{jobpost_id}/:
     parameters:
     - name: jobpost_id
@@ -3906,7 +5268,11 @@ paths:
           description: Success
       operationId: get_qualified_providers_resource
       tags:
-      - default
+      - Default
+      summary: Get qualified providers resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/qualification/provider/{provider_id}/:
     parameters:
     - name: provider_id
@@ -3920,7 +5286,11 @@ paths:
           description: Success
       operationId: get_qualified_jobposts_resource
       tags:
-      - default
+      - Default
+      summary: Get qualified jobposts resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/qualification/state/jobpost/{jobpost_id}/:
     parameters:
     - name: jobpost_id
@@ -3934,7 +5304,11 @@ paths:
           description: Success
       operationId: get_qualification_state_summary_resource
       tags:
-      - default
+      - Default
+      summary: Get qualification state summary resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/quick-apply/application/{application_id}/:
     parameters:
     - name: application_id
@@ -3948,7 +5322,11 @@ paths:
           description: Success
       operationId: get_quick_apply_application_resource
       tags:
-      - default
+      - Default
+      summary: Get quick apply application resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/quick-apply/application/{application_id}/resume/:
     parameters:
     - name: application_id
@@ -3962,7 +5340,11 @@ paths:
           description: Success
       operationId: get_quick_apply_application_resume_resource
       tags:
-      - default
+      - Default
+      summary: Get quick apply application resume resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/quick-apply/applications/:
     post:
       responses:
@@ -3970,14 +5352,20 @@ paths:
           description: Success
       operationId: post_quick_apply_applications_resource
       tags:
-      - default
+      - Default
+      summary: Post quick apply applications resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_quick_apply_applications_resource
       tags:
-      - default
+      - Default
+      summary: Get quick apply applications resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/recommendation/provider/:
     post:
       responses:
@@ -3985,7 +5373,11 @@ paths:
           description: Success
       operationId: post_job_recommendations_resource
       tags:
-      - default
+      - Default
+      summary: Post job recommendations resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/referrals/campaigns/active/:
     get:
       responses:
@@ -3993,7 +5385,11 @@ paths:
           description: Success
       operationId: get_referral_campaign_api
       tags:
-      - default
+      - Default
+      summary: Get referral campaign api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/referrals/invite/:
     post:
       responses:
@@ -4001,7 +5397,11 @@ paths:
           description: Success
       operationId: post_referrals_referral_invite_resource
       tags:
-      - default
+      - Default
+      summary: Post referrals referral invite resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/referrals/referral-url/:
     get:
       responses:
@@ -4009,7 +5409,11 @@ paths:
           description: Success
       operationId: get_referrals_referral_url_resource
       tags:
-      - default
+      - Default
+      summary: Get referrals referral url resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/referrals/referred-users/:
     get:
       responses:
@@ -4017,7 +5421,11 @@ paths:
           description: Success
       operationId: get_referrals_referred_users_resource
       tags:
-      - default
+      - Default
+      summary: Get referrals referred users resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/referrals/user/{user_id}/referral/:
     parameters:
     - name: user_id
@@ -4031,7 +5439,11 @@ paths:
           description: Success
       operationId: get_referrals_referral_details_by_user_resource
       tags:
-      - default
+      - Default
+      summary: Get referrals referral details by user resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/referrals/validate-code/:
     post:
       responses:
@@ -4039,7 +5451,11 @@ paths:
           description: Success
       operationId: post_referrals_validate_code_resource
       tags:
-      - default
+      - Default
+      summary: Post referrals validate code resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/reset-password/:
     post:
       responses:
@@ -4047,7 +5463,11 @@ paths:
           description: Success
       operationId: post_reset_password
       tags:
-      - default
+      - Default
+      summary: Post reset password
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/reset-password/check/:
     post:
       responses:
@@ -4055,7 +5475,11 @@ paths:
           description: Success
       operationId: post_reset_password_check_resource
       tags:
-      - default
+      - Default
+      summary: Post reset password check resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/reset-password/update-password/:
     post:
       responses:
@@ -4063,7 +5487,11 @@ paths:
           description: Success
       operationId: post_reset_password_update_password_resource
       tags:
-      - default
+      - Default
+      summary: Post reset password update password resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rule-parameters/hierarchy/job_post/{id}/:
     parameters:
     - name: id
@@ -4077,7 +5505,11 @@ paths:
           description: Success
       operationId: get_rule_parameters_hierarchy_resource
       tags:
-      - default
+      - Default
+      summary: Get rule parameters hierarchy resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rule-parameters/{entity_type}/{id}/:
     parameters:
     - name: entity_type
@@ -4096,14 +5528,20 @@ paths:
           description: Success
       operationId: put_rule_parameters_resource
       tags:
-      - default
+      - Default
+      summary: Put rule parameters resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_rule_parameters_resource
       tags:
-      - default
+      - Default
+      summary: Get rule parameters resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rules-engine-admin/config_values/{entity_type}/{entity_id}/:
     parameters:
     - name: entity_type
@@ -4122,7 +5560,11 @@ paths:
           description: Success
       operationId: get_rules_engine_admin_entity_config_values_list_resource
       tags:
-      - default
+      - Default
+      summary: Get rules engine admin entity config values list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rules-engine-admin/config_values/{entity_type}/{entity_id}/{config_name}/:
     parameters:
     - name: entity_type
@@ -4146,21 +5588,29 @@ paths:
           description: Success
       operationId: delete_rules_engine_admin_entity_config_value_resource
       tags:
-      - default
+      - Default
+      summary: Delete rules engine admin entity config value resource
+      x-summary-source: derived
     put:
       responses:
         '200':
           description: Success
       operationId: put_rules_engine_admin_entity_config_value_resource
       tags:
-      - default
+      - Default
+      summary: Put rules engine admin entity config value resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_rules_engine_admin_entity_config_value_resource
       tags:
-      - default
+      - Default
+      summary: Get rules engine admin entity config value resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rules-engine-admin/configs/:
     get:
       responses:
@@ -4168,7 +5618,11 @@ paths:
           description: Success
       operationId: get_rules_engine_admin_configs_list_resource
       tags:
-      - default
+      - Default
+      summary: Get rules engine admin configs list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rules-engine-admin/forms/rule-instances/{entity_type}/{entity_id}/:
     parameters:
     - name: entity_type
@@ -4187,14 +5641,20 @@ paths:
           description: Success
       operationId: post_rules_engine_admin_forms_rule_instance_list_resource
       tags:
-      - default
+      - Default
+      summary: Post rules engine admin forms rule instance list resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_rules_engine_admin_forms_rule_instance_list_resource
       tags:
-      - default
+      - Default
+      summary: Get rules engine admin forms rule instance list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rules-engine-admin/forms/rule-instances/{entity_type}/{entity_id}/{rule_instance_id}/:
     parameters:
     - name: entity_type
@@ -4218,14 +5678,20 @@ paths:
           description: Success
       operationId: delete_rules_engine_admin_forms_rule_instance_detail_resource
       tags:
-      - default
+      - Default
+      summary: Delete rules engine admin forms rule instance detail resource
+      x-summary-source: derived
     put:
       responses:
         '200':
           description: Success
       operationId: put_rules_engine_admin_forms_rule_instance_detail_resource
       tags:
-      - default
+      - Default
+      summary: Put rules engine admin forms rule instance detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rules-engine-admin/forms/rules/:
     get:
       responses:
@@ -4233,7 +5699,11 @@ paths:
           description: Success
       operationId: get_rules_engine_admin_forms_rules_list_resource
       tags:
-      - default
+      - Default
+      summary: Get rules engine admin forms rules list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rules-engine-admin/rules/:
     get:
       responses:
@@ -4241,7 +5711,11 @@ paths:
           description: Success
       operationId: get_rules_engine_admin_rules_list_resource
       tags:
-      - default
+      - Default
+      summary: Get rules engine admin rules list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/rules-engine/jobpost-rules-resolution-preview/:
     post:
       responses:
@@ -4249,7 +5723,11 @@ paths:
           description: Success
       operationId: post_jobpost_rules_resolution_preview_resource
       tags:
-      - default
+      - Default
+      summary: Post jobpost rules resolution preview resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/sar-debug-tool/recommendations/:
     get:
       responses:
@@ -4257,7 +5735,11 @@ paths:
           description: Success
       operationId: get_sar_debug_tool_recommendations
       tags:
-      - default
+      - Default
+      summary: Get sar debug tool recommendations
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/saved-admin-view/:
     post:
       responses:
@@ -4265,14 +5747,20 @@ paths:
           description: Success
       operationId: post_saved_admin_view_list_resource
       tags:
-      - default
+      - Default
+      summary: Post saved admin view list resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_saved_admin_view_list_resource
       tags:
-      - default
+      - Default
+      summary: Get saved admin view list resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/saved-admin-view/{id}/:
     parameters:
     - name: id
@@ -4286,21 +5774,29 @@ paths:
           description: Success
       operationId: delete_saved_admin_view_detail_resource
       tags:
-      - default
+      - Default
+      summary: Delete saved admin view detail resource
+      x-summary-source: derived
     put:
       responses:
         '200':
           description: Success
       operationId: put_saved_admin_view_detail_resource
       tags:
-      - default
+      - Default
+      summary: Put saved admin view detail resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_saved_admin_view_detail_resource
       tags:
-      - default
+      - Default
+      summary: Get saved admin view detail resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/saved-search:
     post:
       responses:
@@ -4308,21 +5804,29 @@ paths:
           description: Success
       operationId: post_saved_search_api
       tags:
-      - default
+      - Default
+      summary: Post saved search api
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_saved_search_api
       tags:
-      - default
+      - Default
+      summary: Patch saved search api
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_saved_search_api
       tags:
-      - default
+      - Default
+      summary: Get saved search api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/saved-search/delete:
     post:
       responses:
@@ -4330,7 +5834,11 @@ paths:
           description: Success
       operationId: post_saved_search_delete_api
       tags:
-      - default
+      - Default
+      summary: Post saved search delete api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/sendgrid/premier-navigator/inbound-email/:
     post:
       responses:
@@ -4338,7 +5846,11 @@ paths:
           description: Success
       operationId: post_pn_inbound_email
       tags:
-      - default
+      - Default
+      summary: Post pn inbound email
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/shift-mappings/:
     post:
       responses:
@@ -4348,7 +5860,7 @@ paths:
       description: it will return the created shift mapping.
       operationId: post_shift_mapping_list
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
@@ -4357,7 +5869,9 @@ paths:
       description: to the given query.
       operationId: get_shift_mapping_list
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/shift-mappings/{id}/:
     parameters:
     - name: id
@@ -4372,7 +5886,7 @@ paths:
       summary: Delete a shift mapping
       operationId: delete_shift_mapping_detail
       tags:
-      - default
+      - Default
     patch:
       responses:
         '200':
@@ -4381,15 +5895,17 @@ paths:
       description: it will return the updated shift mapping.
       operationId: patch_shift_mapping_detail
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
           description: Success
-      summary: This endpoint will get the entire shift mapping object according to the specified id
+      summary: This endpoint will get the entire shift mapping object according to the…
       operationId: get_shift_mapping_detail
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/sitemap/jobs/chunk/:
     get:
       responses:
@@ -4397,7 +5913,11 @@ paths:
           description: Success
       operationId: get_sitemap_job_chunk
       tags:
-      - default
+      - Default
+      summary: Get sitemap job chunk
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/sitemap/jobs/chunk_count/:
     get:
       responses:
@@ -4405,7 +5925,11 @@ paths:
           description: Success
       operationId: get_sitemap_job_chunk_count
       tags:
-      - default
+      - Default
+      summary: Get sitemap job chunk count
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/specializations/name/:
     get:
       responses:
@@ -4413,7 +5937,11 @@ paths:
           description: Success
       operationId: get_specializations_name_resource
       tags:
-      - default
+      - Default
+      summary: Get specializations name resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/timecard/manual-upload/:
     post:
       responses:
@@ -4421,7 +5949,11 @@ paths:
           description: Success
       operationId: post_timecard_manual_upload_api_resource
       tags:
-      - default
+      - Default
+      summary: Post timecard manual upload api resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/toa/placements/:
     get:
       responses:
@@ -4429,7 +5961,11 @@ paths:
           description: Success
       operationId: get_placements_toa
       tags:
-      - default
+      - Default
+      summary: Get placements toa
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/delivery-status-events/:
     post:
       responses:
@@ -4437,7 +5973,11 @@ paths:
           description: Success
       operationId: post_twilio_delivery_status_events
       tags:
-      - default
+      - Default
+      summary: Post twilio delivery status events
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/incoming-message-events/:
     post:
       responses:
@@ -4445,7 +5985,11 @@ paths:
           description: Success
       operationId: post_twilio_incoming_message_events
       tags:
-      - default
+      - Default
+      summary: Post twilio incoming message events
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/delivery-status-events/:
     post:
       responses:
@@ -4453,7 +5997,11 @@ paths:
           description: Success
       operationId: post_pn_delivery_status_events
       tags:
-      - default
+      - Default
+      summary: Post pn delivery status events
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/incoming-message-events/:
     post:
       responses:
@@ -4461,7 +6009,11 @@ paths:
           description: Success
       operationId: post_pn_incoming_message_events
       tags:
-      - default
+      - Default
+      summary: Post pn incoming message events
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/incoming-voice-call/:
     post:
       responses:
@@ -4469,7 +6021,11 @@ paths:
           description: Success
       operationId: post_pn_voice_call_resource
       tags:
-      - default
+      - Default
+      summary: Post pn voice call resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/incoming-voice-navigator-answer/:
     post:
       responses:
@@ -4477,7 +6033,11 @@ paths:
           description: Success
       operationId: post_pn_incoming_voice_navigator_answer
       tags:
-      - default
+      - Default
+      summary: Post pn incoming voice navigator answer
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/outbound-voice-dial/:
     post:
       responses:
@@ -4485,7 +6045,11 @@ paths:
           description: Success
       operationId: post_pn_outbound_voice_dial
       tags:
-      - default
+      - Default
+      summary: Post pn outbound voice dial
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/outbound-voice-hold/:
     post:
       responses:
@@ -4493,7 +6057,11 @@ paths:
           description: Success
       operationId: post_pn_outbound_voice_hold
       tags:
-      - default
+      - Default
+      summary: Post pn outbound voice hold
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/outbound-voice-provider-answer/:
     post:
       responses:
@@ -4501,7 +6069,11 @@ paths:
           description: Success
       operationId: post_pn_outbound_voice_provider_answer
       tags:
-      - default
+      - Default
+      summary: Post pn outbound voice provider answer
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/voice-amd-status-callback/:
     post:
       responses:
@@ -4509,7 +6081,11 @@ paths:
           description: Success
       operationId: post_pn_voice_amd_status_callback
       tags:
-      - default
+      - Default
+      summary: Post pn voice amd status callback
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/voice-auth/:
     get:
       responses:
@@ -4517,7 +6093,11 @@ paths:
           description: Success
       operationId: get_twilio_premier_navigator_voice_auth_resource
       tags:
-      - default
+      - Default
+      summary: Get twilio premier navigator voice auth resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/voice-call/:
     post:
       responses:
@@ -4525,7 +6105,11 @@ paths:
           description: Success
       operationId: post_pn_voice_call_resource
       tags:
-      - default
+      - Default
+      summary: Post pn voice call resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/voice-dial-action/:
     post:
       responses:
@@ -4533,7 +6117,11 @@ paths:
           description: Success
       operationId: post_pn_voice_dial_action
       tags:
-      - default
+      - Default
+      summary: Post pn voice dial action
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/voice-intelligence-transcript-webhook/:
     post:
       responses:
@@ -4541,7 +6129,11 @@ paths:
           description: Success
       operationId: post_pn_voice_intelligence_transcript_webhook
       tags:
-      - default
+      - Default
+      summary: Post pn voice intelligence transcript webhook
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/voice-recording-status-callback/:
     post:
       responses:
@@ -4549,7 +6141,11 @@ paths:
           description: Success
       operationId: post_pn_voice_recording_status_callback
       tags:
-      - default
+      - Default
+      summary: Post pn voice recording status callback
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/voice-status-callback/:
     post:
       responses:
@@ -4557,7 +6153,11 @@ paths:
           description: Success
       operationId: post_pn_voice_status_callback
       tags:
-      - default
+      - Default
+      summary: Post pn voice status callback
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/update-qualifications/compliance-prereqs/:
     post:
       responses:
@@ -4565,7 +6165,11 @@ paths:
           description: Success
       operationId: post_update_qualifications_compliance_prereqs
       tags:
-      - default
+      - Default
+      summary: Post update qualifications compliance prereqs
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/us/states/:
     get:
       responses:
@@ -4573,7 +6177,11 @@ paths:
           description: Success
       operationId: get_us_states
       tags:
-      - default
+      - Default
+      summary: Get us states
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/user_assessment/pdf/{user_assessment_id}/:
     parameters:
     - name: user_assessment_id
@@ -4587,7 +6195,11 @@ paths:
           description: Success
       operationId: post_assessments_document_api
       tags:
-      - default
+      - Default
+      summary: Post assessments document api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/user_assessment/{assessment_id}/:
     parameters:
     - name: assessment_id
@@ -4601,14 +6213,18 @@ paths:
           description: Success
       operationId: post_assessment_api
       tags:
-      - default
+      - Default
+      summary: Post assessment api
+      x-summary-source: derived
     patch:
       responses:
         '200':
           description: Success
       operationId: patch_assessment_api
       tags:
-      - default
+      - Default
+      summary: Patch assessment api
+      x-summary-source: derived
     get:
       responses:
         '200':
@@ -4616,7 +6232,9 @@ paths:
       summary: API for GET an assessment and user_assessments for provider
       operationId: get_assessment_api
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/:
     post:
       responses:
@@ -4624,7 +6242,11 @@ paths:
           description: Success
       operationId: post_users_resource
       tags:
-      - default
+      - Default
+      summary: Post users resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/account-settings:
     patch:
       responses:
@@ -4632,7 +6254,11 @@ paths:
           description: Success
       operationId: patch_user_account_settings_api
       tags:
-      - default
+      - Default
+      summary: Patch user account settings api
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/application-autopilot:
     patch:
       responses:
@@ -4640,14 +6266,20 @@ paths:
           description: Success
       operationId: patch_application_autopilot_users_self_resource
       tags:
-      - default
+      - Default
+      summary: Patch application autopilot users self resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_application_autopilot_users_self_resource
       tags:
-      - default
+      - Default
+      summary: Get application autopilot users self resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/application-autopilot/{jobpost_id}:
     parameters:
     - name: jobpost_id
@@ -4661,14 +6293,20 @@ paths:
           description: Success
       operationId: patch_application_autopilot_users_self_app_confirmation_resource
       tags:
-      - default
+      - Default
+      summary: Patch application autopilot users self app confirmation resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_application_autopilot_users_self_app_confirmation_resource
       tags:
-      - default
+      - Default
+      summary: Get application autopilot users self app confirmation resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/deactivate/:
     put:
       responses:
@@ -4676,7 +6314,11 @@ paths:
           description: Success
       operationId: put_users_deactivate_resource
       tags:
-      - default
+      - Default
+      summary: Put users deactivate resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/identities/:
     get:
       responses:
@@ -4684,7 +6326,11 @@ paths:
           description: Success
       operationId: get_user_identities_resource
       tags:
-      - default
+      - Default
+      summary: Get user identities resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/incomplete/:
     put:
       responses:
@@ -4692,14 +6338,20 @@ paths:
           description: Success
       operationId: put_incomplete_user_resource
       tags:
-      - default
+      - Default
+      summary: Put incomplete user resource
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_incomplete_user_resource
       tags:
-      - default
+      - Default
+      summary: Get incomplete user resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/last-known-location/:
     patch:
       responses:
@@ -4707,7 +6359,11 @@ paths:
           description: Success
       operationId: patch_user_location_resource
       tags:
-      - default
+      - Default
+      summary: Patch user location resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/me/:
     get:
       responses:
@@ -4715,7 +6371,11 @@ paths:
           description: Success
       operationId: get_users_self_resource
       tags:
-      - default
+      - Default
+      summary: Get users self resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/promotional-sms-consent/:
     post:
       responses:
@@ -4725,14 +6385,18 @@ paths:
       description: job_alert.
       operationId: post_user_promotional_sms_consent_settings
       tags:
-      - default
+      - Default
     get:
       responses:
         '200':
           description: Success
       operationId: get_user_promotional_sms_consent_settings
       tags:
-      - default
+      - Default
+      summary: Get user promotional sms consent settings
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/search-status-expiration/:
     get:
       responses:
@@ -4740,7 +6404,11 @@ paths:
           description: Success
       operationId: get_user_search_status_expiration_resource
       tags:
-      - default
+      - Default
+      summary: Get user search status expiration resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/settings/notification-settings/:
     patch:
       responses:
@@ -4748,14 +6416,20 @@ paths:
           description: Success
       operationId: patch_user_notification_settings
       tags:
-      - default
+      - Default
+      summary: Patch user notification settings
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_user_notification_settings
       tags:
-      - default
+      - Default
+      summary: Get user notification settings
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/users/settings/resend-email-verification/:
     post:
       responses:
@@ -4763,7 +6437,11 @@ paths:
           description: Success
       operationId: post_resend_email_verification_settings_resource
       tags:
-      - default
+      - Default
+      summary: Post resend email verification settings resource
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/vms:
     get:
       responses:
@@ -4771,7 +6449,11 @@ paths:
           description: Success
       operationId: get_vmsapi
       tags:
-      - default
+      - Default
+      summary: Get vmsapi
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/vms_submission/{object_descriptor}/info:
     parameters:
     - name: object_descriptor
@@ -4785,7 +6467,11 @@ paths:
           description: Success
       operationId: get_vms_submission_info
       tags:
-      - default
+      - Default
+      summary: Get vms submission info
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/vms_submission/{placement_id}:
     parameters:
     - name: placement_id
@@ -4799,14 +6485,20 @@ paths:
           description: Success
       operationId: post_vms_submission
       tags:
-      - default
+      - Default
+      summary: Post vms submission
+      x-summary-source: derived
     get:
       responses:
         '200':
           description: Success
       operationId: get_vms_submission
       tags:
-      - default
+      - Default
+      summary: Get vms submission
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/zendesk/webhooks/:
     post:
       responses:
@@ -4814,7 +6506,11 @@ paths:
           description: Success
       operationId: post_user_persona_information
       tags:
-      - default
+      - Default
+      summary: Post user persona information
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/zendesk/webhooks/attachment-linked/:
     post:
       responses:
@@ -4822,7 +6518,11 @@ paths:
           description: Success
       operationId: post_zendesk_attachment_linked
       tags:
-      - default
+      - Default
+      summary: Post zendesk attachment linked
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/zendesk/webhooks/comment-added/:
     post:
       responses:
@@ -4830,7 +6530,11 @@ paths:
           description: Success
       operationId: post_zendesk_comment_added
       tags:
-      - default
+      - Default
+      summary: Post zendesk comment added
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/zendesk/webhooks/comment-created/:
     post:
       responses:
@@ -4838,7 +6542,11 @@ paths:
           description: Success
       operationId: post_zendesk_comment_created
       tags:
-      - default
+      - Default
+      summary: Post zendesk comment created
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/zendesk/webhooks/metadata-update/:
     post:
       responses:
@@ -4860,7 +6568,9 @@ paths:
         - zen:event-type:ticket.tags_changed'
       operationId: post_zendesk_ticket_metadata_changed_webhook
       tags:
-      - default
+      - Default
+    servers:
+    - url: https://nomadhealth.com/
   /api/v1/zendesk/webhooks/ticket-closed/:
     post:
       responses:
@@ -4868,7 +6578,11 @@ paths:
           description: Success
       operationId: post_zendesk_ticket_closed
       tags:
-      - default
+      - Default
+      summary: Post zendesk ticket closed
+      x-summary-source: derived
+    servers:
+    - url: https://nomadhealth.com/
 x-refined-from:
 - nomad-health-api-openapi.yml
 - nomad-health-platform-openapi.yml

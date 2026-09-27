@@ -2520,20 +2520,24 @@ paths:
       responses:
         '200':
           description: Success
-      operationId: patch_application_resource
+      operationId: patchApiV1ApplicationsById
       tags:
       - Default
       summary: Patch application resource
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: patch_application_resource
     get:
       responses:
         '200':
           description: Success
-      operationId: get_application_resource
+      operationId: getApiV1ApplicationsById
       tags:
       - Default
       summary: Get application resource
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: get_application_resource
     servers:
     - url: https://nomadhealth.com/
   /api/v1/applications/{id}/validation/:
@@ -2547,11 +2551,13 @@ paths:
       responses:
         '200':
           description: Success
-      operationId: get_application_validation_resource
+      operationId: getApiV1ApplicationsByIdValidation
       tags:
       - Default
       summary: Get application validation resource
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: get_application_validation_resource
     servers:
     - url: https://nomadhealth.com/
   /api/v1/applications/{id}/work-experience-facilities/:
@@ -6103,11 +6109,13 @@ paths:
       responses:
         '200':
           description: Success
-      operationId: post_pn_voice_call_resource
+      operationId: postApiV1TwilioPremierNavigatorVoiceCall
       tags:
       - Default
       summary: Post pn voice call resource
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: post_pn_voice_call_resource
     servers:
     - url: https://nomadhealth.com/
   /api/v1/twilio/premier-navigator/voice-dial-action/:

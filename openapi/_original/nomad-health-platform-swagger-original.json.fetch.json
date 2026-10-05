@@ -1,0 +1,12 @@
+{
+ "url": "https://nomadhealth.com/swagger.json",
+ "requested_url": "https://nomadhealth.com/swagger.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 100802,
+ "sha256": "910869dc797a4fd53b95eb993e5b87fad0f21ff141fb6f24f789e37f85a51ac0",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 0.931), but the bytes differ, so the archive is an earlier or reformatted copy."
+}

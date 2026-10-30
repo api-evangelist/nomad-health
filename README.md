@@ -64,5 +64,110 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Nomad Health is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/nomad-health-stock
+Nomad Health operates a digital marketplace for healthcare travel staffing, connecting travel nurses, allied health professionals and other clinicians directly with healthcare facilities across all fifty U.S. states. The two-sided platform lets clinicians search and apply for travel assignments with transparency on pay rate, shift structure and requirements, while facilities post open positions and manage hiring through a cloud-based system; Nomad Navigators support clinicians through credentialing, onboarding and on-assignment needs. Nomad Health holds the Joint Commission Gold Seal of Approval for Travel Nursing Accreditation and reports more than 400,000 registered clinicians across 50-plus specialties spanning nursing, cath lab, laboratory, occupational therapy, physical therapy, radiology, respiratory therapy, sonography, speech language pathology and surgical technology. The company runs no public developer program, but serves a live Swagger 2.0 contract and a Swagger UI from its production application host covering job search, applications, credentialing, placements, facilities and messaging.
+
+**Areas:** Company · Healthcare · Staffing · Job · Marketplace · Travel Nursing · Allied Health · Credentialing · Recruiting · Human Resources
+
+## Nomad Health on APIs.io
+
+Everything profiled for Nomad Health is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/nomad-health/](https://apis.io/providers/nomad-health/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Nomad Health Default API](https://apis.io/apis/nomad-health/nomad-health-default-api/) — Default namespace
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [nomad-health](https://apis.io/servers/nomad-health/nomad-health/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [Nomad Health Default API](https://apis.io/collections/nomad-health/open-nomad-health-default-api/)
+
+#### Overlays (2)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Nomad Health Api Overlay](https://apis.io/overlays/nomad-health/nomad-health-api-overlay/)
+- [Nomad Health Platform Overlay](https://apis.io/overlays/nomad-health/nomad-health-platform-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Nomad Health Authentication](https://apis.io/security/nomad-health/nomad-health-authentication/)
+- [Nomad Health Domain Security](https://apis.io/security/nomad-health/nomad-health-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://nomadhealth.com)
+- [API reference](https://nomadhealth.com/api)
+- [Sign up](https://nomadhealth.com/auth/register)
+- [Support](https://nomadhealth.com/faqs)
+- [Blog](https://nomadhealth.com/blog)
+- [Terms of service](https://nomadhealth.com/tos)
+- [Privacy policy](https://nomadhealth.com/privacy)
+- [GitHub](https://github.com/NomadHealth)
+
+## API Evangelist rating
+
+**Kin Score 32.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 78.6 |
+| Contract quality | 36.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 28.0 |
+| Access clarity | 34.2 |
+
+**Agent readiness 19.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 19.5** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/nomad-health/](https://apis.io/providers/nomad-health/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Nomad Health: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/nomad-health/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
